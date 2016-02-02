@@ -8,12 +8,21 @@
  */
 class fb2
 {
-    private $domDoc;
+    protected $domDoc;
 
     public function __construct()
     {
         $this->domDoc = new DOMDocument();
-        $this->domDoc->load("./templateFb2.xml");
+        $this->domDoc->preserveWhiteSpace = false;
+        $this->domDoc->formatOutput = true;
+        $this->domDoc->loadXML("<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+                                <FictionBook xmlns=\"http://www.gribuser.ru/xml/fictionbook/2.0\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">
+                                    <description>
+                                        <title-info/>
+                                        <document-info/>
+                                    </description>
+                                    <body/>
+                                </FictionBook>");
     }
 
 
