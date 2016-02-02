@@ -40,12 +40,10 @@ class fb2
         $titleInfo = $this->domDoc->getElementsByTagName('title-info');
         $titleInfo->item(0)->appendChild($this->domDoc->createElement('book-title', $bookTitle));
     }
-    public function buildFb2(){
+    public function saveFb2(){
       //  if(!$this->domDoc->schemaValidate('./schema/XSD/fb2.2/FictionBook.xsd'))
       //      echo 'error';'
         $this->domDoc->normalizeDocument();
         echo $this->domDoc->saveXML();
     }
 }
-/*$a = new fb2();
-$a->buildFb2();*/

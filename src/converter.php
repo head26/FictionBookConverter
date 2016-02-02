@@ -51,7 +51,7 @@ class converter
         $fb2 = new fb2();
         $fb2->addGenre($this->genres);
         $fb2->addBookTitle($this->bookTitle);
-        $fb2->buildFb2();
+        $fb2->saveFb2();
     }
 }
 $a = new converter();
