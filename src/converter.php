@@ -10,7 +10,7 @@ class converter
 {
     protected $body;
 
-    protected $author;
+    protected $titleAuthor;
     protected $bookTitle = '';
     protected $genres = [];
     protected $annotation;
@@ -31,11 +31,11 @@ class converter
     }
 
     /**
-     * @param mixed $author
+     * @param mixed $titleAuthor
      */
-    public function setAuthor($author)
+    public function setTitleAuthor($titleAuthor)
     {
-        $this->author = $author;
+        $this->titleAuthor = $titleAuthor;
     }
 
     /**
