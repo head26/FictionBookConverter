@@ -11,6 +11,11 @@
 class FB2BuilderDescription
 {
     protected $titleInfo = NULL;
+    protected $srcTitleInfo  = NULL;
+    protected $documentInfo  = NULL;
+    protected $publishInfo  = NULL;
+    protected $customInfo  = NULL;
+    protected $output  = NULL;
 
     /**
      * @return FB2BuilderTitleInfo|null

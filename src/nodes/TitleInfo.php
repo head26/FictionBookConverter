@@ -9,7 +9,17 @@
 class FB2BuilderTitleInfo
 {
 
-protected $a ='хуй';
+    protected $genre = NULL;
+    protected $author = NULL;
+    protected $bookTitle = NULL;
+    protected $annotation = NULL;
+    protected $keywords = NULL;
+    protected $date = NULL;
+    protected $coverpage = NULL;
+    protected $lang = NULL;
+    protected $srcLang = NULL;
+    protected $translator = NULL;
+    protected $sequence = NULL;
 
     /**
      * @return string
