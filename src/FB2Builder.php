@@ -46,18 +46,20 @@ class FB2Builder
 
 }
 $a = new FB2Builder();
-$a->getDescription()->getTitleInfo()->getAuthor()->setFirstname('Имя');
-$a->getDescription()->getTitleInfo()->getAuthor()->setLastname('ФАм');
-$a->getDescription()->getTitleInfo()->getAuthor()->setNickname('head');
-$a->getDescription()->getTitleInfo()->getBookTitle()->setTitle('Хуевая книга','ru');
-$a->getDescription()->getTitleInfo()->getDate()->setDate('04.02.2016');
-$a->getDescription()->getTitleInfo()->getLang()->setLang('ru');
-$a->getDescription()->getTitleInfo()->getLang()->getValue();
+$titleInfo = $a->getDescription()->getTitleInfo();
+$titleInfo->getAuthor()->setFirstname('Имя');
+$titleInfo->getAuthor()->setLastname('ФАм');
+$titleInfo->getAuthor()->setNickname('head');
+$titleInfo->getBookTitle()->setTitle('Хуевая книга','ru');
+$titleInfo->getDate()->setDate('04.02.2016');
+$titleInfo->getLang()->setLang('ru');
+$titleInfo->getLang()->getValue();
 
 $genres = ['sf_cyberpunk','sf_space','sf'];
+$genre = $titleInfo->getGenre();
 foreach($genres as $k => $v)
-    $a->getDescription()->getTitleInfo()->getGenre()->setGenre($v);
+    $genre->add($v);
 
-print_r($a->getDescription()->getTitleInfo()->getGenre()->getValue());
+print_r($genre->getValue());
 
 

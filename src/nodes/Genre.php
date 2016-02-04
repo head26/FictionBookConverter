@@ -26,7 +26,7 @@ class FB2BuilderGenre
     /**
      * @param string $genre
      */
-    public function setGenre($genre)
+    public function add($genre)
     {
         $this->genres[] = trim($genre);
         array_unique($this->genres);
