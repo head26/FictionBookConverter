@@ -17,7 +17,7 @@ class FB2BuilderGenre
     /**
      * @return array
      */
-    public function getGenre()
+    public function getValue()
     {
         return $this->genres;
     }

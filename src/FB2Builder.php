@@ -52,13 +52,12 @@ $a->getDescription()->getTitleInfo()->getAuthor()->setNickname('head');
 $a->getDescription()->getTitleInfo()->getBookTitle()->setTitle('Хуевая книга','ru');
 $a->getDescription()->getTitleInfo()->getDate()->setDate('04.02.2016');
 $a->getDescription()->getTitleInfo()->getLang()->setLang('ru');
-//не хуйня ли? ->getLang()->getLang()
-$a->getDescription()->getTitleInfo()->getLang()->getLang();
+$a->getDescription()->getTitleInfo()->getLang()->getValue();
 
 $genres = ['sf_cyberpunk','sf_space','sf'];
 foreach($genres as $k => $v)
     $a->getDescription()->getTitleInfo()->getGenre()->setGenre($v);
-//такая же хуйня getGenre()->setGenre()
-print_r($a->getDescription()->getTitleInfo()->getGenre()->getGenre());
+
+print_r($a->getDescription()->getTitleInfo()->getGenre()->getValue());
 
 

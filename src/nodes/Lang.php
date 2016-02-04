@@ -13,7 +13,7 @@ class FB2BuilderLang
     /**
      * @return string
      */
-    public function getLang()
+    public function getValue()
     {
         return $this->lang;
     }
