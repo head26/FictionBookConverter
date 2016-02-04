@@ -3,10 +3,10 @@
 /**
  * Created by PhpStorm.
  * User: Denis Kuliev
- * Date: 03.02.2016
- * Time: 17:53
+ * Date: 04.02.2016
+ * Time: 16:07
  */
-class FB2BuilderAuthor
+class FB2BuilderTranslator
 {
     protected $firstname = NULL;
     protected $middlename = NULL;
@@ -53,7 +53,6 @@ class FB2BuilderAuthor
         return $this;
     }
 
-
     /**
      * @return null
      */
@@ -73,7 +72,6 @@ class FB2BuilderAuthor
         return $this;
     }
 
-
     /**
      * @return null
      */
@@ -92,7 +90,6 @@ class FB2BuilderAuthor
         $this->nickname = $nickname;
         return $this;
     }
-
 
     /**
      * @return null

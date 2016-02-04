@@ -24,11 +24,13 @@ class FB2BuilderGenre
 
 
     /**
-     * @param string $genre
+     * @param $genre
+     * @return $this
      */
     public function add($genre)
     {
         $this->genres[] = trim($genre);
         array_unique($this->genres);
+        return $this;
     }
 };

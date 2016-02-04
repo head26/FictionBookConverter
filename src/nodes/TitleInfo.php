@@ -98,4 +98,48 @@ class FB2BuilderTitleInfo
     }
 
 
+    /**
+     * @return FB2BuilderSrcLang|null
+     */
+    public function getSrcLang()
+    {
+        if(!$this->srcLang instanceof FB2BuilderSrcLang)
+            return $this->srcLang = new FB2BuilderSrcLang();
+        return $this->srcLang;
+    }
+
+
+    /**
+     * @return FB2BuilderTranslator|null
+     */
+    public function getTranslator()
+    {
+        if(!$this->translator instanceof FB2BuilderTranslator)
+            return $this->translator = new FB2BuilderTranslator();
+        return $this->translator;
+    }
+
+
+    /**
+     * @return FB2BuilderCoverpage|null
+     */
+    public function getCoverpage()
+    {
+        if(!$this->coverpage instanceof FB2BuilderCoverpage)
+            return $this->coverpage = new FB2BuilderCoverpage();
+        return $this->coverpage;
+    }
+
+
+    /**
+     * @return FB2BuilderSequence|null
+     */
+    public function getSequence()
+    {
+        if(!$this->sequence instanceof FB2BuilderSequence)
+            return $this->sequence = new FB2BuilderSequence();
+        return $this->sequence;
+    }
+
+
 }

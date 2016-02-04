@@ -36,16 +36,19 @@ class FB2Builder
     }
 
 }
-$a = new FB2Builder();
-$fb = $a->getFictionBook();
+$FB2Builder = new FB2Builder();
+$fb = $FB2Builder->getFictionBook();
+
 $titleInfo = $fb->getDescription()->getTitleInfo();
-$titleInfo->getAuthor()->setFirstname('Имя');
-$titleInfo->getAuthor()->setLastname('ФАм');
-$titleInfo->getAuthor()->setNickname('head');
+
+$tIAuthor = $titleInfo->getAuthor();
+$tIAuthor->setFirstname('Имя');
+$tIAuthor->setLastname('ФАм');
+$tIAuthor->setNickname('head');
+
 $titleInfo->getBookTitle()->setTitle('Хуевая книга','ru');
 $titleInfo->getDate()->setDate('04.02.2016');
 $titleInfo->getLang()->setLang('ru');
-$titleInfo->getLang()->getValue();
 
 $genre = $titleInfo->getGenre();
 $genres = ['sf_cyberpunk','sf_space','sf'];
