@@ -8,5 +8,21 @@
  */
 class FB2BuilderGenre
 {
+    protected $genres = [];
 
-}
+    /**
+     * @return array
+     */
+    public function getGenres()
+    {
+        return $this->genres;
+    }
+
+    /**
+     * @param array $genres
+     */
+    public function setGenres($genres)
+    {
+        $this->genres = $genres;
+    }
+};

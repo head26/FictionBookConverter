@@ -15,9 +15,7 @@ if (!defined('FB2Builder_ROOT')) {
 
 class FB2Builder
 {
-    /**
-     * @var null
-     */
+    protected $fictionBook = NULL;
     protected $description = NULL;
     protected $body = NULL;
     protected $stylesheet = NULL;
@@ -34,8 +32,9 @@ class FB2Builder
         return $this->description;
     }
 
+
     /**
-     * @return null
+     * @return \FB2BuilderDescription|null
      */
     public function getBody()
     {
@@ -47,4 +46,13 @@ class FB2Builder
 
 }
 $a = new FB2Builder();
-echo $a->getDescription()->getTitleInfo()->getA();
+$a->getDescription()->getTitleInfo()->getAuthor()->setFirstname('Имя');
+$a->getDescription()->getTitleInfo()->getAuthor()->setLastname('ФАм');
+$a->getDescription()->getTitleInfo()->getAuthor()->setNickname('head');
+$a->getDescription()->getTitleInfo()->getBookTitle()->setTitle('Хуевая книга','ru');
+$a->getDescription()->getTitleInfo()->getDate()->setDate('04.02.2016');
+$a->getDescription()->getTitleInfo()->getLang()->setLang('ru');
+//не хуйня ли? ->getLang()->getLang()
+$a->getDescription()->getTitleInfo()->getLang()->getLang();
+
+
