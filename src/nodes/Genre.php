@@ -8,21 +8,27 @@
  */
 class FB2BuilderGenre
 {
+    /**
+     * @var array
+     */
     protected $genres = [];
+
 
     /**
      * @return array
      */
-    public function getGenres()
+    public function getGenre()
     {
         return $this->genres;
     }
 
+
     /**
-     * @param array $genres
+     * @param string $genre
      */
-    public function setGenres($genres)
+    public function setGenre($genre)
     {
-        $this->genres = $genres;
+        $this->genres[] = trim($genre);
+        array_unique($this->genres);
     }
 };

@@ -55,4 +55,10 @@ $a->getDescription()->getTitleInfo()->getLang()->setLang('ru');
 //не хуйня ли? ->getLang()->getLang()
 $a->getDescription()->getTitleInfo()->getLang()->getLang();
 
+$genres = ['sf_cyberpunk','sf_space','sf'];
+foreach($genres as $k => $v)
+    $a->getDescription()->getTitleInfo()->getGenre()->setGenre($v);
+//такая же хуйня getGenre()->setGenre()
+print_r($a->getDescription()->getTitleInfo()->getGenre()->getGenre());
+
 
