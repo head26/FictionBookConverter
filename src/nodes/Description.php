@@ -72,7 +72,7 @@ class FB2BuilderDescription extends FB2BuilderAbstractNodes
     }
 
 
-    function buildXML($domDoc)
+    function buildXML(DOMDocument $domDoc)
     {
         $descriptionXml = $domDoc->createElement('description');
         $titleInfoXml = $this->getTitleInfo()->buildXML($domDoc);

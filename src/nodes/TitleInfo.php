@@ -141,7 +141,7 @@ class FB2BuilderTitleInfo extends FB2BuilderAbstractNodes
         return $this->sequence;
     }
 
-    function buildXML($domDoc)
+    function buildXML(DOMDocument $domDoc)
     {
         $titleInfoXml = $domDoc->createElement('title-info');
         return $titleInfoXml;

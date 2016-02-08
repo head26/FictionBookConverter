@@ -132,7 +132,7 @@ class FB2BuilderAuthor extends FB2BuilderAbstractNodes
         return $this;
     }
 
-    function buildXML($xml)
+    function buildXML(DOMDocument $domDoc)
     {
         // TODO: Implement getXML() method.
     }

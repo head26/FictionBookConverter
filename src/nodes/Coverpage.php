@@ -10,7 +10,7 @@ class FB2BuilderCoverpage extends FB2BuilderAbstractNodes
 {
     protected $image = NULL;
 
-    function buildXML($xml)
+    function buildXML(DOMDocument $domDoc)
     {
         // TODO: Implement getXML() method.
     }

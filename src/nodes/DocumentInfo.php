@@ -51,7 +51,7 @@ class FB2BuilderDocumentInfo extends FB2BuilderAbstractNodes
         return $this->id;
     }
 
-    function buildXML($xml)
+    function buildXML(DOMDocument $domDoc)
     {
         // TODO: Implement getXML() method.
     }

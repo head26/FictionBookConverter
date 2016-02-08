@@ -37,7 +37,7 @@ class FB2BuilderBookTitle extends FB2BuilderAbstractNodes
         $this->title = $lang;
     }
 
-    function buildXML($xml)
+    function buildXML(DOMDocument $domDoc)
     {
         // TODO: Implement getXML() method.
     }

@@ -35,7 +35,7 @@ class FB2BuilderFictionBook extends FB2BuilderAbstractNodes
     }
 
 
-    function buildXML($domDoc)
+    function buildXML(DOMDocument $domDoc)
     {
         $fb = $domDoc->createElementNS('http://www.gribuser.ru/xml/fictionbook/2.0','FictionBook');
         $fb->setAttributeNS(
