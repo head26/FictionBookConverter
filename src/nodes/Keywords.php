@@ -26,7 +26,7 @@ class FB2BuilderKeywords extends FB2BuilderAbstractNodes
         $this->keywords = $keywords;
     }
 
-    function getXML(DOMDocument $xml)
+    function buildXML($xml)
     {
         // TODO: Implement getXML() method.
     }

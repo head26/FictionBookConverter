@@ -26,7 +26,7 @@ class FB2BuilderDate extends FB2BuilderAbstractNodes
         $this->date = $date;
     }
 
-    function getXML(DOMDocument $xml)
+    function buildXML($xml)
     {
         // TODO: Implement getXML() method.
     }

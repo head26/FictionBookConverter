@@ -34,8 +34,27 @@ class FB2BuilderFictionBook extends FB2BuilderAbstractNodes
         return $this->description;
     }
 
-    function getXML(DOMDocument $xml)
+
+    function buildXML($domDoc)
     {
+        $fb = $domDoc->createElementNS('http://www.gribuser.ru/xml/fictionbook/2.0','FictionBook');
+        $fb->setAttributeNS(
+                            'http://www.w3.org/2000/xmlns/',
+                            'xmlns:xlink',
+                            'http://www.w3.org/1999/xlink'
+            );
+        $domDoc->appendChild($fb);
+
+        $fb->appendChild($this->getDescription()->buildXML($domDoc));
         // TODO: Implement getXML() method.
     }
 }
+/*<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<FictionBook xmlns=\"http://www.gribuser.ru/xml/fictionbook/2.0\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">
+    <description>
+        <title-info/>
+        <document-info/>
+    </description>
+    <body/>
+</FictionBook>
+*/

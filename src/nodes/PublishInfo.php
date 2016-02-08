@@ -9,7 +9,7 @@
 class FB2BuilderPublishInfo extends FB2BuilderAbstractNodes
 {
 
-    function getXML(DOMDocument $xml)
+    function buildXML($xml)
     {
         // TODO: Implement getXML() method.
     }

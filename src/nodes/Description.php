@@ -71,8 +71,13 @@ class FB2BuilderDescription extends FB2BuilderAbstractNodes
         return $this->documentInfo;
     }
 
-    function getXML(DOMDocument $xml)
+
+    function buildXML($domDoc)
     {
+        $descriptionXml = $domDoc->createElement('description');
+        $titleInfoXml = $this->getTitleInfo()->buildXML($domDoc);
+        $descriptionXml->appendChild($titleInfoXml);
+        return $descriptionXml;
         // TODO: Implement getXML() method.
     }
 }

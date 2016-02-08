@@ -8,7 +8,7 @@
  */
 class FB2BuilderAnnotation extends FB2BuilderAbstractNodes
 {
-    function getXML(DOMDocument $xml)
+    function buildXML($xml)
     {
         // TODO: Implement getXML() method.
     }

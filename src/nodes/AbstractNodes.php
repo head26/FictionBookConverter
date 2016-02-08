@@ -8,5 +8,5 @@
  */
 abstract class FB2BuilderAbstractNodes
 {
-    abstract function getXML(DOMDocument $xml);
+    abstract function buildXML($domDoc);
 }

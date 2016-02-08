@@ -38,7 +38,7 @@ class FB2BuilderSequence extends FB2BuilderAbstractNodes
         return $this->name;
     }
 
-    function getXML(DOMDocument $xml)
+    function buildXML($xml)
     {
         // TODO: Implement getXML() method.
     }

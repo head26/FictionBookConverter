@@ -34,12 +34,17 @@ class FB2Builder
             return $this->fictionBook = new \FB2BuilderFictionBook();
         return $this->fictionBook;
     }
+
+    /**
+     *
+     */
     public function save() {
         if($this->fictionBook instanceof \FB2BuilderFictionBook) {
-            $xml = new \DOMDocument("1.0", "UTF-8");
-            $xml->preserveWhiteSpace = false;
-            $xml->formatOutput = true;
-           echo $xml->saveXML();
+            $domDoc = new \DOMDocument("1.0", "UTF-8");
+            $domDoc->preserveWhiteSpace = false;
+            $domDoc->formatOutput = true;
+            $this->fictionBook->buildXML($domDoc);
+           echo $domDoc->saveXML();
         }
     }
 

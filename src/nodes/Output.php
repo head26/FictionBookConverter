@@ -9,7 +9,7 @@
 class FB2BuilderOutput extends FB2BuilderAbstractNodes
 {
 
-    function getXML(DOMDocument $xml)
+    function buildXML($xml)
     {
         // TODO: Implement getXML() method.
     }

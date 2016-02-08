@@ -26,7 +26,7 @@ class FB2BuilderSrcLang extends FB2BuilderAbstractNodes
         $this->lang = $lang;
     }
 
-    function getXML(DOMDocument $xml)
+    function buildXML($xml)
     {
         // TODO: Implement getXML() method.
     }
