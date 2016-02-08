@@ -34,6 +34,14 @@ class FB2Builder
             return $this->fictionBook = new \FB2BuilderFictionBook();
         return $this->fictionBook;
     }
+    public function save() {
+        if($this->fictionBook instanceof \FB2BuilderFictionBook) {
+            $xml = new \DOMDocument("1.0", "UTF-8");
+            $xml->preserveWhiteSpace = false;
+            $xml->formatOutput = true;
+           echo $xml->saveXML();
+        }
+    }
 
 }
 $FB2Builder = new FB2Builder();
@@ -57,5 +65,7 @@ foreach($genres as $k => $v)
     $genre->add($v);
 
 print_r($genre->getValue());
+
+$FB2Builder->save();
 
 

@@ -6,7 +6,11 @@
  * Date: 04.02.2016
  * Time: 23:08
  */
-class FB2BuilderPublishInfo
+class FB2BuilderPublishInfo extends FB2BuilderAbstractNodes
 {
 
+    function getXML(DOMDocument $xml)
+    {
+        // TODO: Implement getXML() method.
+    }
 }

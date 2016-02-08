@@ -6,7 +6,7 @@
  * Date: 04.02.2016
  * Time: 16:07
  */
-class FB2BuilderSrcLang
+class FB2BuilderSrcLang extends FB2BuilderAbstractNodes
 {
     protected $lang = '';
 
@@ -24,5 +24,10 @@ class FB2BuilderSrcLang
     public function setLang($lang)
     {
         $this->lang = $lang;
+    }
+
+    function getXML(DOMDocument $xml)
+    {
+        // TODO: Implement getXML() method.
     }
 }

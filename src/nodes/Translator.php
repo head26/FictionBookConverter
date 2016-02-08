@@ -6,7 +6,7 @@
  * Date: 04.02.2016
  * Time: 16:07
  */
-class FB2BuilderTranslator
+class FB2BuilderTranslator extends FB2BuilderAbstractNodes
 {
     protected $firstname = NULL;
     protected $middlename = NULL;
@@ -127,5 +127,10 @@ class FB2BuilderTranslator
     {
         $this->id = $id;
         return $this;
+    }
+
+    function getXML(DOMDocument $xml)
+    {
+        // TODO: Implement getXML() method.
     }
 }

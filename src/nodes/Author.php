@@ -6,7 +6,7 @@
  * Date: 03.02.2016
  * Time: 17:53
  */
-class FB2BuilderAuthor
+class FB2BuilderAuthor extends FB2BuilderAbstractNodes
 {
     protected $firstname = NULL;
     protected $middlename = NULL;
@@ -130,5 +130,10 @@ class FB2BuilderAuthor
     {
         $this->id = $id;
         return $this;
+    }
+
+    function getXML(DOMDocument $xml)
+    {
+        // TODO: Implement getXML() method.
     }
 }

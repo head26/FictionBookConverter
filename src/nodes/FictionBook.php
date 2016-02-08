@@ -6,7 +6,7 @@
  * Date: 04.02.2016
  * Time: 15:59
  */
-class FB2BuilderFictionBook
+class FB2BuilderFictionBook extends FB2BuilderAbstractNodes
 {
     protected $description = NULL;
     protected $body = NULL;
@@ -32,5 +32,10 @@ class FB2BuilderFictionBook
         if(!$this->description instanceof FB2BuilderDescription)
             return $this->description = new FB2BuilderDescription();
         return $this->description;
+    }
+
+    function getXML(DOMDocument $xml)
+    {
+        // TODO: Implement getXML() method.
     }
 }

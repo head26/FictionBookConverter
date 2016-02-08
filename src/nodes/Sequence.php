@@ -6,7 +6,7 @@
  * Date: 04.02.2016
  * Time: 16:08
  */
-class FB2BuilderSequence
+class FB2BuilderSequence extends FB2BuilderAbstractNodes
 {
     protected $name = '';
     protected $number = '';
@@ -38,4 +38,8 @@ class FB2BuilderSequence
         return $this->name;
     }
 
+    function getXML(DOMDocument $xml)
+    {
+        // TODO: Implement getXML() method.
+    }
 }

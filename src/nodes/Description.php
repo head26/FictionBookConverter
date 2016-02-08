@@ -8,7 +8,7 @@
  */
 
 
-class FB2BuilderDescription
+class FB2BuilderDescription extends FB2BuilderAbstractNodes
 {
     protected $titleInfo = NULL;
     protected $srcTitleInfo  = NULL;
@@ -69,5 +69,10 @@ class FB2BuilderDescription
         if(!$this->documentInfo instanceof FB2BuilderDocumentInfo)
             return $this->documentInfo = new FB2BuilderDocumentInfo();
         return $this->documentInfo;
+    }
+
+    function getXML(DOMDocument $xml)
+    {
+        // TODO: Implement getXML() method.
     }
 }

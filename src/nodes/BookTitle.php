@@ -6,7 +6,7 @@
  * Date: 04.02.2016
  * Time: 13:55
  */
-class FB2BuilderBookTitle
+class FB2BuilderBookTitle extends FB2BuilderAbstractNodes
 {
     protected $lang = '';
     protected $title = '';
@@ -35,5 +35,10 @@ class FB2BuilderBookTitle
     {
         $this->title = $title;
         $this->title = $lang;
+    }
+
+    function getXML(DOMDocument $xml)
+    {
+        // TODO: Implement getXML() method.
     }
 }

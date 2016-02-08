@@ -6,7 +6,7 @@
  * Date: 04.02.2016
  * Time: 14:16
  */
-class FB2BuilderDate
+class FB2BuilderDate extends FB2BuilderAbstractNodes
 {
     protected $date = '';
 
@@ -24,5 +24,10 @@ class FB2BuilderDate
     public function setDate($date)
     {
         $this->date = $date;
+    }
+
+    function getXML(DOMDocument $xml)
+    {
+        // TODO: Implement getXML() method.
     }
 }

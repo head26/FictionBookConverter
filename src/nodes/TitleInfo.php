@@ -6,7 +6,7 @@
  * Date: 03.02.2016
  * Time: 17:08
  */
-class FB2BuilderTitleInfo
+class FB2BuilderTitleInfo extends FB2BuilderAbstractNodes
 {
 
     protected $genre = NULL;
@@ -142,4 +142,8 @@ class FB2BuilderTitleInfo
     }
 
 
+    function getXML(DOMDocument $xml)
+    {
+        // TODO: Implement getXML() method.
+    }
 }

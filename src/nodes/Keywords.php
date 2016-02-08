@@ -6,7 +6,7 @@
  * Date: 04.02.2016
  * Time: 14:06
  */
-class FB2BuilderKeywords
+class FB2BuilderKeywords extends FB2BuilderAbstractNodes
 {
     protected $keywords = '';
 
@@ -24,5 +24,10 @@ class FB2BuilderKeywords
     public function setKeywords($keywords)
     {
         $this->keywords = $keywords;
+    }
+
+    function getXML(DOMDocument $xml)
+    {
+        // TODO: Implement getXML() method.
     }
 }
