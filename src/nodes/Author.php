@@ -27,7 +27,7 @@ class FB2BuilderAuthor extends FB2BuilderAbstractNodes
      */
 
     /**
-     * @return null
+     * @return string|null
      */
     public function getFirstname()
     {
@@ -36,8 +36,8 @@ class FB2BuilderAuthor extends FB2BuilderAbstractNodes
 
 
     /**
-     * @param $firstname
-     * @return $this
+     * @param string $firstname
+     * @return FB2BuilderAuthor
      */
     public function setFirstname($firstname)
     {
@@ -46,7 +46,7 @@ class FB2BuilderAuthor extends FB2BuilderAbstractNodes
     }
 
     /**
-     * @return null
+     * @return string|null
      */
     public function getMiddlename()
     {
@@ -56,7 +56,7 @@ class FB2BuilderAuthor extends FB2BuilderAbstractNodes
 
     /**
      * @param $middlename
-     * @return $this
+     * @return FB2BuilderAuthor
      */
     public function setMiddlename($middlename)
     {
@@ -66,7 +66,7 @@ class FB2BuilderAuthor extends FB2BuilderAbstractNodes
 
 
     /**
-     * @return null
+     * @return string|null
      */
     public function getLastname()
     {
@@ -76,7 +76,7 @@ class FB2BuilderAuthor extends FB2BuilderAbstractNodes
 
     /**
      * @param $lastname
-     * @return $this
+     * @return FB2BuilderAuthor
      */
     public function setLastname($lastname)
     {
@@ -86,7 +86,7 @@ class FB2BuilderAuthor extends FB2BuilderAbstractNodes
 
 
     /**
-     * @return null
+     * @return string|null
      */
     public function getNickname()
     {
@@ -96,7 +96,7 @@ class FB2BuilderAuthor extends FB2BuilderAbstractNodes
 
     /**
      * @param $nickname
-     * @return $this
+     * @return FB2BuilderAuthor
      */
     public function setNickname($nickname)
     {
@@ -106,7 +106,7 @@ class FB2BuilderAuthor extends FB2BuilderAbstractNodes
 
 
     /**
-     * @return null
+     * @return string|null
      */
     public function getHomePage()
     {
@@ -116,7 +116,7 @@ class FB2BuilderAuthor extends FB2BuilderAbstractNodes
 
     /**
      * @param $homePage
-     * @return $this
+     * @return FB2BuilderAuthor
      */
     public function setHomePage($homePage)
     {
@@ -125,7 +125,7 @@ class FB2BuilderAuthor extends FB2BuilderAbstractNodes
     }
 
     /**
-     * @return null
+     * @return string|null
      */
     public function getId()
     {
@@ -135,7 +135,7 @@ class FB2BuilderAuthor extends FB2BuilderAbstractNodes
 
     /**
      * @param $id
-     * @return $this
+     * @return FB2BuilderAuthor
      */
     public function setId($id)
     {
@@ -144,7 +144,7 @@ class FB2BuilderAuthor extends FB2BuilderAbstractNodes
     }
 
     /**
-     * @return null
+     * @return string|null
      */
     public function getEmail()
     {
@@ -154,7 +154,7 @@ class FB2BuilderAuthor extends FB2BuilderAbstractNodes
 
     /**
      * @param $email
-     * @return $this
+     * @return FB2BuilderAuthor
      */
     public function setEmail($email)
     {

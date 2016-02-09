@@ -9,16 +9,49 @@
 class FB2BuilderTitleInfo extends FB2BuilderAbstractNodes
 {
 
+    /**
+     * @var FB2BuilderGenre
+     */
     protected $genre = NULL;
+    /**
+     * @var FB2BuilderAuthor
+     */
     protected $author = NULL;
+    /**
+     * @var FB2BuilderBookTitle
+     */
     protected $bookTitle = NULL;
+    /**
+     * @var FB2BuilderAnnotation
+     */
     protected $annotation = NULL;
+    /**
+     * @var FB2BuilderKeywords
+     */
     protected $keywords = NULL;
+    /**
+     * @var FB2BuilderDate
+     */
     protected $date = NULL;
+    /**
+     * @var FB2BuilderCoverpage
+     */
     protected $coverpage = NULL;
+    /**
+     * @var FB2BuilderLang
+     */
     protected $lang = NULL;
+    /**
+     * @var FB2BuilderSrcLang
+     */
     protected $srcLang = NULL;
+    /**
+     * @var FB2BuilderTranslator
+     */
     protected $translator = NULL;
+    /**
+     * @var FB2BuilderSequence
+     */
     protected $sequence = NULL;
 
     /**
@@ -36,7 +69,7 @@ class FB2BuilderTitleInfo extends FB2BuilderAbstractNodes
      */
 
     /**
-     * @return FB2BuilderAuthor|null
+     * @return FB2BuilderAuthor
      */
     public function getAuthor()
     {
@@ -46,7 +79,7 @@ class FB2BuilderTitleInfo extends FB2BuilderAbstractNodes
     }
 
     /**
-     * @return FB2BuilderGenre|null
+     * @return FB2BuilderGenre
      */
     public function getGenre()
     {
@@ -57,7 +90,7 @@ class FB2BuilderTitleInfo extends FB2BuilderAbstractNodes
 
 
     /**
-     * @return FB2BuilderAnnotation|null
+     * @return FB2BuilderAnnotation
      */
     public function getAnnotation()
     {
@@ -68,7 +101,7 @@ class FB2BuilderTitleInfo extends FB2BuilderAbstractNodes
 
 
     /**
-     * @return FB2BuilderBookTitle|null
+     * @return FB2BuilderBookTitle
      */
     public function getBookTitle()
     {
@@ -79,7 +112,7 @@ class FB2BuilderTitleInfo extends FB2BuilderAbstractNodes
 
 
     /**
-     * @return FB2BuilderKeywords|null
+     * @return FB2BuilderKeywords
      */
     public function getKeywords()
     {
@@ -90,7 +123,7 @@ class FB2BuilderTitleInfo extends FB2BuilderAbstractNodes
 
 
     /**
-     * @return FB2BuilderDate|null
+     * @return FB2BuilderDate
      */
     public function getDate()
     {
@@ -101,7 +134,7 @@ class FB2BuilderTitleInfo extends FB2BuilderAbstractNodes
 
 
     /**
-     * @return FB2BuilderLang|null
+     * @return FB2BuilderLang
      */
     public function getLang()
     {
@@ -112,7 +145,7 @@ class FB2BuilderTitleInfo extends FB2BuilderAbstractNodes
 
 
     /**
-     * @return FB2BuilderSrcLang|null
+     * @return FB2BuilderSrcLang
      */
     public function getSrcLang()
     {
@@ -123,7 +156,7 @@ class FB2BuilderTitleInfo extends FB2BuilderAbstractNodes
 
 
     /**
-     * @return FB2BuilderTranslator|null
+     * @return FB2BuilderTranslator
      */
     public function getTranslator()
     {
@@ -134,7 +167,7 @@ class FB2BuilderTitleInfo extends FB2BuilderAbstractNodes
 
 
     /**
-     * @return FB2BuilderCoverpage|null
+     * @return FB2BuilderCoverpage
      */
     public function getCoverpage()
     {
@@ -145,7 +178,7 @@ class FB2BuilderTitleInfo extends FB2BuilderAbstractNodes
 
 
     /**
-     * @return FB2BuilderSequence|null
+     * @return FB2BuilderSequence
      */
     public function getSequence()
     {

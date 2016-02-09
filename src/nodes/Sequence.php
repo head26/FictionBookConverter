@@ -8,13 +8,13 @@
  */
 class FB2BuilderSequence extends FB2BuilderAbstractNodes
 {
-    protected $name = '';
-    protected $number = '';
-    protected $xmlLang = '';
+    protected $name = NULL;
+    protected $number = NULL;
+    protected $xmlLang = NULL;
 
     /**
-     * @param $name
-     * @param $number
+     * @param string $name
+     * @param int $number
      */
     public function setSequence($name, $number)
     {
@@ -23,7 +23,7 @@ class FB2BuilderSequence extends FB2BuilderAbstractNodes
     }
 
     /**
-     * @return string
+     * @return int|null
      */
     public function getNumber()
     {
@@ -31,7 +31,7 @@ class FB2BuilderSequence extends FB2BuilderAbstractNodes
     }
 
     /**
-     * @return string
+     * @return string|null
      */
     public function getName()
     {

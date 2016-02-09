@@ -8,11 +8,11 @@
  */
 class FB2BuilderBookTitle extends FB2BuilderAbstractNodes
 {
-    protected $lang = '';
-    protected $title = '';
+    protected $lang = NULL;
+    protected $title = NULL;
 
     /**
-     * @return string
+     * @return string|null
      */
     public function getLang()
     {
@@ -20,7 +20,7 @@ class FB2BuilderBookTitle extends FB2BuilderAbstractNodes
     }
 
     /**
-     * @return string
+     * @return string|null
      */
     public function getTitle()
     {
@@ -28,8 +28,8 @@ class FB2BuilderBookTitle extends FB2BuilderAbstractNodes
     }
 
     /**
-     * @param $title
-     * @param $lang
+     * @param string $title
+     * @param string $lang
      */
     public function setTitle($title, $lang)
     {

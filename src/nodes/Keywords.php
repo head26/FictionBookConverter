@@ -8,10 +8,10 @@
  */
 class FB2BuilderKeywords extends FB2BuilderAbstractNodes
 {
-    protected $keywords = '';
+    protected $keywords = NULL;
 
     /**
-     * @return string
+     * @return string|null
      */
     public function getKeywords()
     {

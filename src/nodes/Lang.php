@@ -8,10 +8,10 @@
  */
 class FB2BuilderLang extends FB2BuilderAbstractNodes
 {
-    protected $lang = '';
+    protected $lang = NULL;
 
     /**
-     * @return string
+     * @return string|null
      */
     public function getValue()
     {

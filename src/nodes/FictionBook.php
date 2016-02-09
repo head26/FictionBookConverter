@@ -20,7 +20,7 @@ class FB2BuilderFictionBook extends FB2BuilderAbstractNodes
      */
 
     /**
-     * @return FB2BuilderDescription|null
+     * @return FB2BuilderDescription
      */
     public function getDescription()
     {
@@ -30,15 +30,13 @@ class FB2BuilderFictionBook extends FB2BuilderAbstractNodes
     }
 
 
-    /**
-     * @return FB2BuilderDescription|null
-     */
-    public function getBody()
+
+   /* public function getBody()
     {
-        if(!$this->description instanceof FB2BuilderDescription)
-            return $this->description = new FB2BuilderDescription();
-        return $this->description;
-    }
+        if(!$this->body instanceof )
+            return $this->body = new ();
+        return $this->body;
+    }*/
 
 
     /*function buildXML()

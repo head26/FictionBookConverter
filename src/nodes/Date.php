@@ -8,10 +8,10 @@
  */
 class FB2BuilderDate extends FB2BuilderAbstractNodes
 {
-    protected $date = '';
+    protected $date = NULL;
 
     /**
-     * @return string
+     * @return string|null
      */
     public function getDate()
     {

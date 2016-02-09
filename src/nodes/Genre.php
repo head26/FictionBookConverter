@@ -12,7 +12,10 @@ class FB2BuilderGenre extends FB2BuilderAbstractNodes
      * @var array
      */
     protected $genres = [];
-
+    /**
+     * Атрибуты
+     * match (опциональный, значение по умолчанию "100") ? число от "1" до "100", задающее субъективное процентное соответствие данному жанру.
+     */
 
     /**
      * @return array
@@ -24,8 +27,8 @@ class FB2BuilderGenre extends FB2BuilderAbstractNodes
 
 
     /**
-     * @param $genre
-     * @return $this
+     * @param string $genre
+     * @return FB2BuilderGenre
      */
     public function add($genre)
     {

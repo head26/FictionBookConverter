@@ -10,11 +10,29 @@
 
 class FB2BuilderDescription extends FB2BuilderAbstractNodes
 {
+    /**
+     * @var FB2BuilderTitleInfo
+     */
     protected $titleInfo = NULL;
+    /**
+     * @var FB2BuilderScrTitleInfo
+     */
     protected $srcTitleInfo  = NULL;
+    /**
+     * @var FB2BuilderDocumentInfo
+     */
     protected $documentInfo  = NULL;
+    /**
+     * @var FB2BuilderPublishInfo
+     */
     protected $publishInfo  = NULL;
+    /**
+     * @var FB2BuilderCustomInfo
+     */
     protected $customInfo  = NULL;
+    /**
+     * @var FB2BuilderOutput
+     */
     protected $output  = NULL;
 
     /**
@@ -28,7 +46,7 @@ class FB2BuilderDescription extends FB2BuilderAbstractNodes
 
 
     /**
-     * @return FB2BuilderTitleInfo|null
+     * @return FB2BuilderTitleInfo
      */
     public function getTitleInfo() {
         if(!$this->titleInfo instanceof FB2BuilderTitleInfo)
@@ -38,7 +56,7 @@ class FB2BuilderDescription extends FB2BuilderAbstractNodes
 
 
     /**
-     * @return FB2BuilderScrTitleInfo|null
+     * @return FB2BuilderScrTitleInfo
      */
     public function getSrcTitleInfo()
     {
@@ -49,7 +67,7 @@ class FB2BuilderDescription extends FB2BuilderAbstractNodes
 
 
     /**
-     * @return FB2BuilderPublishInfo|null
+     * @return FB2BuilderPublishInfo
      */
     public function getPublishInfo()
     {
@@ -60,7 +78,7 @@ class FB2BuilderDescription extends FB2BuilderAbstractNodes
 
 
     /**
-     * @return FB2BuilderOutput|null
+     * @return FB2BuilderOutput
      */
     public function getOutput()
     {
@@ -72,7 +90,7 @@ class FB2BuilderDescription extends FB2BuilderAbstractNodes
 
 
     /**
-     * @return FB2BuilderDocumentInfo|null
+     * @return FB2BuilderDocumentInfo
      */
     public function getDocumentInfo()
     {

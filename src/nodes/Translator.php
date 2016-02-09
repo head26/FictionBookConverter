@@ -16,7 +16,7 @@ class FB2BuilderTranslator extends FB2BuilderAbstractNodes
     protected $id = NULL;
 
     /**
-     * @return null
+     * @return string|null
      */
     public function getFirstname()
     {
@@ -25,8 +25,8 @@ class FB2BuilderTranslator extends FB2BuilderAbstractNodes
 
 
     /**
-     * @param $firstname
-     * @return $this
+     * @param string $firstname
+     * @return FB2BuilderTranslator
      */
     public function setFirstname($firstname)
     {
@@ -35,7 +35,7 @@ class FB2BuilderTranslator extends FB2BuilderAbstractNodes
     }
 
     /**
-     * @return null
+     * @return string|null
      */
     public function getMiddlename()
     {
@@ -44,8 +44,8 @@ class FB2BuilderTranslator extends FB2BuilderAbstractNodes
 
 
     /**
-     * @param $middlename
-     * @return $this
+     * @param string $middlename
+     * @return FB2BuilderTranslator
      */
     public function setMiddlename($middlename)
     {
@@ -54,7 +54,7 @@ class FB2BuilderTranslator extends FB2BuilderAbstractNodes
     }
 
     /**
-     * @return null
+     * @return string|null
      */
     public function getLastname()
     {
@@ -63,8 +63,8 @@ class FB2BuilderTranslator extends FB2BuilderAbstractNodes
 
 
     /**
-     * @param $lastname
-     * @return $this
+     * @param string $lastname
+     * @return FB2BuilderTranslator
      */
     public function setLastname($lastname)
     {
@@ -73,7 +73,7 @@ class FB2BuilderTranslator extends FB2BuilderAbstractNodes
     }
 
     /**
-     * @return null
+     * @return string|null
      */
     public function getNickname()
     {
@@ -82,8 +82,8 @@ class FB2BuilderTranslator extends FB2BuilderAbstractNodes
 
 
     /**
-     * @param $nickname
-     * @return $this
+     * @param string $nickname
+     * @return FB2BuilderTranslator
      */
     public function setNickname($nickname)
     {
@@ -92,7 +92,7 @@ class FB2BuilderTranslator extends FB2BuilderAbstractNodes
     }
 
     /**
-     * @return null
+     * @return string|null
      */
     public function getHomePage()
     {
@@ -101,8 +101,8 @@ class FB2BuilderTranslator extends FB2BuilderAbstractNodes
 
 
     /**
-     * @param $homePage
-     * @return $this
+     * @param string $homePage
+     * @return FB2BuilderTranslator
      */
     public function setHomePage($homePage)
     {
@@ -111,7 +111,7 @@ class FB2BuilderTranslator extends FB2BuilderAbstractNodes
     }
 
     /**
-     * @return null
+     * @return string|null
      */
     public function getId()
     {
@@ -120,8 +120,8 @@ class FB2BuilderTranslator extends FB2BuilderAbstractNodes
 
 
     /**
-     * @param $id
-     * @return $this
+     * @param string $id
+     * @return FB2BuilderTranslator
      */
     public function setId($id)
     {

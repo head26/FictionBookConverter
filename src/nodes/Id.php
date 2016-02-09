@@ -11,7 +11,7 @@ class FB2BuilderId extends FB2BuilderAbstractNodes
     protected $id = NULL;
 
     /**
-     * @return null
+     * @return string|null
      */
     public function getValue()
     {
@@ -20,8 +20,8 @@ class FB2BuilderId extends FB2BuilderAbstractNodes
 
 
     /**
-     * @param $id
-     * @return $this
+     * @param string $id
+     * @return FB2BuilderId
      */
     public function setId($id)
     {

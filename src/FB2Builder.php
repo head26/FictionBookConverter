@@ -20,13 +20,13 @@ if (!defined('FB2Builder_ROOT')) {
 class FB2Builder
 {
     /**
-     * @var null
+     * @var \FB2BuilderFictionBook
      */
     protected $fictionBook = NULL;
 
 
     /**
-     * @return \FB2BuilderFictionBook|null
+     * @return \FB2BuilderFictionBook
      */
     public function getFictionBook()
     {
@@ -35,9 +35,7 @@ class FB2Builder
         return $this->fictionBook;
     }
 
-    /**
-     *
-     */
+
     public function save() {
         if($this->fictionBook instanceof \FB2BuilderFictionBook) {
             $this->fictionBook->buildXML();
