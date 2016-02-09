@@ -8,10 +8,23 @@
  */
 class FB2BuilderFictionBook extends FB2BuilderAbstractNodes
 {
+    /**
+     * @var FB2BuilderDescription
+     */
     protected $description = NULL;
+    /**
+     * @var FB2BuilderBody
+     */
     protected $body = NULL;
+    /**
+     * @var FB2BuilderStyleSheet
+     */
     protected $stylesheet = NULL;
+    /**
+     * @var FB2BuilderBinary
+     */
     protected $binary = NULL;
+
     /**
      * <stylesheet> - 0..n (любое число, опционально);
      * <description> - 1 (один, обязателен);
