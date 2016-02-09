@@ -37,8 +37,10 @@ class FB2BuilderBookTitle extends FB2BuilderAbstractNodes
         $this->title = $lang;
     }
 
-    function buildXML(DOMDocument $domDoc)
+    static public function getXMLNodesName()
     {
-        // TODO: Implement getXML() method.
+        // TODO: Implement getXMLNodesName() method.
     }
+
+
 }

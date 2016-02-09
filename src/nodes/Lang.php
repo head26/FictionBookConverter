@@ -26,8 +26,10 @@ class FB2BuilderLang extends FB2BuilderAbstractNodes
         $this->lang = $lang;
     }
 
-    function buildXML(DOMDocument $domDoc)
+    static public function getXMLNodesName()
     {
-        // TODO: Implement getXML() method.
+        // TODO: Implement getXMLNodesName() method.
     }
+
+
 }

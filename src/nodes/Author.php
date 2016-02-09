@@ -152,7 +152,7 @@ class FB2BuilderAuthor extends FB2BuilderAbstractNodes
         return $this;
     }
 
-    function buildXML(DOMDocument $domDoc)
+    /*function buildXML()
     {
         $authorXML = $domDoc->createElement('author');
         $authorXML->appendChild($domDoc->createElement('first-name',$this->firstname));
@@ -164,6 +164,11 @@ class FB2BuilderAuthor extends FB2BuilderAbstractNodes
         $authorXML->appendChild($domDoc->createElement('id',$this->id));
         return $authorXML;
         // TODO: Implement getXML() method.
+    }*/
+
+    static public function getXMLNodesName()
+    {
+        // TODO: Implement getXMLNodesName() method.
     }
 }
 /*

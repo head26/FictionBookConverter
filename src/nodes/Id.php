@@ -29,8 +29,10 @@ class FB2BuilderId extends FB2BuilderAbstractNodes
         return $this;
     }
 
-    function buildXML(DOMDocument $domDoc)
+    static public function getXMLNodesName()
     {
-        // TODO: Implement getXML() method.
+        // TODO: Implement getXMLNodesName() method.
     }
+
+
 }

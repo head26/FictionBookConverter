@@ -20,8 +20,10 @@ class FB2BuilderScrTitleInfo extends FB2BuilderAbstractNodes
     protected $translator = NULL;
     protected $sequence = NULL;
 
-    function buildXML(DOMDocument $domDoc)
+    static public function getXMLNodesName()
     {
-        // TODO: Implement getXML() method.
+        // TODO: Implement getXMLNodesName() method.
     }
+
+
 }

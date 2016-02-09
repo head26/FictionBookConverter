@@ -8,9 +8,8 @@
  */
 class FB2BuilderOutput extends FB2BuilderAbstractNodes
 {
-
-    function buildXML(DOMDocument $domDoc)
+    static public function getXMLNodesName()
     {
-        // TODO: Implement getXML() method.
+        // TODO: Implement getXMLNodesName() method.
     }
 }
