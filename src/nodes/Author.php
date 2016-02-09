@@ -17,6 +17,16 @@ class FB2BuilderAuthor extends FB2BuilderAbstractNodes
     protected $id = NULL;
 
     /**
+     * <first-name> - 0..1 (один, обязателен при отсутствии <nickname>, иначе опционально) - имя;
+     * <middle-name> - 0..1 (один, опционально) - отчество;
+     * <last-name> - 0..1 (один, обязателен при отсутствии <nickname>, иначе опционально) - фамилия;
+     * <nickname> - 0..1 (один, обязателен при отсутствии <first-name> и <last-name>, иначе опционально);
+     * <home-page> - 0..n (любое число, опционально);
+     * <email> - 0..n (любое число, опционально);
+     * <id> - 0..1 (один, опционально) с версии 2.2 - идентификатор автора, присваивается библиотекой.
+     */
+
+    /**
      * @return null
      */
     public function getFirstname()
@@ -168,15 +178,14 @@ class FB2BuilderAuthor extends FB2BuilderAbstractNodes
 
     static public function getXMLNodesName()
     {
-        // TODO: Implement getXMLNodesName() method.
+        return [
+            'firstname' => 'first-name',
+            'middlename' => 'middle-name',
+            'lastname' => 'last-name',
+            'nickname' => 'nickname',
+            'homePage' => 'home-page',
+            'email' => 'email',
+            'id' => 'id',
+        ];
     }
 }
-/*
-<first-name> - 0..1 (один, обязателен при отсутствии <nickname>, иначе опционально) - имя;
-<middle-name> - 0..1 (один, опционально) - отчество;
-<last-name> - 0..1 (один, обязателен при отсутствии <nickname>, иначе опционально) - фамилия;
-<nickname> - 0..1 (один, обязателен при отсутствии <first-name> и <last-name>, иначе опционально);
-<home-page> - 0..n (любое число, опционально);
-<email> - 0..n (любое число, опционально);
-<id> - 0..1 (один, опционально) с версии 2.2 - идентификатор автора, присваивается библиотекой.
-*/

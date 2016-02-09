@@ -36,7 +36,9 @@ class FB2BuilderGenre extends FB2BuilderAbstractNodes
 
     static public function getXMLNodesName()
     {
-        // TODO: Implement getXMLNodesName() method.
+        return [
+            'genres' => 'genre'
+        ];
     }
 
 

@@ -18,6 +18,16 @@ class FB2BuilderDescription extends FB2BuilderAbstractNodes
     protected $output  = NULL;
 
     /**
+     * <title-info> - 1 (один, обязателен);
+     * <src-title-info> - 0..1 (один, опционально) с версии 2.1;
+     * <document-info> - 1 (один, обязателен);
+     * <publish-info> - 0..1 (один, опционально);
+     * <custom-info> - 0..n (любое число, опционально);
+     * <output> - 0..2 (опционально один или два) с версии 2.1.
+     */
+
+
+    /**
      * @return FB2BuilderTitleInfo|null
      */
     public function getTitleInfo() {
@@ -82,6 +92,12 @@ class FB2BuilderDescription extends FB2BuilderAbstractNodes
     }*/
     static public function getXMLNodesName()
     {
-        // TODO: Implement getXMLNodesName() method.
+        return [
+            'titleInfo' => 'title-info',
+            'srcTitleInfo' => 'src-title-info',
+            'documentInfo' => 'document-info',
+            'publishInfo' => 'publish-info',
+            'customInfo' => 'custom-info',
+        ];
     }
 }

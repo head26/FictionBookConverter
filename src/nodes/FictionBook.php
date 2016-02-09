@@ -12,6 +12,12 @@ class FB2BuilderFictionBook extends FB2BuilderAbstractNodes
     protected $body = NULL;
     protected $stylesheet = NULL;
     protected $binary = NULL;
+    /**
+     * <stylesheet> - 0..n (любое число, опционально);
+     * <description> - 1 (один, обязателен);
+     * <body> - 1..n (любое число, один обязaтелен);
+     * <binary> - 0..n (любое число, опционально).
+     */
 
     /**
      * @return FB2BuilderDescription|null
@@ -50,7 +56,12 @@ class FB2BuilderFictionBook extends FB2BuilderAbstractNodes
     }*/
     static public function getXMLNodesName()
     {
-        return [];
+        return [
+            'description' => 'description',
+            'body' => 'body',
+            'stylesheet' => 'stylesheet',
+            'binary' => 'binary',
+        ];
     }
 }
 /*<?xml version=\"1.0\" encoding=\"UTF-8\"?>

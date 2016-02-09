@@ -21,6 +21,19 @@ class FB2BuilderTitleInfo extends FB2BuilderAbstractNodes
     protected $translator = NULL;
     protected $sequence = NULL;
 
+    /**
+     * <genre> - 1..n (любое число, один обязaтелен);
+     * <author> - 1..n (любое число, один обязaтелен);
+     * <book-title> - 1 (один, обязателен);
+     * <annotation> - 0..1 (один, опционально);
+     * <keywords> - 0..1 (один, опционально);
+     * <date> - 0..1 (один, опционально);
+     * <coverpage> - 0..1 (один, опционально);
+     * <lang> - 1 (один, обязателен);
+     * <src-lang> - 0..1 (один, опционально);
+     * <translator> - 0..n (любое число, опционально);
+     * <sequence> - 0..n (любое число, опционально).
+     */
 
     /**
      * @return FB2BuilderAuthor|null
@@ -151,7 +164,19 @@ class FB2BuilderTitleInfo extends FB2BuilderAbstractNodes
     }*/
     static public function getXMLNodesName()
     {
-        return [];
-        // TODO: Implement getXMLNodesName() method.
+        return [
+            'genre' => 'genre',
+            'author' => 'author',
+            'bookTitle' => 'book-title',
+            'annotation' => 'annotation',
+            'keywords' => 'keywords',
+            'date' => 'date',
+            'coverpage' => 'coverpage',
+            'lang' => 'lang',
+            'srcLang' => 'src-lang',
+            'translator' => 'translator',
+            'sequence' => 'sequence',
+        ];
+
     }
 }
