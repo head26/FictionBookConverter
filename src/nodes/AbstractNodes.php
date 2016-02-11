@@ -12,7 +12,7 @@ abstract class FB2BuilderAbstractNodes implements FB2BuilderInterfaceNodes
         // print_r($this);
         //print_r($this->getXMLNodesName());
         //echo $this->getXMLNodesName()['parent'];
-        $parent = !empty($this->getXMLNodesName()['parent']) ? $this->getXMLNodesName()['parent'] : FALSE;
+        $parent = isset($this->getXMLNodesName()['parent']) ? $this->getXMLNodesName()['parent'] : FALSE;
         $property = isset($this->getXMLNodesName()['property']) ? $this->getXMLNodesName()['property'] : FALSE;
         $domDoc = new DOMDocument("1.0", "UTF-8");
         $domDoc->preserveWhiteSpace = FALSE;

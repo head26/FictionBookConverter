@@ -8,8 +8,5 @@
  */
 interface FB2BuilderInterfaceNodes
 {
-    /**
-     * @return array
-     */
     static public function getXMLNodesName();
 }
