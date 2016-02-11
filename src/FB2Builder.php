@@ -56,13 +56,13 @@ $tIAuthor->setNickname('head');
 $titleInfo->getBookTitle()->setTitle('Хуевая книга','ru');
 $titleInfo->getDate()->setDate('04.02.2016');
 $titleInfo->getLang()->setLang('ru');
-*/ /*
+*/
 $genre = $titleInfo->getGenre();
 $genres = ['sf_cyberpunk','sf_space','sf'];
 
 foreach($genres as $k => $v)
     $genre->add($v);
-*/
+
 //print_r($genre->getValue());
 
 $FB2Builder->save();

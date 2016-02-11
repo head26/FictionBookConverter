@@ -21,10 +21,10 @@ abstract class FB2BuilderAbstractNodes implements FB2BuilderInterfaceNodes
         foreach($this as $key => $val) {
 
             if(is_object($val)) {
-                $nodes = $val->buildXML();
-                if(!empty($nodes)) {
-                    $parentNode->appendChild($domDoc->importNode($nodes, TRUE));
-                    $domDoc->appendChild($parentNode);
+                $resultXML = $val->buildXML();
+                if(!empty($resultXML)) {
+                    $parentNode->appendChild($domDoc->importNode($resultXML, TRUE));
+                    $domDoc->appendChild($parentNode); echo $domDoc->saveXML();
                 }
             } else {
                 if(is_array($property) && array_search($key,$property)) {
@@ -32,12 +32,14 @@ abstract class FB2BuilderAbstractNodes implements FB2BuilderInterfaceNodes
                 } else {
                     $xmlNodeName = $key;
                 }
-                if(is_array($val)) {
-                    foreach($val as $item){
-                        $parentNode->appendChild($domDoc->createElement($xmlNodeName,$item));
+                if(!empty($val)) {
+                    if(is_array($val)) {
+                        foreach($val as $item){
+                            $parentNode->appendChild($domDoc->createElement($xmlNodeName,$item));
+                        }
+                    } else {
+                        $parentNode->appendChild($domDoc->createElement($xmlNodeName,$val));
                     }
-                } else {
-                    $parentNode->appendChild($domDoc->createElement($xmlNodeName,$val));
                 }
                 //echo $xmlNodeName.' = '.$val."\r\n";
 //print_r($parentNode);
@@ -45,7 +47,6 @@ abstract class FB2BuilderAbstractNodes implements FB2BuilderInterfaceNodes
         }
         if(!empty($parentNode))
             return $parentNode;
-        echo $domDoc->saveXML();
        // print_r($this);
     }
 }
