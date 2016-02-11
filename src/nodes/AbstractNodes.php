@@ -15,8 +15,8 @@ abstract class FB2BuilderAbstractNodes implements FB2BuilderInterfaceNodes
         $parent = $this->getXMLNodesName()['parent'];
         $property = isset($this->getXMLNodesName()['property']) ? $this->getXMLNodesName()['property'] : FALSE;
         $domDoc = new DOMDocument("1.0", "UTF-8");
-        $domDoc->preserveWhiteSpace = false;
-        $domDoc->formatOutput = true;
+        $domDoc->preserveWhiteSpace = FALSE;
+        $domDoc->formatOutput = TRUE;
         $parentNode = $domDoc->createElement($parent);
         foreach($this as $key => $val) {
 
