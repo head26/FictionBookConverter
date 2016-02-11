@@ -9,10 +9,10 @@
 abstract class FB2BuilderAbstractNodes implements FB2BuilderInterfaceNodes
 {
     function buildXML(){
-       // print_r($this);
+        // print_r($this);
         //print_r($this->getXMLNodesName());
         //echo $this->getXMLNodesName()['parent'];
-        $parent = $this->getXMLNodesName()['parent'];
+        $parent = !empty($this->getXMLNodesName()['parent']) ? $this->getXMLNodesName()['parent'] : FALSE;
         $property = isset($this->getXMLNodesName()['property']) ? $this->getXMLNodesName()['property'] : FALSE;
         $domDoc = new DOMDocument("1.0", "UTF-8");
         $domDoc->preserveWhiteSpace = FALSE;
@@ -47,7 +47,7 @@ abstract class FB2BuilderAbstractNodes implements FB2BuilderInterfaceNodes
         }
         if(!empty($parentNode))
             return $parentNode;
-       // print_r($this);
+        // print_r($this);
     }
 }
 /*$domDoc = new DOMDocument("1.0", "UTF-8");
