@@ -111,11 +111,7 @@ class FB2BuilderDescription extends FB2BuilderAbstractNodes
     static public function getXMLNodesName()
     {
         return [
-            'titleInfo' => 'title-info',
-            'srcTitleInfo' => 'src-title-info',
-            'documentInfo' => 'document-info',
-            'publishInfo' => 'publish-info',
-            'customInfo' => 'custom-info',
+            'parent' => 'description'
         ];
     }
 }

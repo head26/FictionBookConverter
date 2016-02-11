@@ -179,13 +179,16 @@ class FB2BuilderAuthor extends FB2BuilderAbstractNodes
     static public function getXMLNodesName()
     {
         return [
-            'firstname' => 'first-name',
-            'middlename' => 'middle-name',
-            'lastname' => 'last-name',
-            'nickname' => 'nickname',
-            'homePage' => 'home-page',
-            'email' => 'email',
-            'id' => 'id',
+            'parent' => 'author',
+            'property' => [
+                'first-name' => 'firstname',
+                'middle-name' => 'middlename',
+                'last-name' => 'lastname',
+                'nickname' => 'nickname',
+                'home-page' => 'homePage',
+                'email' => 'email',
+                'id' => 'id',
+                ]
         ];
     }
 }

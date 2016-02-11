@@ -68,10 +68,7 @@ class FB2BuilderFictionBook extends FB2BuilderAbstractNodes
     static public function getXMLNodesName()
     {
         return [
-            'description' => 'description',
-            'body' => 'body',
-            'stylesheet' => 'stylesheet',
-            'binary' => 'binary',
+            'parent' => 'FictionBook'
         ];
     }
 }

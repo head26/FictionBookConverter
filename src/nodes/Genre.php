@@ -11,7 +11,7 @@ class FB2BuilderGenre extends FB2BuilderAbstractNodes
     /**
      * @var array
      */
-    protected $genres = [];
+    protected $genre = [];
     /**
      * Атрибуты
      * match (опциональный, значение по умолчанию "100") ? число от "1" до "100", задающее субъективное процентное соответствие данному жанру.
@@ -22,7 +22,7 @@ class FB2BuilderGenre extends FB2BuilderAbstractNodes
      */
     public function getValue()
     {
-        return $this->genres;
+        return $this->genre;
     }
 
 
@@ -32,15 +32,15 @@ class FB2BuilderGenre extends FB2BuilderAbstractNodes
      */
     public function add($genre)
     {
-        $this->genres[] = trim($genre);
-        array_unique($this->genres);
+        $this->genre[] = trim($genre);
+        array_unique($this->genre);
         return $this;
     }
 
     static public function getXMLNodesName()
     {
         return [
-            'genres' => 'genre'
+            'parent' => 'genre'
         ];
     }
 

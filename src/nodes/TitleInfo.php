@@ -198,17 +198,7 @@ class FB2BuilderTitleInfo extends FB2BuilderAbstractNodes
     static public function getXMLNodesName()
     {
         return [
-            'genre' => 'genre',
-            'author' => 'author',
-            'bookTitle' => 'book-title',
-            'annotation' => 'annotation',
-            'keywords' => 'keywords',
-            'date' => 'date',
-            'coverpage' => 'coverpage',
-            'lang' => 'lang',
-            'srcLang' => 'src-lang',
-            'translator' => 'translator',
-            'sequence' => 'sequence',
+            'parent' => 'title-info'
         ];
 
     }
