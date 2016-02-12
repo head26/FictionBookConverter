@@ -38,7 +38,11 @@ class FB2Builder
 
     public function save() {
         if($this->fictionBook instanceof \FB2BuilderFictionBook) {
-            $this->fictionBook->buildXML();
+            $domDoc = new \DOMDocument("1.0", "UTF-8");
+            $domDoc->preserveWhiteSpace = FALSE;
+            $domDoc->formatOutput = TRUE;
+            $this->fictionBook->buildXML($domDoc);
+            $this->getFictionBook()->getDescription()->buildXML($domDoc);
         }
     }
 
