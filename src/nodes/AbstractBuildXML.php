@@ -6,14 +6,14 @@
  * Date: 08.02.2016
  * Time: 13:58
  */
-abstract class FB2BuilderAbstractNodes implements FB2BuilderInterfaceNodes
+abstract class FB2BuilderAbstractBuildXML implements FB2BuilderInterfaceNodes
 {
     function getAttr(){
         return [];
     }
     function buildXML(DOMDocument $domDoc){
-        $parent = isset($this->getXMLNodesName()['parent']) && !empty($this->getXMLNodesName()['parent']) ? $this->getXMLNodesName()['parent'] : FALSE;
-        $property = isset($this->getXMLNodesName()['property']) && !empty($this->getXMLNodesName()['property']) ? $this->getXMLNodesName()['property'] : FALSE;
+        $parent = isset($this->getXMLNodeName()['parent']) && !empty($this->getXMLNodeName()['parent']) ? $this->getXMLNodeName()['parent'] : FALSE;
+        $property = isset($this->getXMLNodeName()['property']) && !empty($this->getXMLNodeName()['property']) ? $this->getXMLNodeName()['property'] : FALSE;
         $parentXML = NULL;
         $nodes = [];
         if($parent){

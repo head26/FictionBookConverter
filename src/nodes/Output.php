@@ -6,9 +6,9 @@
  * Date: 04.02.2016
  * Time: 23:12
  */
-class FB2BuilderOutput extends FB2BuilderAbstractNodes
+class FB2BuilderOutput extends FB2BuilderAbstractBuildXML
 {
-    static public function getXMLNodesName()
+    static public function getXMLNodeName()
     {
         // TODO: Implement getXMLNodesName() method.
     }

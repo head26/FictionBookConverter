@@ -6,7 +6,7 @@
  * Date: 04.02.2016
  * Time: 15:59
  */
-class FB2BuilderFictionBook extends FB2BuilderAbstractNodes
+class FB2BuilderFictionBook extends FB2BuilderAbstractBuildXML
 {
     /**
      * @var FB2BuilderDescription
@@ -78,7 +78,7 @@ class FB2BuilderFictionBook extends FB2BuilderAbstractNodes
         $fb->appendChild($this->getDescription()->buildXML($domDoc));
         // TODO: Implement getXML() method.
     }*/
-    static public function getXMLNodesName()
+    static public function getXMLNodeName()
     {
         return [
             'parent' => 'FictionBook'

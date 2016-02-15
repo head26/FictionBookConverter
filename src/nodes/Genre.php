@@ -6,7 +6,7 @@
  * Date: 03.02.2016
  * Time: 17:51
  */
-class FB2BuilderGenre extends FB2BuilderAbstractNodes
+class FB2BuilderGenre extends FB2BuilderAbstractBuildXML
 {
     /**
      * @var array
@@ -44,7 +44,7 @@ class FB2BuilderGenre extends FB2BuilderAbstractNodes
         return $this;
     }
 
-    static public function getXMLNodesName()
+    static public function getXMLNodeName()
     {
         return [];
     }

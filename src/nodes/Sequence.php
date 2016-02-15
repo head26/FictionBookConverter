@@ -6,7 +6,7 @@
  * Date: 04.02.2016
  * Time: 16:08
  */
-class FB2BuilderSequence extends FB2BuilderAbstractNodes
+class FB2BuilderSequence extends FB2BuilderAbstractBuildXML
 {
     protected $name = NULL;
     protected $number = NULL;
@@ -38,7 +38,7 @@ class FB2BuilderSequence extends FB2BuilderAbstractNodes
         return $this->name;
     }
 
-    static public function getXMLNodesName()
+    static public function getXMLNodeName()
     {
         // TODO: Implement getXMLNodesName() method.
     }

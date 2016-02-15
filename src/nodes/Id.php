@@ -6,7 +6,7 @@
  * Date: 08.02.2016
  * Time: 10:46
  */
-class FB2BuilderId extends FB2BuilderAbstractNodes
+class FB2BuilderId extends FB2BuilderAbstractBuildXML
 {
     protected $id = NULL;
 
@@ -29,7 +29,7 @@ class FB2BuilderId extends FB2BuilderAbstractNodes
         return $this;
     }
 
-    static public function getXMLNodesName()
+    static public function getXMLNodeName()
     {
         // TODO: Implement getXMLNodesName() method.
     }

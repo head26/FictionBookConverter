@@ -6,7 +6,7 @@
  * Date: 04.02.2016
  * Time: 23:00
  */
-class FB2BuilderDocumentInfo extends FB2BuilderAbstractNodes
+class FB2BuilderDocumentInfo extends FB2BuilderAbstractBuildXML
 {
     /**
      * @var FB2BuilderAuthor
@@ -89,7 +89,7 @@ class FB2BuilderDocumentInfo extends FB2BuilderAbstractNodes
         return $this->id;
     }
 
-    static public function getXMLNodesName()
+    static public function getXMLNodeName()
     {
         // TODO: Implement getXMLNodesName() method.
     }

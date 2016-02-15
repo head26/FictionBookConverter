@@ -6,7 +6,7 @@
  * Date: 04.02.2016
  * Time: 14:16
  */
-class FB2BuilderDate extends FB2BuilderAbstractNodes
+class FB2BuilderDate extends FB2BuilderAbstractBuildXML
 {
     protected $date = NULL;
 
@@ -26,7 +26,7 @@ class FB2BuilderDate extends FB2BuilderAbstractNodes
         $this->date = $date;
     }
 
-    static public function getXMLNodesName()
+    static public function getXMLNodeName()
     {
         // TODO: Implement getXMLNodesName() method.
     }

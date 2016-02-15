@@ -8,7 +8,7 @@
  */
 class FB2BuilderScrTitleInfo extends FB2BuilderTitleInfo
 {
-    static public function getXMLNodesName()
+    static public function getXMLNodeName()
     {
         // TODO: Implement getXMLNodesName() method.
     }

@@ -6,7 +6,7 @@
  * Date: 03.02.2016
  * Time: 17:08
  */
-class FB2BuilderTitleInfo extends FB2BuilderAbstractNodes
+class FB2BuilderTitleInfo extends FB2BuilderAbstractBuildXML
 {
 
     /**
@@ -195,7 +195,7 @@ class FB2BuilderTitleInfo extends FB2BuilderAbstractNodes
         return $titleInfoXML;
         // TODO: Implement getXML() method.
     }*/
-    static public function getXMLNodesName()
+    static public function getXMLNodeName()
     {
         return [
             'parent' => 'title-info'

@@ -8,7 +8,7 @@
  */
 
 
-class FB2BuilderDescription extends FB2BuilderAbstractNodes
+class FB2BuilderDescription extends FB2BuilderAbstractBuildXML
 {
     /**
      * @var FB2BuilderTitleInfo
@@ -108,7 +108,7 @@ class FB2BuilderDescription extends FB2BuilderAbstractNodes
         return $descriptionXML;
         // TODO: Implement getXML() method.
     }*/
-    static public function getXMLNodesName()
+    static public function getXMLNodeName()
     {
         return [
             'parent' => 'description'

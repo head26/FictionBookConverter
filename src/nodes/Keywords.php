@@ -6,7 +6,7 @@
  * Date: 04.02.2016
  * Time: 14:06
  */
-class FB2BuilderKeywords extends FB2BuilderAbstractNodes
+class FB2BuilderKeywords extends FB2BuilderAbstractBuildXML
 {
     protected $keywords = NULL;
 
@@ -26,7 +26,7 @@ class FB2BuilderKeywords extends FB2BuilderAbstractNodes
         $this->keywords = $keywords;
     }
 
-    static public function getXMLNodesName()
+    static public function getXMLNodeName()
     {
         // TODO: Implement getXMLNodesName() method.
     }

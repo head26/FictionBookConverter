@@ -6,7 +6,7 @@
  * Date: 04.02.2016
  * Time: 14:17
  */
-class FB2BuilderLang extends FB2BuilderAbstractNodes
+class FB2BuilderLang extends FB2BuilderAbstractBuildXML
 {
     protected $lang = NULL;
 
@@ -26,7 +26,7 @@ class FB2BuilderLang extends FB2BuilderAbstractNodes
         $this->lang = $lang;
     }
 
-    static public function getXMLNodesName()
+    static public function getXMLNodeName()
     {
         // TODO: Implement getXMLNodesName() method.
     }

@@ -9,7 +9,7 @@
 class FB2BuilderSrcLang extends FB2BuilderLang
 {
 
-    static public function getXMLNodesName()
+    static public function getXMLNodeName()
     {
         // TODO: Implement getXMLNodesName() method.
     }

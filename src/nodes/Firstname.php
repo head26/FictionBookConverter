@@ -6,7 +6,7 @@
  * Date: 15.02.2016
  * Time: 20:06
  */
-class FB2BuilderFirstname extends FB2BuilderAbstractNodes
+class FB2BuilderFirstname extends FB2BuilderAbstractBuildXML
 {
     protected $value = '';
     protected $attrLang = '';
@@ -38,11 +38,11 @@ class FB2BuilderFirstname extends FB2BuilderAbstractNodes
         return $this->attrLang;
     }
 
-    static public function getXMLNodesName()
+    static public function getXMLNodeName()
     {
         return [
             'property' => [
-                 'first-name' => 'firstname',
+                 'first-name' => 'value',
             ]
         ];
     }
