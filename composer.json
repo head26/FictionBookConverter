@@ -7,7 +7,7 @@
   "authors": [
     {
       "name": "Denis Kuliev",
-      "email": "26soft@mail.ru",
+      "email": "26soft@mail.ru"
     }
   ],
   "require": {
@@ -17,5 +17,11 @@
     "psr-4": {
       "FB2Builder\\": "src/nodes/"
     }
-  }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/head26/FictionBookConverter.git"
+    }
+    ]
 }
