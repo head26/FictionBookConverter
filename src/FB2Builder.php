@@ -26,12 +26,14 @@ class FB2Builder
 
 
     /**
+     * @param string $xmlns
+     * @param string $xlink
      * @return \FB2BuilderFictionBook
      */
-    public function getFictionBook()
+    public function getFictionBook($xmlns = NULL, $xlink = NULL)
     {
         if(!$this->fictionBook instanceof \FB2BuilderFictionBook)
-            return $this->fictionBook = new \FB2BuilderFictionBook();
+            return $this->fictionBook = new \FB2BuilderFictionBook($xmlns, $xlink);
         return $this->fictionBook;
     }
 
@@ -65,14 +67,14 @@ $genre = $titleInfo->getGenre();
 $genres = ['sf_cyberpunk','sf_space','sf'];
 
 foreach($genres as $k => $v)
-    $genre->add($v, 1);
-
+    $genre->add($v,1);
+/*
 print_r($genre->getValue());
-foreach($genre->getValue() as $k => $v) {
-    foreach($v as $ki => $item)
-        echo $k .' = '. $ki . ' = '. $item. "\r\n";
+foreach($genre->getValue() as $v) {
+    foreach($v['attr'] as $ki => $item)
+        echo $v['value'] .' = '. $ki.' = '.$item."\r\n";
 }
-die();
+die();*/
 
 $FB2Builder->save();
 

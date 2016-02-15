@@ -9,9 +9,6 @@
 abstract class FB2BuilderAbstractNodes implements FB2BuilderInterfaceNodes
 {
     function buildXML(DOMDocument $domDoc){
-        // print_r($this);
-        //print_r($this->getXMLNodesName());
-        //echo $this->getXMLNodesName()['parent'];
         $parent = isset($this->getXMLNodesName()['parent']) && !empty($this->getXMLNodesName()['parent']) ? $this->getXMLNodesName()['parent'] : FALSE;
         $property = isset($this->getXMLNodesName()['property']) && !empty($this->getXMLNodesName()['property']) ? $this->getXMLNodesName()['property'] : FALSE;
         $parentXML = NULL;
@@ -19,29 +16,36 @@ abstract class FB2BuilderAbstractNodes implements FB2BuilderInterfaceNodes
         if($parent){
             $parentXML = $domDoc->createElement($parent);
             $domDoc->appendChild($parentXML);
+            if(isset($this->parentAttr) && !empty($this->parentAttr)){
+                foreach($this->parentAttr as $name => $value) {
+                    $parentXML->setAttribute($name, $value);
+                }
+            }
+                //print_r($this->parentAttr);
         }
 
-        foreach($this as $key => $val) {
+        foreach($this as $name => $value) {
 
-            if(is_object($val)) {
-                $result = $val->buildXML($domDoc);
+            if(is_object($value)) {
+                $result = $value->buildXML($domDoc);
                 if($parent) {
-                    foreach ($result as $obj) {
-                        $parentXML->appendChild($domDoc->importNode($obj, TRUE));
+                    foreach ($result as $node) {
+                        $parentXML->appendChild($domDoc->importNode($node, TRUE));
                     }
                 } else {
                     $nodes[] = $result;
                 }
-            } else {
-                $xmlNodeName = is_array($property) && array_search($key,$property) ? array_search($key,$property) : $key;
+            } elseif((strpos($name, 'parentAttr') !== 0)) {
+                $xmlNodeName = is_array($property) && array_search($name,$property) ? array_search($name,$property) : $name;
 
-                if(!empty($val)) {
-                    if(is_array($val)) {
-                        foreach($val as $item){
-                            $nodes[] = $domDoc->createElement($xmlNodeName,$item);
+                if(!empty($value)) {
+                    if(is_array($value)) {
+
+                        foreach($value as $item){
+                            $nodes[] = $domDoc->createElement($xmlNodeName,$item['value']);
                         }
                     } else {
-                        $nodes[] = $domDoc->createElement($xmlNodeName,$val);
+                        $nodes[] = $domDoc->createElement($xmlNodeName,$value);
                     }
                 }
             }

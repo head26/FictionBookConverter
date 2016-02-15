@@ -31,9 +31,17 @@ class FB2BuilderGenre extends FB2BuilderAbstractNodes
      * @param string $match
      * @return FB2BuilderGenre
      */
-    public function add($genre,$match)
+    public function add($genre,$match = '')
     {
-        $this->genre[trim($genre)] =  ['xml:lang' => trim($match)];
+        $data = [
+            'value' => trim($genre),
+        ];
+        if(!empty($match))
+            $data = array_merge($data,['attr' => ['match' => trim($match)]]);
+
+        $this->genre[] = $data;
+
+        print_r($this->genre);
         return $this;
     }
 
