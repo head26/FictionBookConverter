@@ -162,20 +162,6 @@ class FB2BuilderAuthor extends FB2BuilderAbstractNodes
         return $this;
     }
 
-    /*function buildXML()
-    {
-        $authorXML = $domDoc->createElement('author');
-        $authorXML->appendChild($domDoc->createElement('first-name',$this->firstname));
-        $authorXML->appendChild($domDoc->createElement('middle-name',$this->middlename));
-        $authorXML->appendChild($domDoc->createElement('last-name',$this->lastname));
-        $authorXML->appendChild($domDoc->createElement('nickname',$this->nickname));
-        $authorXML->appendChild($domDoc->createElement('home-page',$this->homePage));
-        $authorXML->appendChild($domDoc->createElement('email',$this->email));
-        $authorXML->appendChild($domDoc->createElement('id',$this->id));
-        return $authorXML;
-        // TODO: Implement getXML() method.
-    }*/
-
     static public function getXMLNodesName()
     {
         return [

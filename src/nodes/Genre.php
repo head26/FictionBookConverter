@@ -28,15 +28,15 @@ class FB2BuilderGenre extends FB2BuilderAbstractNodes
 
     /**
      * @param string $genre
-     * @param string $match
+     * @param int $match 1-100
      * @return FB2BuilderGenre
      */
-    public function add($genre,$match = '')
+    public function add($genre,$match = -1)
     {
         $data = [
             'value' => trim($genre),
         ];
-        if(!empty($match))
+        if((int)$match >= 1)
             $data = array_merge($data,['attr' => ['match' => trim($match)]]);
 
         $this->genre[] = $data;

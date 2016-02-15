@@ -38,8 +38,6 @@ class FB2BuilderFictionBook extends FB2BuilderAbstractNodes
             $this->parentAttr['xmlns'] = empty($xmlns) ? "http://www.gribuser.ru/xml/fictionbook/2.0" : $xmlns;
             $this->parentAttr['xmlns:xlink'] = empty($xlink) ? "http://www.w3.org/1999/xlink" : $xlink;
     }
-
-//<FictionBook xmlns=\"http://www.gribuser.ru/xml/fictionbook/2.0\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">
     /**
      * <stylesheet> - 0..n (любое число, опционально);
      * <description> - 1 (один, обязателен);
