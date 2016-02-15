@@ -12,7 +12,7 @@ abstract class AbstractBuildXML implements InterfaceNodes
     function getAttr(){
         return [];
     }
-    function buildXML(DOMDocument $domDoc){
+    function buildXML(\DOMDocument $domDoc){
         $parent = isset($this->getXMLNodeName()['parent']) && !empty($this->getXMLNodeName()['parent']) ? $this->getXMLNodeName()['parent'] : FALSE;
         $property = isset($this->getXMLNodeName()['property']) && !empty($this->getXMLNodeName()['property']) ? $this->getXMLNodeName()['property'] : FALSE;
         $parentXML = NULL;
