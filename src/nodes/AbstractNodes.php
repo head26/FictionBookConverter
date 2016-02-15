@@ -8,6 +8,9 @@
  */
 abstract class FB2BuilderAbstractNodes implements FB2BuilderInterfaceNodes
 {
+    function getAttr(){
+        return [];
+    }
     function buildXML(DOMDocument $domDoc){
         $parent = isset($this->getXMLNodesName()['parent']) && !empty($this->getXMLNodesName()['parent']) ? $this->getXMLNodesName()['parent'] : FALSE;
         $property = isset($this->getXMLNodesName()['property']) && !empty($this->getXMLNodesName()['property']) ? $this->getXMLNodesName()['property'] : FALSE;
@@ -35,24 +38,31 @@ abstract class FB2BuilderAbstractNodes implements FB2BuilderInterfaceNodes
                 } else {
                     $nodes[] = $result;
                 }
-            } elseif((strpos($name, 'parentAttr') !== 0)) {
+            } elseif((strpos($name, 'parentAttr') !== 0) && (strpos($name, 'attr') !== 0)) {
                 $xmlNodeName = is_array($property) && array_search($name,$property) ? array_search($name,$property) : $name;
-
+                $element = NULL;
                 if(!empty($value)) {
                     if(is_array($value)) {
-                        $element = NULL;
+
                         foreach($value as $item){
+                            echo $xmlNodeName."\r\n";
                             $element = $domDoc->createElement($xmlNodeName,$item['value']);
                             if(isset($item['attr'])) {
                                 foreach($item['attr'] as $attrName => $attrVal) {
                                     $element->setAttribute($attrName, $attrVal);
                                 }
                             }
-
                             $nodes[] = $element;
                         }
                     } else {
-                        $nodes[] = $domDoc->createElement($xmlNodeName,$value);
+                        $element = $domDoc->createElement($xmlNodeName,$value);
+                        $attr = $this->getAttr();
+                        if($attr) {
+                            foreach($attr as $attrName => $attrVal) {
+                                $element->setAttribute($attrName, $attrVal);
+                            }
+                        }
+                        $nodes[] = $element;
                     }
                 }
             }

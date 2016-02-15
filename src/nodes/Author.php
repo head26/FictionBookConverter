@@ -25,12 +25,13 @@ class FB2BuilderAuthor extends FB2BuilderAbstractNodes
      * <email> - 0..n (любое число, опционально);
      * <id> - 0..1 (один, опционально) с версии 2.2 - идентификатор автора, присваивается библиотекой.
      */
-
     /**
-     * @return string|null
+     * @return FB2BuilderFirstname|null
      */
     public function getFirstname()
     {
+        if(!$this->firstname instanceof FB2BuilderFirstname)
+            return $this->firstname = new FB2BuilderFirstname();
         return $this->firstname;
     }
 
@@ -39,11 +40,11 @@ class FB2BuilderAuthor extends FB2BuilderAbstractNodes
      * @param string $firstname
      * @return FB2BuilderAuthor
      */
-    public function setFirstname($firstname)
+   /* public function setFirstname($firstname)
     {
         $this->firstname = $firstname;
         return $this;
-    }
+    }*/
 
     /**
      * @return string|null
@@ -167,7 +168,7 @@ class FB2BuilderAuthor extends FB2BuilderAbstractNodes
         return [
             'parent' => 'author',
             'property' => [
-                'first-name' => 'firstname',
+               // 'first-name' => 'firstname',
                 'middle-name' => 'middlename',
                 'last-name' => 'lastname',
                 'nickname' => 'nickname',

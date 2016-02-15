@@ -55,19 +55,20 @@ $fb = $FB2Builder->getFictionBook();
 $titleInfo = $fb->getDescription()->getTitleInfo();
 
 $tIAuthor = $titleInfo->getAuthor();
-$tIAuthor->setFirstname('Имя');
+$tIAuthor->getFirstname()->setValue('Имя', 'ru');
+//$tIAuthor->setFirstname('Имя');
 $tIAuthor->setLastname('ФАм');
 $tIAuthor->setNickname('head');
-
+/*
 $titleInfo->getBookTitle()->setTitle('Хуевая книга','ru');
 $titleInfo->getDate()->setDate('04.02.2016');
-$titleInfo->getLang()->setLang('ru');
-
+$titleInfo->getLang()->setLang('ru');*/
+/*
 $genre = $titleInfo->getGenre();
 $genres = ['sf_cyberpunk','sf_space','sf'];
 
 foreach($genres as $k => $v)
-    $genre->add($v,100);
+    $genre->add($v,100);*/
 /*
 print_r($genre->getValue());
 foreach($genre->getValue() as $v) {
