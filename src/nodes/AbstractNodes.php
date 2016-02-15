@@ -12,32 +12,50 @@ abstract class FB2BuilderAbstractNodes implements FB2BuilderInterfaceNodes
         // print_r($this);
         //print_r($this->getXMLNodesName());
         //echo $this->getXMLNodesName()['parent'];
-        $parent = isset($this->getXMLNodesName()['parent']) ? $this->getXMLNodesName()['parent'] : FALSE;
-        $property = isset($this->getXMLNodesName()['property']) ? $this->getXMLNodesName()['property'] : FALSE;
+        $parent = isset($this->getXMLNodesName()['parent']) && !empty($this->getXMLNodesName()['parent']) ? $this->getXMLNodesName()['parent'] : FALSE;
+        $property = isset($this->getXMLNodesName()['property']) && !empty($this->getXMLNodesName()['property']) ? $this->getXMLNodesName()['property'] : FALSE;
+        $parentXML = NULL;
+        $nodes = [];
+        if($parent){
+            $parentXML = $domDoc->createElement($parent);
+            $domDoc->appendChild($parentXML);
+        }
 
         foreach($this as $key => $val) {
 
             if(is_object($val)) {
-                $resultXML = $val->buildXML($domDoc);
-
+                $result = $val->buildXML($domDoc);
+                if($parent) {
+                    foreach ($result as $obj) {
+                        $parentXML->appendChild($domDoc->importNode($obj, TRUE));
+                    }
+                } else {
+                    $nodes[] = $result;
+                }
             } else {
                 $xmlNodeName = is_array($property) && array_search($key,$property) ? array_search($key,$property) : $key;
 
                 if(!empty($val)) {
                     if(is_array($val)) {
                         foreach($val as $item){
-                            $domDoc->createElement($xmlNodeName,$item);
+                            $nodes[] = $domDoc->createElement($xmlNodeName,$item);
                         }
                     } else {
-                        $domDoc->createElement($xmlNodeName,$val);
+                        $nodes[] = $domDoc->createElement($xmlNodeName,$val);
                     }
                 }
-                //echo $xmlNodeName.' = '.$val."\r\n";
-//print_r($parentNode);
             }
         }
-        if(!empty($parentNode))
-            return $parentNode;
+        if($parent){
+            foreach($nodes as $obj) {
+                $parentXML->appendChild($obj);
+            }
+        }
+
+        if(!empty($parentXML))
+            return [$parentXML];
+        elseif(!empty($nodes))
+            return $nodes;
         // print_r($this);
     }
 }
@@ -52,46 +70,3 @@ $fb->setAttributeNS(
 );
 $domDoc->appendChild($fb);
 echo $domDoc->saveXML();*/
-
-
-/*    function buildXML(){
-        // print_r($this);
-        //print_r($this->getXMLNodesName());
-        //echo $this->getXMLNodesName()['parent'];
-        $parent = isset($this->getXMLNodesName()['parent']) ? $this->getXMLNodesName()['parent'] : FALSE;
-        $property = isset($this->getXMLNodesName()['property']) ? $this->getXMLNodesName()['property'] : FALSE;
-        $domDoc = new DOMDocument("1.0", "UTF-8");
-        $domDoc->preserveWhiteSpace = FALSE;
-        $domDoc->formatOutput = TRUE;
-        $parentNode = $domDoc->createElement($parent);
-        foreach($this as $key => $val) {
-
-            if(is_object($val)) {
-                $resultXML = $val->buildXML();
-                if(!empty($resultXML)) {
-                    $parentNode->appendChild($domDoc->importNode($resultXML, TRUE));
-                    $domDoc->appendChild($parentNode); echo $domDoc->saveXML();
-                }
-            } else {
-                if(is_array($property) && array_search($key,$property)) {
-                    $xmlNodeName = array_search($key,$property);
-                } else {
-                    $xmlNodeName = $key;
-                }
-                if(!empty($val)) {
-                    if(is_array($val)) {
-                        foreach($val as $item){
-                            $parentNode->appendChild($domDoc->createElement($xmlNodeName,$item));
-                        }
-                    } else {
-                        $parentNode->appendChild($domDoc->createElement($xmlNodeName,$val));
-                    }
-                }
-                //echo $xmlNodeName.' = '.$val."\r\n";
-//print_r($parentNode);
-            }
-        }
-        if(!empty($parentNode))
-            return $parentNode;
-        // print_r($this);
-    }*/

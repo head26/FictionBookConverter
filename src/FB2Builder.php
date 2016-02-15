@@ -42,7 +42,7 @@ class FB2Builder
             $domDoc->preserveWhiteSpace = FALSE;
             $domDoc->formatOutput = TRUE;
             $this->fictionBook->buildXML($domDoc);
-            $this->getFictionBook()->getDescription()->buildXML($domDoc);
+            echo $domDoc->saveXML();
         }
     }
 
@@ -65,9 +65,14 @@ $genre = $titleInfo->getGenre();
 $genres = ['sf_cyberpunk','sf_space','sf'];
 
 foreach($genres as $k => $v)
-    $genre->add($v);
+    $genre->add($v, 1);
 
-//print_r($genre->getValue());
+print_r($genre->getValue());
+foreach($genre->getValue() as $k => $v) {
+    foreach($v as $ki => $item)
+        echo $k .' = '. $ki . ' = '. $item. "\r\n";
+}
+die();
 
 $FB2Builder->save();
 

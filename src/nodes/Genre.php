@@ -28,18 +28,18 @@ class FB2BuilderGenre extends FB2BuilderAbstractNodes
 
     /**
      * @param string $genre
+     * @param string $match
      * @return FB2BuilderGenre
      */
-    public function add($genre)
+    public function add($genre,$match)
     {
-        $this->genre[] = trim($genre);
-        array_unique($this->genre);
+        $this->genre[trim($genre)] =  ['xml:lang' => trim($match)];
         return $this;
     }
 
     static public function getXMLNodesName()
     {
-        return ['parent' => 'genre'];
+        return [];
     }
 
 
