@@ -6,8 +6,6 @@
  * Time: 13:54
  */
 
-
-
 namespace FB2Builder;
 require '../vendor/autoload.php';
 /**
