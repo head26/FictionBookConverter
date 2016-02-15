@@ -6,13 +6,10 @@
  * Time: 13:54
  */
 
+
+
 namespace FB2Builder;
-
-if (!defined('FB2Builder_ROOT')) {
-    define('FB2Builder_ROOT', dirname(__FILE__) . '/');
-    require(FB2Builder_ROOT . 'Autoloader.php');
-}
-
+require '../vendor/autoload.php';
 /**
  * Class FB2Builder
  * @package FB2Builder
@@ -20,7 +17,7 @@ if (!defined('FB2Builder_ROOT')) {
 class FB2Builder
 {
     /**
-     * @var \FB2BuilderFictionBook
+     * @var FictionBook
      */
     protected $fictionBook = NULL;
 
@@ -28,18 +25,18 @@ class FB2Builder
     /**
      * @param string $xmlns
      * @param string $xlink
-     * @return \FB2BuilderFictionBook
+     * @return FictionBook
      */
     public function getFictionBook($xmlns = NULL, $xlink = NULL)
     {
-        if(!$this->fictionBook instanceof \FB2BuilderFictionBook)
-            return $this->fictionBook = new \FB2BuilderFictionBook($xmlns, $xlink);
+        if(!$this->fictionBook instanceof FictionBook)
+            return $this->fictionBook = new FictionBook($xmlns, $xlink);
         return $this->fictionBook;
     }
 
 
     public function save() {
-        if($this->fictionBook instanceof \FB2BuilderFictionBook) {
+        if($this->fictionBook instanceof FictionBook) {
             $domDoc = new \DOMDocument("1.0", "UTF-8");
             $domDoc->preserveWhiteSpace = FALSE;
             $domDoc->formatOutput = TRUE;

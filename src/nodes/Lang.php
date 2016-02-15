@@ -6,7 +6,8 @@
  * Date: 04.02.2016
  * Time: 14:17
  */
-class FB2BuilderLang extends FB2BuilderAbstractBuildXML
+namespace FB2Builder;
+class Lang extends AbstractBuildXML
 {
     protected $lang = NULL;
 

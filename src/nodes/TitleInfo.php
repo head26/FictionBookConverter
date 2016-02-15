@@ -6,51 +6,52 @@
  * Date: 03.02.2016
  * Time: 17:08
  */
-class FB2BuilderTitleInfo extends FB2BuilderAbstractBuildXML
+namespace FB2Builder;
+class TitleInfo extends AbstractBuildXML
 {
 
     /**
-     * @var FB2BuilderGenre
+     * @var Genre
      */
     protected $genre = NULL;
     /**
-     * @var FB2BuilderAuthor
+     * @var Author
      */
     protected $author = NULL;
     /**
-     * @var FB2BuilderBookTitle
+     * @var BookTitle
      */
     protected $bookTitle = NULL;
     /**
-     * @var FB2BuilderAnnotation
+     * @var Annotation
      */
     protected $annotation = NULL;
     /**
-     * @var FB2BuilderKeywords
+     * @var Keywords
      */
     protected $keywords = NULL;
     /**
-     * @var FB2BuilderDate
+     * @var Date
      */
     protected $date = NULL;
     /**
-     * @var FB2BuilderCoverpage
+     * @var Coverpage
      */
     protected $coverpage = NULL;
     /**
-     * @var FB2BuilderLang
+     * @var Lang
      */
     protected $lang = NULL;
     /**
-     * @var FB2BuilderSrcLang
+     * @var SrcLang
      */
     protected $srcLang = NULL;
     /**
-     * @var FB2BuilderTranslator
+     * @var Translator
      */
     protected $translator = NULL;
     /**
-     * @var FB2BuilderSequence
+     * @var Sequence
      */
     protected $sequence = NULL;
 
@@ -69,121 +70,121 @@ class FB2BuilderTitleInfo extends FB2BuilderAbstractBuildXML
      */
 
     /**
-     * @return FB2BuilderAuthor
+     * @return Author
      */
     public function getAuthor()
     {
-        if(!$this->author instanceof FB2BuilderAuthor)
-            return $this->author = new FB2BuilderAuthor();
+        if(!$this->author instanceof Author)
+            return $this->author = new Author();
         return $this->author;
     }
 
     /**
-     * @return FB2BuilderGenre
+     * @return Genre
      */
     public function getGenre()
     {
-        if(!$this->genre instanceof FB2BuilderGenre)
-            return $this->genre = new FB2BuilderGenre();
+        if(!$this->genre instanceof Genre)
+            return $this->genre = new Genre();
         return $this->genre;
     }
 
 
     /**
-     * @return FB2BuilderAnnotation
+     * @return Annotation
      */
     public function getAnnotation()
     {
-        if(!$this->annotation instanceof FB2BuilderAnnotation)
-            return $this->annotation = new FB2BuilderAnnotation();
+        if(!$this->annotation instanceof Annotation)
+            return $this->annotation = new Annotation();
         return $this->annotation;
     }
 
 
     /**
-     * @return FB2BuilderBookTitle
+     * @return BookTitle
      */
     public function getBookTitle()
     {
-        if(!$this->bookTitle instanceof FB2BuilderBookTitle)
-            return $this->bookTitle = new FB2BuilderBookTitle();
+        if(!$this->bookTitle instanceof BookTitle)
+            return $this->bookTitle = new BookTitle();
         return $this->bookTitle;
     }
 
 
     /**
-     * @return FB2BuilderKeywords
+     * @return Keywords
      */
     public function getKeywords()
     {
-        if(!$this->keywords instanceof FB2BuilderKeywords)
-            return $this->keywords = new FB2BuilderKeywords();
+        if(!$this->keywords instanceof Keywords)
+            return $this->keywords = new Keywords();
         return $this->keywords;
     }
 
 
     /**
-     * @return FB2BuilderDate
+     * @return Date
      */
     public function getDate()
     {
-        if(!$this->date instanceof FB2BuilderDate)
-            return $this->date = new FB2BuilderDate();
+        if(!$this->date instanceof Date)
+            return $this->date = new Date();
         return $this->date;
     }
 
 
     /**
-     * @return FB2BuilderLang
+     * @return Lang
      */
     public function getLang()
     {
-        if(!$this->lang instanceof FB2BuilderLang)
-            return $this->lang = new FB2BuilderLang();
+        if(!$this->lang instanceof Lang)
+            return $this->lang = new Lang();
         return $this->lang;
     }
 
 
     /**
-     * @return FB2BuilderSrcLang
+     * @return SrcLang
      */
     public function getSrcLang()
     {
-        if(!$this->srcLang instanceof FB2BuilderSrcLang)
-            return $this->srcLang = new FB2BuilderSrcLang();
+        if(!$this->srcLang instanceof SrcLang)
+            return $this->srcLang = new SrcLang();
         return $this->srcLang;
     }
 
 
     /**
-     * @return FB2BuilderTranslator
+     * @return Translator
      */
     public function getTranslator()
     {
-        if(!$this->translator instanceof FB2BuilderTranslator)
-            return $this->translator = new FB2BuilderTranslator();
+        if(!$this->translator instanceof Translator)
+            return $this->translator = new Translator();
         return $this->translator;
     }
 
 
     /**
-     * @return FB2BuilderCoverpage
+     * @return Coverpage
      */
     public function getCoverpage()
     {
-        if(!$this->coverpage instanceof FB2BuilderCoverpage)
-            return $this->coverpage = new FB2BuilderCoverpage();
+        if(!$this->coverpage instanceof Coverpage)
+            return $this->coverpage = new Coverpage();
         return $this->coverpage;
     }
 
 
     /**
-     * @return FB2BuilderSequence
+     * @return Sequence
      */
     public function getSequence()
     {
-        if(!$this->sequence instanceof FB2BuilderSequence)
-            return $this->sequence = new FB2BuilderSequence();
+        if(!$this->sequence instanceof Sequence)
+            return $this->sequence = new Sequence();
         return $this->sequence;
     }
 

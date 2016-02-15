@@ -6,7 +6,8 @@
  * Date: 04.02.2016
  * Time: 14:16
  */
-class FB2BuilderDate extends FB2BuilderAbstractBuildXML
+namespace FB2Builder;
+class Date extends AbstractBuildXML
 {
     protected $date = NULL;
 

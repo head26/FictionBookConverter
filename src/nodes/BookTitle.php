@@ -6,7 +6,8 @@
  * Date: 04.02.2016
  * Time: 13:55
  */
-class FB2BuilderBookTitle extends FB2BuilderAbstractBuildXML
+namespace FB2Builder;
+class BookTitle extends AbstractBuildXML
 {
     protected $lang = NULL;
     protected $title = NULL;

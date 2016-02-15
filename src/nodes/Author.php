@@ -6,7 +6,8 @@
  * Date: 03.02.2016
  * Time: 17:53
  */
-class FB2BuilderAuthor extends FB2BuilderAbstractBuildXML
+namespace FB2Builder;
+class Author extends AbstractBuildXML
 {
     protected $firstname = NULL;
     protected $middlename = NULL;
@@ -26,19 +27,19 @@ class FB2BuilderAuthor extends FB2BuilderAbstractBuildXML
      * <id> - 0..1 (один, опционально) с версии 2.2 - идентификатор автора, присваивается библиотекой.
      */
     /**
-     * @return FB2BuilderFirstname|null
+     * @return Firstname|null
      */
     public function getFirstname()
     {
-        if(!$this->firstname instanceof FB2BuilderFirstname)
-            return $this->firstname = new FB2BuilderFirstname();
+        if(!$this->firstname instanceof Firstname)
+            return $this->firstname = new Firstname();
         return $this->firstname;
     }
 
 
     /**
      * @param string $firstname
-     * @return FB2BuilderAuthor
+     * @return Author
      */
    /* public function setFirstname($firstname)
     {
@@ -57,7 +58,7 @@ class FB2BuilderAuthor extends FB2BuilderAbstractBuildXML
 
     /**
      * @param $middlename
-     * @return FB2BuilderAuthor
+     * @return Author
      */
     public function setMiddlename($middlename)
     {
@@ -77,7 +78,7 @@ class FB2BuilderAuthor extends FB2BuilderAbstractBuildXML
 
     /**
      * @param $lastname
-     * @return FB2BuilderAuthor
+     * @return Author
      */
     public function setLastname($lastname)
     {
@@ -97,7 +98,7 @@ class FB2BuilderAuthor extends FB2BuilderAbstractBuildXML
 
     /**
      * @param $nickname
-     * @return FB2BuilderAuthor
+     * @return Author
      */
     public function setNickname($nickname)
     {
@@ -117,7 +118,7 @@ class FB2BuilderAuthor extends FB2BuilderAbstractBuildXML
 
     /**
      * @param $homePage
-     * @return FB2BuilderAuthor
+     * @return Author
      */
     public function setHomePage($homePage)
     {
@@ -136,7 +137,7 @@ class FB2BuilderAuthor extends FB2BuilderAbstractBuildXML
 
     /**
      * @param $id
-     * @return FB2BuilderAuthor
+     * @return Author
      */
     public function setId($id)
     {
@@ -155,7 +156,7 @@ class FB2BuilderAuthor extends FB2BuilderAbstractBuildXML
 
     /**
      * @param $email
-     * @return FB2BuilderAuthor
+     * @return Author
      */
     public function setEmail($email)
     {

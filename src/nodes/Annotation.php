@@ -6,7 +6,8 @@
  * Date: 04.02.2016
  * Time: 13:58
  */
-class FB2BuilderAnnotation extends FB2BuilderAbstractBuildXML
+namespace FB2Builder;
+class Annotation extends AbstractBuildXML
 {
     /**
      * id (опционально) - Идентификатор (якорь, метка) для ссылок на данный элемент.

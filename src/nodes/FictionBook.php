@@ -6,22 +6,24 @@
  * Date: 04.02.2016
  * Time: 15:59
  */
-class FB2BuilderFictionBook extends FB2BuilderAbstractBuildXML
+namespace FB2Builder;
+
+class FictionBook extends AbstractBuildXML
 {
     /**
-     * @var FB2BuilderDescription
+     * @var Description
      */
     protected $description = NULL;
     /**
-     * @var FB2BuilderBody
+     * @var Body
      */
     protected $body = NULL;
     /**
-     * @var FB2BuilderStyleSheet
+     * @var StyleSheet
      */
     protected $stylesheet = NULL;
     /**
-     * @var FB2BuilderBinary
+     * @var Binary
      */
     protected $binary = NULL;
 
@@ -29,7 +31,7 @@ class FB2BuilderFictionBook extends FB2BuilderAbstractBuildXML
 
 
     /**
-     * FB2BuilderFictionBook constructor.
+     * FictionBook constructor.
      * @param string $xmlns
      * @param string $xlink
      */
@@ -46,12 +48,12 @@ class FB2BuilderFictionBook extends FB2BuilderAbstractBuildXML
      */
 
     /**
-     * @return FB2BuilderDescription
+     * @return Description
      */
     public function getDescription()
     {
-        if(!$this->description instanceof FB2BuilderDescription)
-            return $this->description = new FB2BuilderDescription();
+        if(!$this->description instanceof Description)
+            return $this->description = new Description();
         return $this->description;
     }
 

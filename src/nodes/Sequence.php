@@ -6,7 +6,8 @@
  * Date: 04.02.2016
  * Time: 16:08
  */
-class FB2BuilderSequence extends FB2BuilderAbstractBuildXML
+namespace FB2Builder;
+class Sequence extends AbstractBuildXML
 {
     protected $name = NULL;
     protected $number = NULL;

@@ -7,31 +7,31 @@
  * Time: 13:55
  */
 
-
-class FB2BuilderDescription extends FB2BuilderAbstractBuildXML
+namespace FB2Builder;
+class Description extends AbstractBuildXML
 {
     /**
-     * @var FB2BuilderTitleInfo
+     * @var TitleInfo
      */
     protected $titleInfo = NULL;
     /**
-     * @var FB2BuilderScrTitleInfo
+     * @var ScrTitleInfo
      */
     protected $srcTitleInfo  = NULL;
     /**
-     * @var FB2BuilderDocumentInfo
+     * @var DocumentInfo
      */
     protected $documentInfo  = NULL;
     /**
-     * @var FB2BuilderPublishInfo
+     * @var PublishInfo
      */
     protected $publishInfo  = NULL;
     /**
-     * @var FB2BuilderCustomInfo
+     * @var CustomInfo
      */
     protected $customInfo  = NULL;
     /**
-     * @var FB2BuilderOutput
+     * @var Output
      */
     protected $output  = NULL;
 
@@ -46,56 +46,56 @@ class FB2BuilderDescription extends FB2BuilderAbstractBuildXML
 
 
     /**
-     * @return FB2BuilderTitleInfo
+     * @return TitleInfo
      */
     public function getTitleInfo() {
-        if(!$this->titleInfo instanceof FB2BuilderTitleInfo)
-            return $this->titleInfo = new FB2BuilderTitleInfo();
+        if(!$this->titleInfo instanceof TitleInfo)
+            return $this->titleInfo = new TitleInfo();
         return $this->titleInfo;
     }
 
 
     /**
-     * @return FB2BuilderScrTitleInfo
+     * @return ScrTitleInfo
      */
     public function getSrcTitleInfo()
     {
-        if(!$this->srcTitleInfo instanceof FB2BuilderScrTitleInfo)
-            return $this->srcTitleInfo = new FB2BuilderScrTitleInfo();
+        if(!$this->srcTitleInfo instanceof ScrTitleInfo)
+            return $this->srcTitleInfo = new ScrTitleInfo();
         return $this->srcTitleInfo;
     }
 
 
     /**
-     * @return FB2BuilderPublishInfo
+     * @return PublishInfo
      */
     public function getPublishInfo()
     {
-        if(!$this->publishInfo instanceof FB2BuilderPublishInfo)
-            return $this->publishInfo = new FB2BuilderPublishInfo();
+        if(!$this->publishInfo instanceof PublishInfo)
+            return $this->publishInfo = new PublishInfo();
         return $this->publishInfo;
     }
 
 
     /**
-     * @return FB2BuilderOutput
+     * @return Output
      */
     public function getOutput()
     {
-        if(!$this->output instanceof FB2BuilderOutput)
-            return $this->output = new FB2BuilderOutput()
+        if(!$this->output instanceof Output)
+            return $this->output = new Output()
                 ;
         return $this->output;
     }
 
 
     /**
-     * @return FB2BuilderDocumentInfo
+     * @return DocumentInfo
      */
     public function getDocumentInfo()
     {
-        if(!$this->documentInfo instanceof FB2BuilderDocumentInfo)
-            return $this->documentInfo = new FB2BuilderDocumentInfo();
+        if(!$this->documentInfo instanceof DocumentInfo)
+            return $this->documentInfo = new DocumentInfo();
         return $this->documentInfo;
     }
 

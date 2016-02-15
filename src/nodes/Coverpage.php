@@ -6,7 +6,8 @@
  * Date: 04.02.2016
  * Time: 16:07
  */
-class FB2BuilderCoverpage extends FB2BuilderAbstractBuildXML
+namespace FB2Builder;
+class Coverpage extends AbstractBuildXML
 {
     protected $image = NULL;
 

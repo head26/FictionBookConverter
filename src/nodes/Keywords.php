@@ -6,7 +6,8 @@
  * Date: 04.02.2016
  * Time: 14:06
  */
-class FB2BuilderKeywords extends FB2BuilderAbstractBuildXML
+namespace FB2Builder;
+class Keywords extends AbstractBuildXML
 {
     protected $keywords = NULL;
 

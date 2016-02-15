@@ -6,7 +6,8 @@
  * Date: 08.02.2016
  * Time: 13:58
  */
-abstract class FB2BuilderAbstractBuildXML implements FB2BuilderInterfaceNodes
+namespace FB2Builder;
+abstract class AbstractBuildXML implements InterfaceNodes
 {
     function getAttr(){
         return [];

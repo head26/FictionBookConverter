@@ -6,7 +6,8 @@
  * Date: 03.02.2016
  * Time: 17:51
  */
-class FB2BuilderGenre extends FB2BuilderAbstractBuildXML
+namespace FB2Builder;
+class Genre extends AbstractBuildXML
 {
     /**
      * @var array
@@ -29,7 +30,7 @@ class FB2BuilderGenre extends FB2BuilderAbstractBuildXML
     /**
      * @param string $genre
      * @param int $match 1-100
-     * @return FB2BuilderGenre
+     * @return Genre
      */
     public function add($genre,$match = -1)
     {

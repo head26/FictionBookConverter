@@ -6,7 +6,8 @@
  * Date: 04.02.2016
  * Time: 16:07
  */
-class FB2BuilderSrcLang extends FB2BuilderLang
+namespace FB2Builder;
+class SrcLang extends Lang
 {
 
     static public function getXMLNodeName()

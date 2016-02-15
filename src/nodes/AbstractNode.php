@@ -6,10 +6,11 @@
  * Date: 15.02.2016
  * Time: 21:01
  */
-abstract class FB2BuildetAbstractNode extends FB2BuilderAbstractBuildXML
+namespace FB2Builder;
+abstract class AbstractNode extends AbstractBuildXML
 {
     function getAttr(){
         return [];
     }
-    
+
 }

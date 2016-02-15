@@ -6,7 +6,8 @@
  * Date: 04.02.2016
  * Time: 23:06
  */
-class FB2BuilderScrTitleInfo extends FB2BuilderTitleInfo
+namespace FB2Builder;
+class ScrTitleInfo extends TitleInfo
 {
     static public function getXMLNodeName()
     {

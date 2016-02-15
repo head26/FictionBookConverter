@@ -6,42 +6,43 @@
  * Date: 04.02.2016
  * Time: 23:00
  */
-class FB2BuilderDocumentInfo extends FB2BuilderAbstractBuildXML
+namespace FB2Builder;
+class DocumentInfo extends AbstractBuildXML
 {
     /**
-     * @var FB2BuilderAuthor
+     * @var Author
      */
     protected $author = NULL;
     /**
-     * @var FB2BuilderProgramUsed
+     * @var ProgramUsed
      */
     protected $programUsed = NULL;
     /**
-     * @var FB2BuilderDate
+     * @var Date
      */
     protected $date = NULL;
     /**
-     * @var FB2BuilderScrUrl
+     * @var ScrUrl
      */
     protected $scrUrl = NULL;
     /**
-     * @var FB2BuilderScrOcr
+     * @var ScrOcr
      */
     protected $scrOcr = NULL;
     /**
-     * @var FB2BuilderId
+     * @var Id
      */
     protected $id = NULL;
     /**
-     * @var FB2BuilderVersion
+     * @var Version
      */
     protected $version = NULL;
     /**
-     * @var FB2BuilderHistory
+     * @var History
      */
     protected $history = NULL;
     /**
-     * @var FB2BuilderPublisher
+     * @var Publisher
      */
     protected $publisher = NULL;
 
@@ -58,34 +59,34 @@ class FB2BuilderDocumentInfo extends FB2BuilderAbstractBuildXML
      */
 
     /**
-     * @return FB2BuilderAuthor
+     * @return Author
      */
     public function getAuthor()
     {
-        if(!$this->author instanceof FB2BuilderAuthor)
-            return $this->author = new FB2BuilderAuthor();
+        if(!$this->author instanceof Author)
+            return $this->author = new Author();
         return $this->author;
     }
 
 
     /**
-     * @return FB2BuilderDate
+     * @return Date
      */
     public function getDate()
     {
-        if(!$this->date instanceof FB2BuilderDate)
-            return $this->date = new FB2BuilderDate();
+        if(!$this->date instanceof Date)
+            return $this->date = new Date();
         return $this->date;
     }
 
 
     /**
-     * @return FB2BuilderId
+     * @return Id
      */
     public function getId()
     {
-        if(!$this->id instanceof FB2BuilderId)
-            return $this->id = new FB2BuilderId();
+        if(!$this->id instanceof Id)
+            return $this->id = new Id();
         return $this->id;
     }
 

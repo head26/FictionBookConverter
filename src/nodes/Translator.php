@@ -6,7 +6,8 @@
  * Date: 04.02.2016
  * Time: 16:07
  */
-class FB2BuilderTranslator extends FB2BuilderAbstractBuildXML
+namespace FB2Builder;
+class Translator extends AbstractBuildXML
 {
     protected $firstname = NULL;
     protected $middlename = NULL;
@@ -26,7 +27,7 @@ class FB2BuilderTranslator extends FB2BuilderAbstractBuildXML
 
     /**
      * @param string $firstname
-     * @return FB2BuilderTranslator
+     * @return Translator
      */
     public function setFirstname($firstname)
     {
@@ -45,7 +46,7 @@ class FB2BuilderTranslator extends FB2BuilderAbstractBuildXML
 
     /**
      * @param string $middlename
-     * @return FB2BuilderTranslator
+     * @return Translator
      */
     public function setMiddlename($middlename)
     {
@@ -64,7 +65,7 @@ class FB2BuilderTranslator extends FB2BuilderAbstractBuildXML
 
     /**
      * @param string $lastname
-     * @return FB2BuilderTranslator
+     * @return Translator
      */
     public function setLastname($lastname)
     {
@@ -83,7 +84,7 @@ class FB2BuilderTranslator extends FB2BuilderAbstractBuildXML
 
     /**
      * @param string $nickname
-     * @return FB2BuilderTranslator
+     * @return Translator
      */
     public function setNickname($nickname)
     {
@@ -102,7 +103,7 @@ class FB2BuilderTranslator extends FB2BuilderAbstractBuildXML
 
     /**
      * @param string $homePage
-     * @return FB2BuilderTranslator
+     * @return Translator
      */
     public function setHomePage($homePage)
     {
@@ -121,7 +122,7 @@ class FB2BuilderTranslator extends FB2BuilderAbstractBuildXML
 
     /**
      * @param string $id
-     * @return FB2BuilderTranslator
+     * @return Translator
      */
     public function setId($id)
     {

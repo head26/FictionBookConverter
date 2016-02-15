@@ -6,7 +6,8 @@
  * Date: 08.02.2016
  * Time: 10:46
  */
-class FB2BuilderId extends FB2BuilderAbstractBuildXML
+namespace FB2Builder;
+class Id extends AbstractBuildXML
 {
     protected $id = NULL;
 
@@ -21,7 +22,7 @@ class FB2BuilderId extends FB2BuilderAbstractBuildXML
 
     /**
      * @param string $id
-     * @return FB2BuilderId
+     * @return Id
      */
     public function setId($id)
     {

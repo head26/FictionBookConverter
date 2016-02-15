@@ -6,7 +6,8 @@
  * Date: 09.02.2016
  * Time: 14:34
  */
-interface FB2BuilderInterfaceNodes
+namespace FB2Builder;
+interface InterfaceNodes
 {
     static public function getXMLNodeName();
 }
