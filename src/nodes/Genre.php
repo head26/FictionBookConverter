@@ -41,7 +41,6 @@ class FB2BuilderGenre extends FB2BuilderAbstractNodes
 
         $this->genre[] = $data;
 
-        print_r($this->genre);
         return $this;
     }
 

@@ -40,9 +40,16 @@ abstract class FB2BuilderAbstractNodes implements FB2BuilderInterfaceNodes
 
                 if(!empty($value)) {
                     if(is_array($value)) {
-
+                        $element = NULL;
                         foreach($value as $item){
-                            $nodes[] = $domDoc->createElement($xmlNodeName,$item['value']);
+                            $element = $domDoc->createElement($xmlNodeName,$item['value']);
+                            if(isset($item['attr'])) {
+                                foreach($item['attr'] as $attrName => $attrVal) {
+                                    $element->setAttribute($attrName, $attrVal);
+                                }
+                            }
+
+                            $nodes[] = $element;
                         }
                     } else {
                         $nodes[] = $domDoc->createElement($xmlNodeName,$value);
