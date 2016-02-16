@@ -27,7 +27,7 @@ class Author extends AbstractBuildXML
      * <id> - 0..1 (один, опционально) с версии 2.2 - идентификатор автора, присваивается библиотекой.
      */
     /**
-     * @return Firstname|null
+     * @return Firstname
      */
     public function getFirstname()
     {
@@ -38,32 +38,13 @@ class Author extends AbstractBuildXML
 
 
     /**
-     * @param string $firstname
-     * @return Author
-     */
-   /* public function setFirstname($firstname)
-    {
-        $this->firstname = $firstname;
-        return $this;
-    }*/
-
-    /**
-     * @return string|null
+     * @return Middlename
      */
     public function getMiddlename()
     {
+        if(!$this->middlename instanceof Middlename)
+            return $this->middlename = new Middlename();
         return $this->middlename;
-    }
-
-
-    /**
-     * @param $middlename
-     * @return Author
-     */
-    public function setMiddlename($middlename)
-    {
-        $this->middlename = $middlename;
-        return $this;
     }
 
 

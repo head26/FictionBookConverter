@@ -40,8 +40,7 @@ abstract class AbstractBuildXML implements InterfaceNodes
             } elseif((strpos($name, 'parentAttr') !== 0) && (strpos($name, 'attr') !== 0)) {
                 if(empty($value))
                     continue;
-                $element = $domDoc->createElement($nodeName,$value);
-                $node->appendChild($element);
+                $node->textContent = $value;
             }
         }
         return $node;

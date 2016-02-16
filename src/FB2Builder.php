@@ -51,7 +51,7 @@ $titleInfo = $fb->getDescription()->getTitleInfo();
 
 $tIAuthor = $titleInfo->getAuthor();
 $tIAuthor->getFirstname()->setValue('Имя', 'ru');
-//$tIAuthor->setFirstname('Имя');
+$tIAuthor->getMiddlename()->setValue('Отчество', 'ru');
 //$tIAuthor->setLastname('ФАм');
 //$tIAuthor->setNickname('head');
 /*
