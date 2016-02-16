@@ -49,24 +49,14 @@ class Author extends AbstractBuildXML
 
 
     /**
-     * @return string|null
+     * @return Lastname
      */
     public function getLastname()
     {
+        if(!$this->lastname instanceof Lastname)
+            return $this->lastname = new Lastname();
         return $this->lastname;
     }
-
-
-    /**
-     * @param $lastname
-     * @return Author
-     */
-    public function setLastname($lastname)
-    {
-        $this->lastname = $lastname;
-        return $this;
-    }
-
 
     /**
      * @return string|null

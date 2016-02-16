@@ -21,14 +21,12 @@ class FB2Builder
 
 
     /**
-     * @param string $xmlns
-     * @param string $xlink
      * @return FictionBook
      */
-    public function getFictionBook($xmlns = NULL, $xlink = NULL)
+    public function getFictionBook()
     {
         if(!$this->fictionBook instanceof FictionBook)
-            return $this->fictionBook = new FictionBook($xmlns, $xlink);
+            return $this->fictionBook = new FictionBook();
         return $this->fictionBook;
     }
 
@@ -52,7 +50,7 @@ $titleInfo = $fb->getDescription()->getTitleInfo();
 $tIAuthor = $titleInfo->getAuthor();
 $tIAuthor->getFirstname()->setValue('Имя', 'ru');
 $tIAuthor->getMiddlename()->setValue('Отчество', 'ru');
-//$tIAuthor->setLastname('ФАм');
+$tIAuthor->getLastname()->setValue('Фамилия');
 //$tIAuthor->setNickname('head');
 /*
 $titleInfo->getBookTitle()->setTitle('Хуевая книга','ru');

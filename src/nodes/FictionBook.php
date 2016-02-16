@@ -31,19 +31,6 @@ class FictionBook extends AbstractBuildXML
      */
     protected $binary = NULL;
 
-    protected $parentAttr = [];
-
-
-    /**
-     * FictionBook constructor.
-     * @param string $xmlns
-     * @param string $xlink
-     */
-    public function __construct($xmlns = NULL, $xlink = NULL)
-    {
-            $this->parentAttr['xmlns'] = empty($xmlns) ? "http://www.gribuser.ru/xml/fictionbook/2.0" : $xmlns;
-            $this->parentAttr['xmlns:xlink'] = empty($xlink) ? "http://www.w3.org/1999/xlink" : $xlink;
-    }
     /**
      * <stylesheet> - 0..n (любое число, опционально);
      * <description> - 1 (один, обязателен);
@@ -61,8 +48,6 @@ class FictionBook extends AbstractBuildXML
         return $this->description;
     }
 
-
-
    /* public function getBody()
     {
         if(!$this->body instanceof )
@@ -70,20 +55,6 @@ class FictionBook extends AbstractBuildXML
         return $this->body;
     }*/
 
-
-    /*function buildXML()
-    {
-        $fb = $domDoc->createElementNS('http://www.gribuser.ru/xml/fictionbook/2.0','FictionBook');
-        $fb->setAttributeNS(
-                            'http://www.w3.org/2000/xmlns/',
-                            'xmlns:xlink',
-                            'http://www.w3.org/1999/xlink'
-            );
-        $domDoc->appendChild($fb);
-
-        $fb->appendChild($this->getDescription()->buildXML($domDoc));
-        // TODO: Implement getXML() method.
-    }*/
     /**
      * @return string
      */

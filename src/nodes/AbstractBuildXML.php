@@ -26,18 +26,13 @@ abstract class AbstractBuildXML implements InterfaceNodes
 
         $node = $domDoc->createElement($nodeName);
         $domDoc->appendChild($node);
-        if(isset($this->parentAttr) && !empty($this->parentAttr)){
-            foreach($this->parentAttr as $name => $value) {
-                $node->setAttribute($name, $value);
-            }
-        }
 
         foreach($this as $name => $value) {
 
             if(is_object($value)) {
                 $element = $value->buildXML($domDoc);
                 $node->appendChild($domDoc->importNode($element, TRUE));
-            } elseif((strpos($name, 'parentAttr') !== 0) && (strpos($name, 'attr') !== 0)) {
+            } elseif((strpos($name, 'attr') !== 0)) {
                 if(empty($value))
                     continue;
                 $node->textContent = $value;
