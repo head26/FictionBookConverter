@@ -7,7 +7,15 @@
  * Time: 14:34
  */
 namespace FB2Builder;
+/**
+ * Interface InterfaceNodes
+ * @package FB2Builder
+ */
 interface InterfaceNodes
 {
+    /**
+     * XML Node Name
+     * @return string
+     */
     static public function getXMLNodeName();
 }

@@ -7,9 +7,17 @@
  * Time: 20:06
  */
 namespace FB2Builder;
+/**
+ * Class Firstname
+ * @package FB2Builder
+ */
 class Firstname extends AbstractNode
 {
 
+    /**
+     * XML Node Name
+     * @return string
+     */
     static public function getXMLNodeName()
     {
         return 'first-name';

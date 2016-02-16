@@ -15,6 +15,7 @@ abstract class AbstractBuildXML implements InterfaceNodes
 {
 
     /**
+     * Build XML
      * @param \DOMDocument $domDoc
      * @return \DOMElement|void
      */
