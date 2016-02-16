@@ -6,7 +6,7 @@
  * Time: 16:12
  */
 
-namespace FB2Builder;
+namespace FB2Builder\nodes;
 
 /**
  * Class Attribute

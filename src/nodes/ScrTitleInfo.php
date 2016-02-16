@@ -6,7 +6,7 @@
  * Date: 04.02.2016
  * Time: 23:06
  */
-namespace FB2Builder;
+namespace FB2Builder\nodes;
 /**
  * Class ScrTitleInfo
  * @package FB2Builder

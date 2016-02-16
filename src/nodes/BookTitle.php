@@ -6,7 +6,7 @@
  * Date: 04.02.2016
  * Time: 13:55
  */
-namespace FB2Builder;
+namespace FB2Builder\nodes;
 /**
  * Class BookTitle
  * @package FB2Builder

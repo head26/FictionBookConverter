@@ -7,7 +7,7 @@
  * Time: 13:55
  */
 
-namespace FB2Builder;
+namespace FB2Builder\nodes;
 /**
  * Class Description
  * @package FB2Builder
