@@ -56,7 +56,7 @@ class TitleInfo extends AbstractBuildXML
     protected $sequence = NULL;
 
     /**
-     * <genre> - 1..n (любое число, один обязaтелен);
+     *
      * <author> - 1..n (любое число, один обязaтелен);
      * <book-title> - 1 (один, обязателен);
      * <annotation> - 0..1 (один, опционально);
@@ -80,7 +80,7 @@ class TitleInfo extends AbstractBuildXML
     }
 
     /**
-     * @return Genre
+     * @return Genre <genre> - 1..n (любое число, один обязaтелен);
      */
     public function getGenre()
     {

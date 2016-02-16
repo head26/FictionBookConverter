@@ -59,6 +59,7 @@ $tIAuthor->getEmail()->setValue('26soft@mail.ru');
 $titleInfo->getBookTitle()->setValue('Хуевая книга','ru');
 $titleInfo->getDate()->setValue('04.02.2016');
 $titleInfo->getLang()->setValue('ru');
+
 /*
 $genre = $titleInfo->getGenre();
 $genres = ['sf_cyberpunk','sf_space','sf'];

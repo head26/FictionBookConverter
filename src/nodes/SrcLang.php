@@ -12,7 +12,7 @@ class SrcLang extends Lang
 
     static public function getXMLNodeName()
     {
-        // TODO: Implement getXMLNodesName() method.
+        return 'src-lang';
     }
 
 
