@@ -47,7 +47,7 @@ class Genre extends AbstractBuildXML
 
     static public function getXMLNodeName()
     {
-        return '';
+        return 'genre';
     }
 
 

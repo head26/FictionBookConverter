@@ -7,41 +7,24 @@
  * Time: 13:55
  */
 namespace FB2Builder;
-class BookTitle extends AbstractBuildXML
+/**
+ * Class BookTitle
+ * @package FB2Builder
+ */
+class BookTitle extends AbstractNode
 {
-    protected $lang = NULL;
-    protected $title = NULL;
-
     /**
-     * @return string|null
+     * @return string
      */
-    public function getLang()
-    {
-        return $this->lang;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    /**
-     * @param string $title
-     * @param string $lang
-     */
-    public function setTitle($title, $lang)
-    {
-        $this->title = $title;
-        $this->title = $lang;
-    }
-
     static public function getXMLNodeName()
     {
-        // TODO: Implement getXMLNodesName() method.
+        return 'book-title';
     }
-
-
+    /**
+     * @return array
+     */
+    public function getAttr()
+    {
+        return ['xml:lang' => $this->attr];
+    }
 }

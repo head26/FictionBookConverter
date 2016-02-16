@@ -7,30 +7,17 @@
  * Time: 14:17
  */
 namespace FB2Builder;
-class Lang extends AbstractBuildXML
+/**
+ * Class Lang
+ * @package FB2Builder
+ */
+class Lang extends AbstractNode
 {
-    protected $lang = NULL;
-
     /**
-     * @return string|null
+     * @return string
      */
-    public function getValue()
-    {
-        return $this->lang;
-    }
-
-    /**
-     * @param string $lang
-     */
-    public function setLang($lang)
-    {
-        $this->lang = $lang;
-    }
-
     static public function getXMLNodeName()
     {
-        // TODO: Implement getXMLNodesName() method.
+        return 'lang';
     }
-
-
 }

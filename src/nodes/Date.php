@@ -7,30 +7,27 @@
  * Time: 14:16
  */
 namespace FB2Builder;
-class Date extends AbstractBuildXML
+/**
+ * Class Date
+ * @package FB2Builder
+ */
+class Date extends AbstractNode
 {
-    protected $date = NULL;
-
     /**
-     * @return string|null
+     * @return string
      */
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    /**
-     * @param string $date
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
-    }
-
     static public function getXMLNodeName()
     {
-        // TODO: Implement getXMLNodesName() method.
+        return 'date';
     }
-
-
+    /**
+     * @return array
+     */
+    public function getAttr()
+    {
+        return [
+            'xml:lang' => $this->attr,
+            'value' => ''
+        ];
+    }
 }

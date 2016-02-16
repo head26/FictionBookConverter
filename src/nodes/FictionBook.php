@@ -48,13 +48,6 @@ class FictionBook extends AbstractBuildXML
         return $this->description;
     }
 
-   /* public function getBody()
-    {
-        if(!$this->body instanceof )
-            return $this->body = new ();
-        return $this->body;
-    }*/
-
     /**
      * @return string
      */
