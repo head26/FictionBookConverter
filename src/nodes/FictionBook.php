@@ -48,7 +48,9 @@ class FictionBook extends AbstractBuildXML
         return $this->description;
     }
 
+
     /**
+     * XML Node Name
      * @return string
      */
     static public function getXMLNodeName()

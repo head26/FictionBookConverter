@@ -7,6 +7,10 @@
  * Time: 17:53
  */
 namespace FB2Builder;
+/**
+ * Class Author
+ * @package FB2Builder
+ */
 class Author extends AbstractBuildXML
 {
     protected $firstname = NULL;
@@ -98,6 +102,10 @@ class Author extends AbstractBuildXML
         return $this->id;
     }
 
+    /**
+     * XML Node Name
+     * @return string
+     */
     static public function getXMLNodeName()
     {
         return 'author';

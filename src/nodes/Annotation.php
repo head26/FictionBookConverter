@@ -7,6 +7,10 @@
  * Time: 13:58
  */
 namespace FB2Builder;
+/**
+ * Class Annotation
+ * @package FB2Builder
+ */
 class Annotation extends AbstractBuildXML
 {
     /**
@@ -14,8 +18,12 @@ class Annotation extends AbstractBuildXML
      * xml:lang (опционально) - язык.
      */
 
+    /**
+     * XML Node Name
+     * @return string
+     */
     static public function getXMLNodeName()
     {
-        // TODO: Implement getXMLNodesName() method.
+        return 'annotation';
     }
 }

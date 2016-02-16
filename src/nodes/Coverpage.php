@@ -7,6 +7,10 @@
  * Time: 16:07
  */
 namespace FB2Builder;
+/**
+ * Class Coverpage
+ * @package FB2Builder
+ */
 class Coverpage extends AbstractBuildXML
 {
     protected $image = NULL;

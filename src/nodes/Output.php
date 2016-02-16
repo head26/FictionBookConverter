@@ -7,6 +7,10 @@
  * Time: 23:12
  */
 namespace FB2Builder;
+/**
+ * Class Output
+ * @package FB2Builder
+ */
 class Output extends AbstractBuildXML
 {
     static public function getXMLNodeName()

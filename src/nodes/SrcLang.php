@@ -7,9 +7,17 @@
  * Time: 16:07
  */
 namespace FB2Builder;
+/**
+ * Class SrcLang
+ * @package FB2Builder
+ */
 class SrcLang extends Lang
 {
 
+    /**
+     * XML Node Name
+     * @return string
+     */
     static public function getXMLNodeName()
     {
         return 'src-lang';

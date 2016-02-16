@@ -8,6 +8,10 @@
  */
 
 namespace FB2Builder;
+/**
+ * Class Description
+ * @package FB2Builder
+ */
 class Description extends AbstractBuildXML
 {
     /**
@@ -100,14 +104,10 @@ class Description extends AbstractBuildXML
     }
 
 
-    /*function buildXML()
-    {
-        $descriptionXML = $domDoc->createElement('description');
-        $titleInfoXML = $this->getTitleInfo()->buildXML($domDoc);
-        $descriptionXML->appendChild($titleInfoXML);
-        return $descriptionXML;
-        // TODO: Implement getXML() method.
-    }*/
+    /**
+     * XML Node Name
+     * @return string
+     */
     static public function getXMLNodeName()
     {
         return 'description';

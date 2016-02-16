@@ -16,6 +16,7 @@ namespace FB2Builder;
 class HomePage extends AbstractNode
 {
     /**
+     * XML Node Name
      * @return string
      */
     static public function getXMLNodeName()

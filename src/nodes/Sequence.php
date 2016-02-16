@@ -7,6 +7,10 @@
  * Time: 16:08
  */
 namespace FB2Builder;
+/**
+ * Class Sequence
+ * @package FB2Builder
+ */
 class Sequence extends AbstractBuildXML
 {
     protected $name = NULL;

@@ -7,6 +7,10 @@
  * Time: 23:06
  */
 namespace FB2Builder;
+/**
+ * Class ScrTitleInfo
+ * @package FB2Builder
+ */
 class ScrTitleInfo extends TitleInfo
 {
     static public function getXMLNodeName()

@@ -7,6 +7,10 @@
  * Time: 17:08
  */
 namespace FB2Builder;
+/**
+ * Class TitleInfo
+ * @package FB2Builder
+ */
 class TitleInfo extends AbstractBuildXML
 {
 
@@ -188,14 +192,10 @@ class TitleInfo extends AbstractBuildXML
         return $this->sequence;
     }
 
-    /*function buildXML()
-    {
-        $titleInfoXML = $domDoc->createElement('title-info');
-        $authorXML = $this->getAuthor()->buildXML($domDoc);
-        $titleInfoXML->appendChild($authorXML);
-        return $titleInfoXML;
-        // TODO: Implement getXML() method.
-    }*/
+    /**
+     * XML Node Name
+     * @return string
+     */
     static public function getXMLNodeName()
     {
         return 'title-info';

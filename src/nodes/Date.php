@@ -14,6 +14,7 @@ namespace FB2Builder;
 class Date extends AbstractNode
 {
     /**
+     * XML Node Name
      * @return string
      */
     static public function getXMLNodeName()

@@ -7,6 +7,10 @@
  * Time: 14:06
  */
 namespace FB2Builder;
+/**
+ * Class Keywords
+ * @package FB2Builder
+ */
 class Keywords extends AbstractBuildXML
 {
     protected $keywords = NULL;
@@ -27,9 +31,13 @@ class Keywords extends AbstractBuildXML
         $this->keywords = $keywords;
     }
 
+    /**
+     * XML Node Name
+     * @return string
+     */
     static public function getXMLNodeName()
     {
-        // TODO: Implement getXMLNodesName() method.
+        return 'keywords';
     }
 
 

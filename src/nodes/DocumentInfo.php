@@ -7,6 +7,10 @@
  * Time: 23:00
  */
 namespace FB2Builder;
+/**
+ * Class DocumentInfo
+ * @package FB2Builder
+ */
 class DocumentInfo extends AbstractBuildXML
 {
     /**

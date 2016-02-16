@@ -14,6 +14,7 @@ namespace FB2Builder;
 class BookTitle extends AbstractNode
 {
     /**
+     * XML Node Name
      * @return string
      */
     static public function getXMLNodeName()

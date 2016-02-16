@@ -7,6 +7,10 @@
  * Time: 16:07
  */
 namespace FB2Builder;
+/**
+ * Class Translator
+ * @package FB2Builder
+ */
 class Translator extends AbstractBuildXML
 {
     protected $firstname = NULL;

@@ -25,6 +25,7 @@ class Middlename extends AbstractNode
     }
 
     /**
+     * XML Node Name
      * @return array
      */
     public function getAttr()

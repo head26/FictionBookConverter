@@ -7,6 +7,10 @@
  * Time: 17:51
  */
 namespace FB2Builder;
+/**
+ * Class Genre
+ * @package FB2Builder
+ */
 class Genre extends AbstractBuildXML
 {
     /**
@@ -45,6 +49,10 @@ class Genre extends AbstractBuildXML
         return $this;
     }
 
+    /**
+     * XML Node Name
+     * @return string
+     */
     static public function getXMLNodeName()
     {
         return 'genre';
