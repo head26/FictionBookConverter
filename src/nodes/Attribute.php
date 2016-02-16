@@ -30,13 +30,15 @@ class Attribute
         self::$data[$key] = $value;
     }
     /**
-     * Возвращает атрибут по ключу
+     * Возвращает атрибут по ключу, без ключа возвращает все атрибуты
      *
      * @param string $key
      * @return mixed
      */
     public static function get($key)
     {
+        if(empty($key))
+            return self::$data;
         return isset(self::$data[$key]) ? self::$data[$key] : null;
     }
     /**
