@@ -13,7 +13,7 @@ namespace FB2Builder;
  */
 class Firstname extends AbstractNode
 {
-
+    protected $attribute = [];
     /**
      * XML Node Name
      * @return string

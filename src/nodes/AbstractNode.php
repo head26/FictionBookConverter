@@ -14,6 +14,10 @@ namespace FB2Builder;
 abstract class AbstractNode extends AbstractBuildXML
 {
     /**
+     * @var array
+     */
+    protected $attribute;
+    /**
      * @var string
      */
     protected $value = '';
@@ -23,12 +27,10 @@ abstract class AbstractNode extends AbstractBuildXML
     protected $attr = '';
     /**
      * @param $value
-     * @param $attr
      */
-    public function setValue($value, $attr = '')
+    public function setValue($value)
     {
         $this->value = $value;
-        $this->attr = $attr;
     }
     /**
      * @return string
