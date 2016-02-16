@@ -51,7 +51,10 @@ $tIAuthor = $titleInfo->getAuthor();
 $tIAuthor->getFirstname()->setValue('Имя', 'ru');
 $tIAuthor->getMiddlename()->setValue('Отчество', 'ru');
 $tIAuthor->getLastname()->setValue('Фамилия');
-//$tIAuthor->setNickname('head');
+$tIAuthor->getNickname()->setValue('head');
+$tIAuthor->getHomePage()->setValue('vk.com');
+$tIAuthor->getId()->setValue('jfhf23489hf293hf9823');
+$tIAuthor->getEmail()->setValue('26soft@mail.ru');
 /*
 $titleInfo->getBookTitle()->setTitle('Хуевая книга','ru');
 $titleInfo->getDate()->setDate('04.02.2016');

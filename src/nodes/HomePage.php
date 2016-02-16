@@ -1,23 +1,26 @@
 <?php
-
 /**
  * Created by PhpStorm.
  * User: Denis Kuliev
- * Date: 08.02.2016
- * Time: 10:46
+ * Date: 16.02.2016
+ * Time: 13:12
  */
+
 namespace FB2Builder;
+
+
 /**
- * Class Id
+ * Class HomePageHomePage
  * @package FB2Builder
  */
-class Id extends AbstractNode
+class HomePage extends AbstractNode
 {
     /**
      * @return string
      */
     static public function getXMLNodeName()
     {
-        return 'id';
+        return 'home-page';
     }
+
 }

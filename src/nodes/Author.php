@@ -59,80 +59,43 @@ class Author extends AbstractBuildXML
     }
 
     /**
-     * @return string|null
+     * @return Nickname
      */
     public function getNickname()
     {
+        if(!$this->nickname instanceof Nickname)
+            return $this->nickname = new Nickname();
         return $this->nickname;
     }
 
-
     /**
-     * @param $nickname
-     * @return Author
-     */
-    public function setNickname($nickname)
-    {
-        $this->nickname = $nickname;
-        return $this;
-    }
-
-
-    /**
-     * @return string|null
+     * @return HomePage
      */
     public function getHomePage()
     {
+        if(!$this->homePage instanceof HomePage)
+            return $this->homePage = new HomePage();
         return $this->homePage;
     }
 
-
     /**
-     * @param $homePage
-     * @return Author
-     */
-    public function setHomePage($homePage)
-    {
-        $this->homePage = $homePage;
-        return $this;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-
-    /**
-     * @param $id
-     * @return Author
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-        return $this;
-    }
-
-    /**
-     * @return string|null
+     * @return Email
      */
     public function getEmail()
     {
+        if(!$this->email instanceof Email)
+            return $this->email = new Email();
         return $this->email;
     }
 
-
     /**
-     * @param $email
-     * @return Author
+     * @return Id
      */
-    public function setEmail($email)
+    public function getId()
     {
-        $this->email = $email;
-        return $this;
+        if(!$this->id instanceof Id)
+            return $this->id = new Id();
+        return $this->id;
     }
 
     static public function getXMLNodeName()
