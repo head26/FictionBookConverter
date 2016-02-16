@@ -17,27 +17,27 @@ class Description extends AbstractBuildXML
     /**
      * @var TitleInfo
      */
-    protected $titleInfo = NULL;
+    protected $titleInfo;
     /**
      * @var ScrTitleInfo
      */
-    protected $srcTitleInfo  = NULL;
+    protected $srcTitleInfo;
     /**
      * @var DocumentInfo
      */
-    protected $documentInfo  = NULL;
+    protected $documentInfo;
     /**
      * @var PublishInfo
      */
-    protected $publishInfo  = NULL;
+    protected $publishInfo;
     /**
      * @var CustomInfo
      */
-    protected $customInfo  = NULL;
+    protected $customInfo;
     /**
      * @var Output
      */
-    protected $output  = NULL;
+    protected $output;
 
     /**
      * <title-info> - 1 (один, обязателен);

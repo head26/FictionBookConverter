@@ -17,47 +17,47 @@ class TitleInfo extends AbstractBuildXML
     /**
      * @var Genre
      */
-    protected $genre = NULL;
+    protected $genre;
     /**
      * @var Author
      */
-    protected $author = NULL;
+    protected $author;
     /**
      * @var BookTitle
      */
-    protected $bookTitle = NULL;
+    protected $bookTitle;
     /**
      * @var Annotation
      */
-    protected $annotation = NULL;
+    protected $annotation;
     /**
      * @var Keywords
      */
-    protected $keywords = NULL;
+    protected $keywords;
     /**
      * @var Date
      */
-    protected $date = NULL;
+    protected $date;
     /**
      * @var Coverpage
      */
-    protected $coverpage = NULL;
+    protected $coverpage;
     /**
      * @var Lang
      */
-    protected $lang = NULL;
+    protected $lang;
     /**
      * @var SrcLang
      */
-    protected $srcLang = NULL;
+    protected $srcLang;
     /**
      * @var Translator
      */
-    protected $translator = NULL;
+    protected $translator;
     /**
      * @var Sequence
      */
-    protected $sequence = NULL;
+    protected $sequence;
 
     /**
      * <genre> - 1..n (любое число, один обязaтелен);

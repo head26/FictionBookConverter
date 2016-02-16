@@ -13,7 +13,7 @@ namespace FB2Builder;
  */
 class Coverpage extends AbstractBuildXML
 {
-    protected $image = NULL;
+    protected $image;
 
     static public function getXMLNodeName()
     {

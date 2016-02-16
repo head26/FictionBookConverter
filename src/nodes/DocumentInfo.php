@@ -16,39 +16,39 @@ class DocumentInfo extends AbstractBuildXML
     /**
      * @var Author
      */
-    protected $author = NULL;
+    protected $author;
     /**
      * @var ProgramUsed
      */
-    protected $programUsed = NULL;
+    protected $programUsed;
     /**
      * @var Date
      */
-    protected $date = NULL;
+    protected $date;
     /**
      * @var ScrUrl
      */
-    protected $scrUrl = NULL;
+    protected $scrUrl;
     /**
      * @var ScrOcr
      */
-    protected $scrOcr = NULL;
+    protected $scrOcr;
     /**
      * @var Id
      */
-    protected $id = NULL;
+    protected $id;
     /**
      * @var Version
      */
-    protected $version = NULL;
+    protected $version;
     /**
      * @var History
      */
-    protected $history = NULL;
+    protected $history;
     /**
      * @var Publisher
      */
-    protected $publisher = NULL;
+    protected $publisher;
 
     /**
      * <author> - 1..n (любое число, один обязaтелен);

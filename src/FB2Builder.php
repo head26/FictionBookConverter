@@ -17,7 +17,7 @@ class FB2Builder
     /**
      * @var FictionBook
      */
-    protected $fictionBook = NULL;
+    protected $fictionBook;
 
 
     /**

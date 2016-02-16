@@ -13,13 +13,13 @@ namespace FB2Builder;
  */
 class Author extends AbstractBuildXML
 {
-    protected $firstname = NULL;
-    protected $middlename = NULL;
-    protected $lastname = NULL;
-    protected $nickname = NULL;
-    protected $homePage = NULL;
-    protected $email = NULL;
-    protected $id = NULL;
+    protected $firstname;
+    protected $middlename;
+    protected $lastname;
+    protected $nickname;
+    protected $homePage;
+    protected $email;
+    protected $id;
 
     /**
      * <first-name> - 0..1 (один, обязателен при отсутствии <nickname>, иначе опционально) - имя;

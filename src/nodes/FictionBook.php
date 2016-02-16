@@ -17,19 +17,19 @@ class FictionBook extends AbstractBuildXML
     /**
      * @var Description
      */
-    protected $description = NULL;
+    protected $description;
     /**
      * @var Body
      */
-    protected $body = NULL;
+    protected $body;
     /**
      * @var StyleSheet
      */
-    protected $stylesheet = NULL;
+    protected $stylesheet;
     /**
      * @var Binary
      */
-    protected $binary = NULL;
+    protected $binary;
 
     /**
      * <stylesheet> - 0..n (любое число, опционально);

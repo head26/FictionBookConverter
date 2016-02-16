@@ -13,12 +13,12 @@ namespace FB2Builder;
  */
 class Translator extends AbstractBuildXML
 {
-    protected $firstname = NULL;
-    protected $middlename = NULL;
-    protected $lastname = NULL;
-    protected $nickname = NULL;
-    protected $homePage = NULL;
-    protected $id = NULL;
+    protected $firstname;
+    protected $middlename;
+    protected $lastname;
+    protected $nickname;
+    protected $homePage;
+    protected $id;
 
     /**
      * @return string|null

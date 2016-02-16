@@ -13,9 +13,9 @@ namespace FB2Builder;
  */
 class Sequence extends AbstractBuildXML
 {
-    protected $name = NULL;
-    protected $number = NULL;
-    protected $xmlLang = NULL;
+    protected $name;
+    protected $number;
+    protected $xmlLang;
 
     /**
      * @param string $name

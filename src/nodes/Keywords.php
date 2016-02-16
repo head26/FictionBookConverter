@@ -13,10 +13,10 @@ namespace FB2Builder;
  */
 class Keywords extends AbstractBuildXML
 {
-    protected $keywords = NULL;
+    protected $keywords;
 
     /**
-     * @return string|null
+     * @return string
      */
     public function getKeywords()
     {
