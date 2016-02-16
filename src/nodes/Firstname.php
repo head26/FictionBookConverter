@@ -7,50 +7,17 @@
  * Time: 20:06
  */
 namespace FB2Builder;
-class Firstname extends AbstractBuildXML
+class Firstname extends AbstractNode
 {
-    protected $value = '';
-    protected $attrLang = '';
-
-    /**
-     * @return string
-     */
-    public function getValue()
-    {
-        return $this->value;
-    }
-
-
-    /**
-     * @param $value
-     * @param $attrLang
-     */
-    public function setValue($value, $attrLang = '')
-    {
-        $this->value = $value;
-        $this->attrLang = $attrLang;
-    }
-
-    /**
-     * @return string
-     */
-    public function getAttrLang()
-    {
-        return $this->attrLang;
-    }
 
     static public function getXMLNodeName()
     {
-        return [
-            'property' => [
-                 'first-name' => 'value',
-            ]
-        ];
+        return 'first-name';
     }
 
     function getAttr()
     {
-        return ['xml:lang' => $this->attrLang];
+        return ['xml:lang' => $this->attr];
     }
 
 }

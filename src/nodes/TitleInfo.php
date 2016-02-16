@@ -198,9 +198,7 @@ class TitleInfo extends AbstractBuildXML
     }*/
     static public function getXMLNodeName()
     {
-        return [
-            'parent' => 'title-info'
-        ];
+        return 'title-info';
 
     }
 }

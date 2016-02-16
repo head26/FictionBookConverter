@@ -110,8 +110,6 @@ class Description extends AbstractBuildXML
     }*/
     static public function getXMLNodeName()
     {
-        return [
-            'parent' => 'description'
-        ];
+        return 'description';
     }
 }

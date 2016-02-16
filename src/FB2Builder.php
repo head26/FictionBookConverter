@@ -52,8 +52,8 @@ $titleInfo = $fb->getDescription()->getTitleInfo();
 $tIAuthor = $titleInfo->getAuthor();
 $tIAuthor->getFirstname()->setValue('Имя', 'ru');
 //$tIAuthor->setFirstname('Имя');
-$tIAuthor->setLastname('ФАм');
-$tIAuthor->setNickname('head');
+//$tIAuthor->setLastname('ФАм');
+//$tIAuthor->setNickname('head');
 /*
 $titleInfo->getBookTitle()->setTitle('Хуевая книга','ru');
 $titleInfo->getDate()->setDate('04.02.2016');

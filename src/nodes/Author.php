@@ -166,17 +166,6 @@ class Author extends AbstractBuildXML
 
     static public function getXMLNodeName()
     {
-        return [
-            'parent' => 'author',
-            'property' => [
-               // 'first-name' => 'firstname',
-                'middle-name' => 'middlename',
-                'last-name' => 'lastname',
-                'nickname' => 'nickname',
-                'home-page' => 'homePage',
-                'email' => 'email',
-                'id' => 'id',
-                ]
-        ];
+        return 'author';
     }
 }

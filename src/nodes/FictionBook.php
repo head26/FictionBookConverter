@@ -8,6 +8,10 @@
  */
 namespace FB2Builder;
 
+/**
+ * Class FictionBook
+ * @package FB2Builder
+ */
 class FictionBook extends AbstractBuildXML
 {
     /**
@@ -80,11 +84,12 @@ class FictionBook extends AbstractBuildXML
         $fb->appendChild($this->getDescription()->buildXML($domDoc));
         // TODO: Implement getXML() method.
     }*/
+    /**
+     * @return string
+     */
     static public function getXMLNodeName()
     {
-        return [
-            'parent' => 'FictionBook'
-        ];
+        return 'FictionBook';
     }
 }
 /*<?xml version=\"1.0\" encoding=\"UTF-8\"?>
