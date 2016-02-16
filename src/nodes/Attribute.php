@@ -8,10 +8,19 @@
 
 namespace FB2Builder;
 
-
+/**
+ * Class Attribute
+ * @package FB2Builder
+ */
 class Attribute
 {
+    /**
+     * @var string
+     */
     protected $name;
+    /**
+     * @var string
+     */
     protected $value;
 
 }
