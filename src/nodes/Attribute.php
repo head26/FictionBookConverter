@@ -49,8 +49,6 @@ class Attribute
      */
     final public static function removeAttr($key)
     {
-        if (array_key_exists($key, self::$data)) {
-            unset(self::$data[$key]);
-        }
+        unset(self::$data[$key]);
     }
 }
