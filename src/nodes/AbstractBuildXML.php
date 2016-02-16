@@ -11,7 +11,7 @@ namespace FB2Builder;
  * Class AbstractBuildXML
  * @package FB2Builder
  */
-abstract class AbstractBuildXML implements InterfaceNodes
+abstract class AbstractBuildXML implements InterfaceNode
 {
 
     /**

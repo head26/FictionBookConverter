@@ -8,10 +8,10 @@
  */
 namespace FB2Builder;
 /**
- * Interface InterfaceNodes
+ * Interface InterfaceNode
  * @package FB2Builder
  */
-interface InterfaceNodes
+interface InterfaceNode
 {
     /**
      * XML Node Name
