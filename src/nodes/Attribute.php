@@ -15,12 +15,40 @@ namespace FB2Builder;
 class Attribute
 {
     /**
-     * @var string
+     * @var mixed[]
      */
-    protected $name;
+    protected static $data = array();
     /**
-     * @var string
+     * Добавляет атрибут
+     *
+     * @param string $key
+     * @param mixed $value
+     * @return void
      */
-    protected $value;
-
+    public static function set($key, $value)
+    {
+        self::$data[$key] = $value;
+    }
+    /**
+     * Возвращает атрибут по ключу
+     *
+     * @param string $key
+     * @return mixed
+     */
+    public static function get($key)
+    {
+        return isset(self::$data[$key]) ? self::$data[$key] : null;
+    }
+    /**
+     * Удаляет атрибут по ключу
+     *
+     * @param string $key
+     * @return void
+     */
+    final public static function removeAttr($key)
+    {
+        if (array_key_exists($key, self::$data)) {
+            unset(self::$data[$key]);
+        }
+    }
 }
