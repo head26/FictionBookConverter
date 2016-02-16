@@ -15,7 +15,7 @@
   },
   "autoload": {
     "psr-4": {
-      "FB2Builder\\": "src/nodes/"
+      "FB2Builder\\": "src/"
     }
   },
   "repositories": [

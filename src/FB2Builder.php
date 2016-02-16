@@ -7,7 +7,6 @@
  */
 
 namespace FB2Builder;
-require '../vendor/autoload.php';
 /**
  * Class FB2Builder
  * @package FB2Builder
@@ -46,7 +45,6 @@ $FB2Builder = new FB2Builder();
 $fb = $FB2Builder->getFictionBook();
 
 $titleInfo = $fb->getDescription()->getTitleInfo();
-
 $tIAuthor = $titleInfo->getAuthor();
 $tIAuthor->getFirstname()->setValue('Имя');
 $tIAuthor->getMiddlename()->setValue('Отчество');

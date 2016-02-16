@@ -22,15 +22,7 @@ class Author extends AbstractBuildXML
     protected $id;
 
     /**
-     * <first-name> - 0..1 (один, обязателен при отсутствии <nickname>, иначе опционально) - имя;
-     * <middle-name> - 0..1 (один, опционально) - отчество;
-     * <last-name> - 0..1 (один, обязателен при отсутствии <nickname>, иначе опционально) - фамилия;
-     * <nickname> - 0..1 (один, обязателен при отсутствии <first-name> и <last-name>, иначе опционально);
-     * <home-page> - 0..n (любое число, опционально);
-     * <email> - 0..n (любое число, опционально);
-     * <id> - 0..1 (один, опционально) с версии 2.2 - идентификатор автора, присваивается библиотекой.
-     */
-    /**
+     * first-name - 0..1 (один, обязателен при отсутствии <nickname>, иначе опционально) - имя;
      * @return Firstname
      */
     public function getFirstname()
@@ -42,6 +34,7 @@ class Author extends AbstractBuildXML
 
 
     /**
+     * middle-name - 0..1 (один, опционально) - отчество;
      * @return Middlename
      */
     public function getMiddlename()
@@ -53,6 +46,7 @@ class Author extends AbstractBuildXML
 
 
     /**
+     * last-name - 0..1 (один, обязателен при отсутствии <nickname>, иначе опционально) - фамилия;
      * @return Lastname
      */
     public function getLastname()
@@ -63,6 +57,7 @@ class Author extends AbstractBuildXML
     }
 
     /**
+     * nickname - 0..1 (один, обязателен при отсутствии <first-name> и <last-name>, иначе опционально);
      * @return Nickname
      */
     public function getNickname()
@@ -73,6 +68,7 @@ class Author extends AbstractBuildXML
     }
 
     /**
+     * home-page - 0..n (любое число, опционально);
      * @return HomePage
      */
     public function getHomePage()
@@ -83,6 +79,7 @@ class Author extends AbstractBuildXML
     }
 
     /**
+     * email - 0..n (любое число, опционально);
      * @return Email
      */
     public function getEmail()
@@ -93,6 +90,7 @@ class Author extends AbstractBuildXML
     }
 
     /**
+     * id - 0..1 (один, опционально) с версии 2.2 - идентификатор автора, присваивается библиотекой.
      * @return Id
      */
     public function getId()
