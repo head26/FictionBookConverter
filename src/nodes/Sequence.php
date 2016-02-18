@@ -9,10 +9,11 @@
 namespace FB2Builder\nodes;
 /**
  * Class Sequence
- * @package FB2Builder
+ * @package FB2Builder\nodes
  */
 class Sequence extends AbstractBuildXML
 {
+    // TODO: к работе.
     protected $name;
     protected $number;
     protected $xmlLang;
@@ -42,10 +43,13 @@ class Sequence extends AbstractBuildXML
     {
         return $this->name;
     }
-
+    /**
+     * XML Node Name
+     * @return string
+     */
     static public function getXMLNodeName()
     {
-        // TODO: Implement getXMLNodesName() method.
+        return 'sequence';
     }
 
 

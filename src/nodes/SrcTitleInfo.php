@@ -9,12 +9,16 @@
 namespace FB2Builder\nodes;
 /**
  * Class ScrTitleInfo
- * @package FB2Builder
+ * @package FB2Builder\nodes
  */
-class ScrTitleInfo extends TitleInfo
+class SrcTitleInfo extends TitleInfo
 {
+    /**
+     * XML Node Name
+     * @return string
+     */
     static public function getXMLNodeName()
     {
-        // TODO: Implement getXMLNodesName() method.
+        return 'src-title-info';
     }
 }

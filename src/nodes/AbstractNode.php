@@ -9,22 +9,15 @@
 namespace FB2Builder\nodes;
 /**
  * Class AbstractNode
- * @package FB2Builder
+ * @package FB2Builder\nodes
  */
 abstract class AbstractNode extends AbstractBuildXML
 {
     /**
-     * @var array
-     */
-    protected $attribute;
-    /**
      * @var string
      */
     protected $value = '';
-    /**
-     * @var string
-     */
-    protected $attr = '';
+
     /**
      * @param $value
      */
@@ -39,12 +32,4 @@ abstract class AbstractNode extends AbstractBuildXML
     {
         return $this->value;
     }
-    /**
-     * @return string
-     */
-    public function getAttr()
-    {
-        return $this->attr;
-    }
-
 }

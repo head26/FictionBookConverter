@@ -10,7 +10,7 @@ namespace FB2Builder\nodes;
 
 /**
  * Class FictionBook
- * @package FB2Builder
+ * @package FB2Builder\nodes
  */
 class FictionBook extends AbstractBuildXML
 {

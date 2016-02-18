@@ -10,7 +10,7 @@
 namespace FB2Builder\nodes;
 /**
  * Class Description
- * @package FB2Builder
+ * @package FB2Builder\nodes
  */
 class Description extends AbstractBuildXML
 {
@@ -19,7 +19,7 @@ class Description extends AbstractBuildXML
      */
     protected $titleInfo;
     /**
-     * @var ScrTitleInfo
+     * @var SrcTitleInfo
      */
     protected $srcTitleInfo;
     /**
@@ -60,12 +60,12 @@ class Description extends AbstractBuildXML
 
 
     /**
-     * @return ScrTitleInfo
+     * @return SrcTitleInfo
      */
     public function getSrcTitleInfo()
     {
-        if(!$this->srcTitleInfo instanceof ScrTitleInfo)
-            return $this->srcTitleInfo = new ScrTitleInfo();
+        if(!$this->srcTitleInfo instanceof SrcTitleInfo)
+            return $this->srcTitleInfo = new SrcTitleInfo();
         return $this->srcTitleInfo;
     }
 

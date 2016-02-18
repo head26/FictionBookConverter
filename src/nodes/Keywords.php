@@ -9,28 +9,10 @@
 namespace FB2Builder\nodes;
 /**
  * Class Keywords
- * @package FB2Builder
+ * @package FB2Builder\nodes
  */
-class Keywords extends AbstractBuildXML
+class Keywords extends AbstractNode
 {
-    protected $keywords;
-
-    /**
-     * @return string
-     */
-    public function getKeywords()
-    {
-        return $this->keywords;
-    }
-
-    /**
-     * @param string $keywords
-     */
-    public function setKeywords($keywords)
-    {
-        $this->keywords = $keywords;
-    }
-
     /**
      * XML Node Name
      * @return string
@@ -39,6 +21,4 @@ class Keywords extends AbstractBuildXML
     {
         return 'keywords';
     }
-
-
 }

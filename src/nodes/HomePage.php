@@ -11,7 +11,7 @@ namespace FB2Builder\nodes;
 
 /**
  * Class HomePageHomePage
- * @package FB2Builder
+ * @package FB2Builder\nodes
  */
 class HomePage extends AbstractNode
 {

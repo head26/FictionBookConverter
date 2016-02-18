@@ -10,7 +10,9 @@ use FB2Builder\FB2Builder;
 $FB2Builder = new FB2Builder();
 $fb = $FB2Builder->getFictionBook();
 
-$titleInfo = $fb->getDescription()->getTitleInfo();
+$description = $fb->getDescription();
+
+$titleInfo = $description->getTitleInfo();
 $tIAuthor = $titleInfo->getAuthor();
 $tIAuthor->getFirstname()->setValue('Имя');
 $tIAuthor->getMiddlename()->setValue('Отчество');
@@ -20,9 +22,25 @@ $tIAuthor->getHomePage()->setValue('vk.com');
 $tIAuthor->getId()->setValue('jff23489hf293hf9823');
 $tIAuthor->getEmail()->setValue('26soft@mail.ru');
 
+$tITranslator = $titleInfo->getTranslator();
+$tITranslator->getFirstname()->setValue('Имя');
+$tITranslator->getMiddlename()->setValue('Отчество');
+$tITranslator->getLastname()->setValue('Фамилия');
+$tITranslator->getNickname()->setValue('head');
+$tITranslator->getHomePage()->setValue('vk.com');
+$tITranslator->getId()->setValue('jff23489hf293hf9823');
+$tITranslator->getEmail()->setValue('26soft@mail.ru');
+
 $titleInfo->getBookTitle()->setValue('Хуевая книга');
 $titleInfo->getDate()->setValue('04.02.2016');
 $titleInfo->getLang()->setValue('ru');
+
+$titleInfo->getKeywords()->setValue('pam, param, pampam');
+
+
+
+
+
 
 /*
 $genre = $titleInfo->getGenre();

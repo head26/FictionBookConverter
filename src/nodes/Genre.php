@@ -9,7 +9,7 @@
 namespace FB2Builder\nodes;
 /**
  * Class Genre
- * @package FB2Builder
+ * @package FB2Builder\nodes
  */
 class Genre extends AbstractBuildXML
 {

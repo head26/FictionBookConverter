@@ -11,12 +11,13 @@ namespace FB2Builder\nodes;
 
 /**
  * Class Middlename
- * @package FB2Builder
+ * @package FB2Builder\nodes
  */
 class Middlename extends AbstractNode
 {
 
     /**
+     * XML Node Name
      * @return string
      */
     static public function getXMLNodeName()
@@ -25,12 +26,13 @@ class Middlename extends AbstractNode
     }
 
     /**
-     * XML Node Name
      * @return array
      */
-    public function getAttr()
+    public function getAttribute()
     {
-        return ['xml:lang' => $this->attr];
+        return [
+            'xml:lang' => 'ru'
+        ];
     }
 
 }

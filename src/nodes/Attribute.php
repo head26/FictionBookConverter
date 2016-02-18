@@ -10,7 +10,7 @@ namespace FB2Builder\nodes;
 
 /**
  * Class Attribute
- * @package FB2Builder
+ * @package FB2Builder\nodes
  */
 class Attribute
 {

@@ -7,7 +7,14 @@
  * Time: 17:30
  */
 namespace FB2Builder\nodes;
+/**
+ * Interface InterfaceProperty
+ * @package FB2Builder\nodes
+ */
 interface InterfaceProperty
 {
+    /**
+     * @return mixed
+     */
     static public function getXMLPropertyName();
 }

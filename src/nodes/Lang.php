@@ -9,7 +9,7 @@
 namespace FB2Builder\nodes;
 /**
  * Class Lang
- * @package FB2Builder
+ * @package FB2Builder\nodes
  */
 class Lang extends AbstractNode
 {

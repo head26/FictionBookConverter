@@ -9,10 +9,11 @@
 namespace FB2Builder\nodes;
 /**
  * Class Annotation
- * @package FB2Builder
+ * @package FB2Builder\nodes
  */
 class Annotation extends AbstractBuildXML
 {
+    // TODO: к работе.
     /**
      * id (опционально) - Идентификатор (якорь, метка) для ссылок на данный элемент.
      * xml:lang (опционально) - язык.

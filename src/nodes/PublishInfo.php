@@ -9,12 +9,16 @@
 namespace FB2Builder\nodes;
 /**
  * Class PublishInfo
- * @package FB2Builder
+ * @package FB2Builder\nodes
  */
 class PublishInfo extends AbstractBuildXML
 {
+    /**
+     * XML Node Name
+     * @return string
+     */
     static public function getXMLNodeName()
     {
-        // TODO: Implement getXMLNodesName() method.
+        return 'publish-info';
     }
 }

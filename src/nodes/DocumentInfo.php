@@ -9,7 +9,7 @@
 namespace FB2Builder\nodes;
 /**
  * Class DocumentInfo
- * @package FB2Builder
+ * @package FB2Builder\nodes
  */
 class DocumentInfo extends AbstractBuildXML
 {
@@ -94,9 +94,63 @@ class DocumentInfo extends AbstractBuildXML
         return $this->id;
     }
 
+    /**
+     * @return ProgramUsed
+     */
+    public function getProgramUsed()
+    {
+        if(!$this->programUsed instanceof ProgramUsed)
+            return $this->programUsed = new ProgramUsed();
+        return $this->programUsed;
+    }
+
+    /**
+     * @return ScrUrl
+     */
+    public function getScrUrl()
+    {
+        return $this->scrUrl;
+    }
+
+    /**
+     * @return ScrOcr
+     */
+    public function getScrOcr()
+    {
+        return $this->scrOcr;
+    }
+
+    /**
+     * @return Version
+     */
+    public function getVersion()
+    {
+        return $this->version;
+    }
+
+    /**
+     * @return History
+     */
+    public function getHistory()
+    {
+        return $this->history;
+    }
+
+    /**
+     * @return Publisher
+     */
+    public function getPublisher()
+    {
+        return $this->publisher;
+    }
+
+    /**
+     * XML Node Name
+     * @return string
+     */
     static public function getXMLNodeName()
     {
-        // TODO: Implement getXMLNodesName() method.
+        return 'document-info';
     }
 
 

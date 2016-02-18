@@ -9,7 +9,7 @@
 namespace FB2Builder\nodes;
 /**
  * Class BookTitle
- * @package FB2Builder
+ * @package FB2Builder\nodes
  */
 class BookTitle extends AbstractNode
 {
@@ -24,8 +24,10 @@ class BookTitle extends AbstractNode
     /**
      * @return array
      */
-    public function getAttr()
+    public function getAttribute()
     {
-        return ['xml:lang' => $this->attr];
+        return [
+            'xml:lang' => 'ru'
+        ];
     }
 }

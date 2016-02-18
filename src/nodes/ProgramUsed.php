@@ -1,21 +1,27 @@
 <?php
-
 /**
  * Created by PhpStorm.
  * User: Denis Kuliev
- * Date: 09.02.2016
- * Time: 14:34
+ * Date: 18.02.2016
+ * Time: 12:43
  */
+
 namespace FB2Builder\nodes;
+
+
 /**
- * Interface InterfaceNode
+ * Class ProgramUsed
  * @package FB2Builder\nodes
  */
-interface InterfaceNode
+class ProgramUsed extends AbstractNode
 {
     /**
      * XML Node Name
      * @return string
      */
-    static public function getXMLNodeName();
+    static public function getXMLNodeName()
+    {
+        return 'program-used';
+    }
+
 }

@@ -9,12 +9,16 @@
 namespace FB2Builder\nodes;
 /**
  * Class Output
- * @package FB2Builder
+ * @package FB2Builder\nodes
  */
 class Output extends AbstractBuildXML
 {
+    /**
+     * XML Node Name
+     * @return string
+     */
     static public function getXMLNodeName()
     {
-        // TODO: Implement getXMLNodesName() method.
+        return 'output';
     }
 }

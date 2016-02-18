@@ -9,7 +9,7 @@
 namespace FB2Builder\nodes;
 /**
  * Class Author
- * @package FB2Builder
+ * @package FB2Builder\nodes
  */
 class Author extends AbstractBuildXML
 {

@@ -9,7 +9,7 @@
 namespace FB2Builder\nodes;
 /**
  * Class Date
- * @package FB2Builder
+ * @package FB2Builder\nodes
  */
 class Date extends AbstractNode
 {
@@ -24,11 +24,10 @@ class Date extends AbstractNode
     /**
      * @return array
      */
-    public function getAttr()
+    public function getAttribute()
     {
         return [
-            'xml:lang' => $this->attr,
-            'value' => ''
+            'value' => $this->value,
         ];
     }
 }

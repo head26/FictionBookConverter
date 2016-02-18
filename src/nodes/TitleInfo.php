@@ -9,7 +9,7 @@
 namespace FB2Builder\nodes;
 /**
  * Class TitleInfo
- * @package FB2Builder
+ * @package FB2Builder\nodes
  */
 class TitleInfo extends AbstractBuildXML
 {

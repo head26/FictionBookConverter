@@ -9,7 +9,7 @@
 namespace FB2Builder\nodes;
 /**
  * Class SrcLang
- * @package FB2Builder
+ * @package FB2Builder\nodes
  */
 class SrcLang extends Lang
 {

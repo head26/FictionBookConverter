@@ -9,7 +9,7 @@
 namespace FB2Builder\nodes;
 /**
  * Class Firstname
- * @package FB2Builder
+ * @package FB2Builder\nodes
  */
 class Firstname extends AbstractNode
 {
@@ -22,10 +22,14 @@ class Firstname extends AbstractNode
     {
         return 'first-name';
     }
-
-    function getAttr()
+    /**
+     * @return array
+     */
+    public function getAttribute()
     {
-        return ['xml:lang' => $this->attr];
+        return [
+            'xml:lang' => 'ru'
+        ];
     }
 
 }
