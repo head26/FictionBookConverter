@@ -1,25 +1,26 @@
 <?php
-
 /**
  * Created by PhpStorm.
  * User: Denis Kuliev
- * Date: 04.02.2016
- * Time: 23:12
+ * Date: 18.02.2016
+ * Time: 13:42
  */
+
 namespace FB2Builder\nodes;
+
+
 /**
- * Class Output
+ * Class Binary
  * @package FB2Builder\nodes
  */
-class Output extends AbstractBuildXML
+class Binary extends AbstractNode
 {
-    //TODO:
     /**
      * XML Node Name
      * @return string
      */
     static public function getXMLNodeName()
     {
-        return 'output';
+        return 'binary';
     }
 }
