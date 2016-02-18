@@ -52,7 +52,8 @@ class Description extends AbstractBuildXML
     /**
      * @return TitleInfo
      */
-    public function getTitleInfo() {
+    public function getTitleInfo()
+    {
         if(!$this->titleInfo instanceof TitleInfo)
             return $this->titleInfo = new TitleInfo();
         return $this->titleInfo;
