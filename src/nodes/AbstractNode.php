@@ -7,6 +7,7 @@
  * Time: 21:01
  */
 namespace FB2Builder\nodes;
+
 /**
  * Class AbstractNode
  * @package FB2Builder\nodes
@@ -18,12 +19,15 @@ abstract class AbstractNode extends AbstractBuildXML
      */
     protected $value = '';
 
+
     /**
      * @param $value
+     * @return $this
      */
     public function setValue($value)
     {
         $this->value = $value;
+        return $this;
     }
     /**
      * @return string

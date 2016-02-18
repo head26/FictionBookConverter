@@ -15,63 +15,60 @@ class TitleInfo extends AbstractBuildXML
 {
 
     /**
+     * <genre> - 1..n (любое число, один обязaтелен);
      * @var Genre
      */
     protected $genre;
     /**
+     * <author> - 1..n (любое число, один обязaтелен);
      * @var Author
      */
     protected $author;
     /**
+     * <book-title> - 1 (один, обязателен);
      * @var BookTitle
      */
     protected $bookTitle;
     /**
+     * <annotation> - 0..1 (один, опционально);
      * @var Annotation
      */
     protected $annotation;
     /**
+     * <keywords> - 0..1 (один, опционально);
      * @var Keywords
      */
     protected $keywords;
     /**
+     * <date> - 0..1 (один, опционально);
      * @var Date
      */
     protected $date;
     /**
+     * <coverpage> - 0..1 (один, опционально);
      * @var Coverpage
      */
     protected $coverpage;
     /**
+     * <lang> - 1 (один, обязателен);
      * @var Lang
      */
     protected $lang;
     /**
+     * <src-lang> - 0..1 (один, опционально);
      * @var SrcLang
      */
     protected $srcLang;
     /**
+     * <translator> - 0..n (любое число, опционально);
      * @var Translator
      */
     protected $translator;
     /**
+     * <sequence> - 0..n (любое число, опционально).
      * @var Sequence
      */
     protected $sequence;
-
-    /**
-     * <genre> - 1..n (любое число, один обязaтелен);
-     * <author> - 1..n (любое число, один обязaтелен);
-     * <book-title> - 1 (один, обязателен);
-     * <annotation> - 0..1 (один, опционально);
-     * <keywords> - 0..1 (один, опционально);
-     * <date> - 0..1 (один, опционально);
-     * <coverpage> - 0..1 (один, опционально);
-     * <lang> - 1 (один, обязателен);
-     * <src-lang> - 0..1 (один, опционально);
-     * <translator> - 0..n (любое число, опционально);
-     * <sequence> - 0..n (любое число, опционально).
-     */
 
     /**
      * @return Author
