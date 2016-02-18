@@ -47,7 +47,16 @@ class FictionBook extends AbstractBuildXML
             return $this->description = new Description();
         return $this->description;
     }
-
+    /**
+     * @return array
+     */
+    public function getAttribute()
+    {
+        return [
+            'xmlns' => 'http://www.gribuser.ru/xml/fictionbook/2.0',
+            'xmlns:xlink' => 'http://www.w3.org/1999/xlink'
+        ];
+    }
 
     /**
      * XML Node Name
@@ -57,13 +66,5 @@ class FictionBook extends AbstractBuildXML
     {
         return 'FictionBook';
     }
+
 }
-/*<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<FictionBook xmlns=\"http://www.gribuser.ru/xml/fictionbook/2.0\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">
-    <description>
-        <title-info/>
-        <document-info/>
-    </description>
-    <body/>
-</FictionBook>
-*/

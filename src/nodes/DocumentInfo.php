@@ -105,14 +105,18 @@ class DocumentInfo extends AbstractBuildXML
     }
 
     /**
+     * TODO:
      * @return ScrUrl
      */
     public function getScrUrl()
     {
+        if(!$this->scrUrl instanceof SrcUrl)
+            return $this->scrUrl = new SrcUrl();
         return $this->scrUrl;
     }
 
     /**
+     * TODO:
      * @return ScrOcr
      */
     public function getScrOcr()
@@ -125,6 +129,8 @@ class DocumentInfo extends AbstractBuildXML
      */
     public function getVersion()
     {
+        if(!$this->version instanceof Version)
+            return $this->version = new Version();
         return $this->version;
     }
 
@@ -133,6 +139,8 @@ class DocumentInfo extends AbstractBuildXML
      */
     public function getHistory()
     {
+        if(!$this->history instanceof History)
+            return $this->history = new History();
         return $this->history;
     }
 
@@ -141,6 +149,8 @@ class DocumentInfo extends AbstractBuildXML
      */
     public function getPublisher()
     {
+        if(!$this->publisher instanceof Publisher)
+            return $this->publisher = new Publisher();
         return $this->publisher;
     }
 
