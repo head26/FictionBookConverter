@@ -7,7 +7,6 @@
  * Time: 15:59
  */
 namespace FB2Builder\nodes;
-use MongoDB\BSON\Binary;
 
 /**
  * Class FictionBook
@@ -54,8 +53,8 @@ class FictionBook extends AbstractBuildXML
      */
     public function getBinary()
     {
-        if(!$this->binary instanceof \FB2Builder\nodes\Binary)
-            return $this->binary = new \FB2Builder\nodes\Binary();
+        if(!$this->binary instanceof Binary)
+            return $this->binary = new Binary();
         return $this->binary;
     }
 
