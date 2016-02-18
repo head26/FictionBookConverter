@@ -26,11 +26,11 @@ class DocumentInfo extends AbstractBuildXML
      */
     protected $date;
     /**
-     * @var ScrUrl
+     * @var SrcUrl
      */
     protected $scrUrl;
     /**
-     * @var ScrOcr
+     * @var SrcOcr
      */
     protected $scrOcr;
     /**
@@ -105,8 +105,7 @@ class DocumentInfo extends AbstractBuildXML
     }
 
     /**
-     * TODO:
-     * @return ScrUrl
+     * @return SrcUrl
      */
     public function getScrUrl()
     {
@@ -116,11 +115,12 @@ class DocumentInfo extends AbstractBuildXML
     }
 
     /**
-     * TODO:
-     * @return ScrOcr
+     * @return SrcOcr
      */
     public function getScrOcr()
     {
+        if(!$this->scrOcr instanceof SrcOcr)
+            return $this->scrOcr = new SrcOcr();
         return $this->scrOcr;
     }
 
