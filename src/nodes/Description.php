@@ -103,6 +103,16 @@ class Description extends AbstractBuildXML
         return $this->documentInfo;
     }
 
+    /**
+     * @return CustomInfo
+     */
+    public function getCustomInfo()
+    {
+        if(!$this->customInfo instanceof CustomInfo)
+            return $this->customInfo = new CustomInfo();
+        return $this->customInfo;
+    }
+
 
     /**
      * XML Node Name
