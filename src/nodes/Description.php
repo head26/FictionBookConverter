@@ -15,39 +15,35 @@ namespace FB2Builder\nodes;
 class Description extends AbstractBuildXML
 {
     /**
+     * <title-info> - 1 (один, обязателен);
      * @var TitleInfo
      */
     protected $titleInfo;
     /**
+     * <src-title-info> - 0..1 (один, опционально) с версии 2.1;
      * @var SrcTitleInfo
      */
     protected $srcTitleInfo;
     /**
+     * <document-info> - 1 (один, обязателен);
      * @var DocumentInfo
      */
     protected $documentInfo;
     /**
+     * <publish-info> - 0..1 (один, опционально);
      * @var PublishInfo
      */
     protected $publishInfo;
     /**
+     * <custom-info> - 0..n (любое число, опционально);
      * @var CustomInfo
      */
     protected $customInfo;
     /**
+     * <output> - 0..2 (опционально один или два) с версии 2.1.
      * @var Output
      */
     protected $output;
-
-    /**
-     * <title-info> - 1 (один, обязателен);
-     * <src-title-info> - 0..1 (один, опционально) с версии 2.1;
-     * <document-info> - 1 (один, обязателен);
-     * <publish-info> - 0..1 (один, опционально);
-     * <custom-info> - 0..n (любое число, опционально);
-     * <output> - 0..2 (опционально один или два) с версии 2.1.
-     */
-
 
     /**
      * @return TitleInfo

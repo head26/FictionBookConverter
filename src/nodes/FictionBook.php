@@ -15,28 +15,25 @@ namespace FB2Builder\nodes;
 class FictionBook extends AbstractBuildXML
 {
     /**
-     * @var Description
-     */
-    protected $description;
-    /**
-     * @var Body
-     */
-    protected $body;
-    /**
+     * <stylesheet> - 0..n (любое число, опционально);
      * @var StyleSheet
      */
     protected $stylesheet;
     /**
+     * <description> - 1 (один, обязателен);
+     * @var Description
+     */
+    protected $description;
+    /**
+     * <body> - 1..n (любое число, один обязaтелен);
+     * @var Body
+     */
+    protected $body;
+    /**
+     * <binary> - 0..n (любое число, опционально).
      * @var Binary
      */
     protected $binary;
-
-    /**
-     * <stylesheet> - 0..n (любое число, опционально);
-     * <description> - 1 (один, обязателен);
-     * <body> - 1..n (любое число, один обязaтелен);
-     * <binary> - 0..n (любое число, опционально).
-     */
 
     /**
      * @return Description
