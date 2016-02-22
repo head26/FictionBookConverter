@@ -61,20 +61,12 @@ $titleInfo->getLang()->setValue('ru');
 $titleInfo->getKeywords()->setValue('pam, param, pampam');
 
 
-$titleInfo->getAnnotation()->setValue("    <p></p>");
+$titleInfo->getAnnotation()->setValue("<p></p>");
 
 $genres = ['sf_cyberpunk','sf_space','sf'];
 
 foreach($genres as $k => $v)
     $titleInfo->getGenre($v)->setValue($v);
 
-$fb->getBody(1)->setValue("<title><p>Анджей Сапковский</p>
-<p>Ведьмак. Последнее желание</p>
-</title><section><cite><p>Andrzej Sapkowski</p>
-<p>Ostatnie Zyczenie</p>
-<p>Печатается с разрешения автора и литературного агентства NOWA Publishers при содействии Агентства Александра Корженевского</p>
-<p>Copyright © Andrzej Sapkowski, 1993</p>
-<p>© Е.П. Вайсброт, наследники, перевод на русский язык</p>
-<p>© ООО «Издательство АСТ», 2015</p>
-</cite></section></title>");
+$fb->getBody(1)->setValue("213");
 $FB2Builder->save();
