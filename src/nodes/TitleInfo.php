@@ -16,14 +16,14 @@ class TitleInfo extends AbstractBuildXML
 
     /**
      * <genre> - 1..n (любое число, один обязaтелен);
-     * @var Genre
+     * @var array Genre
      */
-    protected $genre;
+    protected $genre = [];
     /**
      * <author> - 1..n (любое число, один обязaтелен);
      * @var Author
      */
-    protected $author;
+    protected $author = [];
     /**
      * <book-title> - 1 (один, обязателен);
      * @var BookTitle
@@ -71,23 +71,27 @@ class TitleInfo extends AbstractBuildXML
     protected $sequence;
 
     /**
+     * @param $id
      * @return Author
      */
-    public function getAuthor()
+    public function getAuthor($id)
     {
-        if(!$this->author instanceof Author)
-            return $this->author = new Author();
-        return $this->author;
+        if(isset($this->author[$id]))
+            return $this->author[$id];
+        else
+            return $this->author[$id] = new Author();
     }
 
     /**
+     * @param $id
      * @return Genre
      */
-    public function getGenre()
+    public function getGenre($id)
     {
-        if(!$this->genre instanceof Genre)
-            return $this->genre = new Genre();
-        return $this->genre;
+        if(isset($this->genre[$id]))
+            return $this->genre[$id];
+        else
+            return $this->genre[$id] = new Genre();
     }
 
 
