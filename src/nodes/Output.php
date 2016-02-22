@@ -9,6 +9,8 @@
 namespace FB2Builder\nodes;
 /**
  * Class Output
+ *
+ * Инструкции для выдачи пользователям библиотеки платных и ознакомительных версий документа.
  * @package FB2Builder\nodes
  */
 class Output extends AbstractBuildXML

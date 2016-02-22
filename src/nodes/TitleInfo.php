@@ -9,68 +9,60 @@
 namespace FB2Builder\nodes;
 /**
  * Class TitleInfo
+ *
+ * Описание информации о произведении (с учетом перевода, но без учета издания).
  * @package FB2Builder\nodes
  */
 class TitleInfo extends AbstractBuildXML
 {
 
     /**
-     * <genre> - 1..n (любое число, один обязaтелен);
      * @var array Genre
      */
     protected $genre = [];
     /**
-     * <author> - 1..n (любое число, один обязaтелен);
-     * @var Author
+     * @var array Author
      */
     protected $author = [];
     /**
-     * <book-title> - 1 (один, обязателен);
      * @var BookTitle
      */
     protected $bookTitle;
     /**
-     * <annotation> - 0..1 (один, опционально);
      * @var Annotation
      */
     protected $annotation;
     /**
-     * <keywords> - 0..1 (один, опционально);
      * @var Keywords
      */
     protected $keywords;
     /**
-     * <date> - 0..1 (один, опционально);
      * @var Date
      */
     protected $date;
     /**
-     * <coverpage> - 0..1 (один, опционально);
      * @var Coverpage
      */
     protected $coverpage;
     /**
-     * <lang> - 1 (один, обязателен);
      * @var Lang
      */
     protected $lang;
     /**
-     * <src-lang> - 0..1 (один, опционально);
      * @var SrcLang
      */
     protected $srcLang;
     /**
-     * <translator> - 0..n (любое число, опционально);
-     * @var Translator
+     * @var array Translator
      */
-    protected $translator;
+    protected $translator = [];
     /**
-     * <sequence> - 0..n (любое число, опционально).
-     * @var Sequence
+     * @var array Sequence
      */
-    protected $sequence;
+    protected $sequence = [];
 
     /**
+     * author - 1..n (любое число, один обязaтелен);
      * @param $id
      * @return Author
      */
@@ -83,6 +75,7 @@ class TitleInfo extends AbstractBuildXML
     }
 
     /**
+     * genre - 1..n (любое число, один обязaтелен);
      * @param $id
      * @return Genre
      */
@@ -96,6 +89,7 @@ class TitleInfo extends AbstractBuildXML
 
 
     /**
+     * annotation - 0..1 (один, опционально);
      * @return Annotation
      */
     public function getAnnotation()
@@ -107,6 +101,7 @@ class TitleInfo extends AbstractBuildXML
 
 
     /**
+     * book-title - 1 (один, обязателен);
      * @return BookTitle
      */
     public function getBookTitle()
@@ -118,6 +113,7 @@ class TitleInfo extends AbstractBuildXML
 
 
     /**
+     * keywords - 0..1 (один, опционально);
      * @return Keywords
      */
     public function getKeywords()
@@ -129,6 +125,7 @@ class TitleInfo extends AbstractBuildXML
 
 
     /**
+     * date - 0..1 (один, опционально);
      * @return Date
      */
     public function getDate()
@@ -140,6 +137,7 @@ class TitleInfo extends AbstractBuildXML
 
 
     /**
+     * lang - 1 (один, обязателен);
      * @return Lang
      */
     public function getLang()
@@ -151,6 +149,7 @@ class TitleInfo extends AbstractBuildXML
 
 
     /**
+     * src-lang - 0..1 (один, опционально);
      * @return SrcLang
      */
     public function getSrcLang()
@@ -162,17 +161,21 @@ class TitleInfo extends AbstractBuildXML
 
 
     /**
+     * translator - 0..n (любое число, опционально);
+     * @param $id
      * @return Translator
      */
-    public function getTranslator()
+    public function getTranslator($id)
     {
-        if(!$this->translator instanceof Translator)
-            return $this->translator = new Translator();
-        return $this->translator;
+        if(isset($this->translator[$id]))
+            return $this->translator[$id];
+        else
+            return $this->translator[$id] = new Translator();
     }
 
 
     /**
+     * coverpage - 0..1 (один, опционально);
      * @return Coverpage
      */
     public function getCoverpage()
@@ -184,13 +187,16 @@ class TitleInfo extends AbstractBuildXML
 
 
     /**
+     * sequence - 0..n (любое число, опционально).
+     * @param $id
      * @return Sequence
      */
-    public function getSequence()
+    public function getSequence($id)
     {
-        if(!$this->sequence instanceof Sequence)
-            return $this->sequence = new Sequence();
-        return $this->sequence;
+        if(isset($this->sequence[$id]))
+            return $this->sequence[$id];
+        else
+            return $this->sequence[$id] = new Sequence();
     }
 
     /**

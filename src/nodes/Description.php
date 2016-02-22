@@ -10,42 +10,43 @@
 namespace FB2Builder\nodes;
 /**
  * Class Description
+ *
+ * Метаинформация о книге (автор(ы), название, выходные данные, ...) и файле (создатель(и), история, ссылки на источник, ...)
+ * Используется в основном библиотечным софтом, но может представлять интерес и рядовому читателю.
+ * Рекомендуется серьезно отнесится к заполнению,
+ * поскольку неправильно (или неполно) заполненное описание приводит к некорректному позиционированию книги в библиотеке,
+ * что затрудняет ее поиск, приводит к появлению "двойников" авторов и просто не позволяет потенциальному читателю составить предварительное мнение о книге.
  * @package FB2Builder\nodes
  */
 class Description extends AbstractBuildXML
 {
     /**
-     * <title-info> - 1 (один, обязателен);
      * @var TitleInfo
      */
     protected $titleInfo;
     /**
-     * <src-title-info> - 0..1 (один, опционально) с версии 2.1;
      * @var SrcTitleInfo
      */
     protected $srcTitleInfo;
     /**
-     * <document-info> - 1 (один, обязателен);
      * @var DocumentInfo
      */
     protected $documentInfo;
     /**
-     * <publish-info> - 0..1 (один, опционально);
      * @var PublishInfo
      */
     protected $publishInfo;
     /**
-     * <custom-info> - 0..n (любое число, опционально);
-     * @var CustomInfo
+     * @var array CustomInfo
      */
-    protected $customInfo;
+    protected $customInfo = [];
     /**
-     * <output> - 0..2 (опционально один или два) с версии 2.1.
-     * @var Output
+     * @var array Output
      */
-    protected $output;
+    protected $output = [];
 
     /**
+     * title-info - 1 (один, обязателен);
      * @return TitleInfo
      */
     public function getTitleInfo()
@@ -57,6 +58,7 @@ class Description extends AbstractBuildXML
 
 
     /**
+     * src-title-info - 0..1 (один, опционально) с версии 2.1;
      * @return SrcTitleInfo
      */
     public function getSrcTitleInfo()
@@ -68,6 +70,7 @@ class Description extends AbstractBuildXML
 
 
     /**
+     * publish-info - 0..1 (один, опционально);
      * @return PublishInfo
      */
     public function getPublishInfo()
@@ -79,18 +82,21 @@ class Description extends AbstractBuildXML
 
 
     /**
+     * output - 0..2 (опционально один или два) с версии 2.1.
+     * @param $id
      * @return Output
      */
-    public function getOutput()
+    public function getOutput($id)
     {
-        if(!$this->output instanceof Output)
-            return $this->output = new Output()
-                ;
-        return $this->output;
+        if(isset($this->output[$id]))
+            return $this->output[$id];
+        else
+            return $this->output[$id] = new Output();
     }
 
 
     /**
+     * document-info - 1 (один, обязателен);
      * @return DocumentInfo
      */
     public function getDocumentInfo()
@@ -101,13 +107,16 @@ class Description extends AbstractBuildXML
     }
 
     /**
+     * custom-info - 0..n (любое число, опционально);
+     * @param $id
      * @return CustomInfo
      */
-    public function getCustomInfo()
+    public function getCustomInfo($id)
     {
-        if(!$this->customInfo instanceof CustomInfo)
-            return $this->customInfo = new CustomInfo();
-        return $this->customInfo;
+        if(isset($this->customInfo[$id]))
+            return $this->customInfo[$id];
+        else
+            return $this->customInfo[$id] = new CustomInfo();
     }
 
 

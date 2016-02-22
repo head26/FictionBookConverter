@@ -21,6 +21,7 @@ abstract class AbstractNode extends AbstractBuildXML
 
 
     /**
+     * Set value
      * @param $value
      * @return $this
      */
@@ -30,6 +31,7 @@ abstract class AbstractNode extends AbstractBuildXML
         return $this;
     }
     /**
+     * Get value
      * @return string
      */
     public function getValue()

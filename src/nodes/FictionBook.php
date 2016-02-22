@@ -20,22 +20,20 @@ class FictionBook extends AbstractBuildXML
      */
     protected $stylesheet;
     /**
-     * <description> - 1 (один, обязателен);
      * @var Description
      */
     protected $description;
     /**
-     * <body> - 1..n (любое число, один обязaтелен);
-     * @var Body
+     * @var array Body
      */
-    protected $body;
+    protected $body = [];
     /**
-     * <binary> - 0..n (любое число, опционально).
      * @var Binary
      */
     protected $binary;
 
     /**
+     * description - 1 (один, обязателен);
      * @return Description
      */
     public function getDescription()
@@ -46,6 +44,20 @@ class FictionBook extends AbstractBuildXML
     }
 
     /**
+     * body - 1..n (любое число, один обязaтелен);
+     * @param $id
+     * @return Body
+     */
+    public function getBody($id)
+    {
+        if(isset($this->body[$id]))
+            return $this->body[$id];
+        else
+            return $this->body[$id] = new Body();
+    }
+
+    /**
+     * binary - 0..n (любое число, опционально).
      * @return Binary
      */
     public function getBinary()

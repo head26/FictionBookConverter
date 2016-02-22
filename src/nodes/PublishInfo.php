@@ -7,10 +7,7 @@
  * Time: 23:08
  */
 namespace FB2Builder\nodes;
-/**
- * Class PublishInfo
- * @package FB2Builder\nodes
- */
+
 /**
  * Class PublishInfo
  * @package FB2Builder\nodes
@@ -38,12 +35,12 @@ class PublishInfo extends AbstractBuildXML
      */
     protected $isbn;
     /**
-     * @var Sequence
+     * @var array Sequence
      */
-    protected $sequence;
-
+    protected $sequence = [];
 
     /**
+     * book-name - 0..1 (один, опционально) - название;
      * @return BookName
      */
     public function getBookName()
@@ -55,6 +52,7 @@ class PublishInfo extends AbstractBuildXML
 
 
     /**
+     * publisher - 0..1 (один, опционально) - издательство;
      * @return Publisher
      */
     public function getPublisher()
@@ -66,6 +64,7 @@ class PublishInfo extends AbstractBuildXML
 
 
     /**
+     * city - 0..1 (один, опционально)- место издания;
      * @return City
      */
     public function getCity()
@@ -77,6 +76,7 @@ class PublishInfo extends AbstractBuildXML
 
 
     /**
+     * year - 0..1 (один, опционально) - год издания;
      * @return Year
      */
     public function getYear()
@@ -88,6 +88,7 @@ class PublishInfo extends AbstractBuildXML
 
 
     /**
+     * isbn - 0..1 (один, опционально) - ISBN издания;
      * @return Isbn
      */
     public function getIsbn()
@@ -99,13 +100,16 @@ class PublishInfo extends AbstractBuildXML
 
 
     /**
+     * sequence - 0..n (любое число, опционально) - серия (серии) изданий, в которую входит книга.
+     * @param $id
      * @return Sequence
      */
-    public function getSequence()
+    public function getSequence($id)
     {
-        if(!$this->sequence instanceof Sequence)
-            return $this->sequence = new Sequence();
-        return $this->sequence;
+        if(isset($this->sequence[$id]))
+            return $this->sequence[$id];
+        else
+            return $this->sequence[$id] = new Sequence();
     }
     /**
      * XML Node Name

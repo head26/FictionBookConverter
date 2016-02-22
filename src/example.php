@@ -19,10 +19,10 @@ $authors = [
         'Firstname' => 'Имя',
         'Middlename' => 'Отчество',
         'Lastname' => 'Фамилия',
-        'name' => 'head',
-        'Nickname' => 'vk.com',
-        'HomePage' => 'jff23489hf293hf9823',
-        'Id' => '26soft@mail.ru',
+        'Nickname' => 'head',
+        'HomePage' => 'vk.com',
+        'Id' => 'jff23489hf293hf9823',
+        'Email' => '26soft@mail.ru',
     ],
     '2' => [
         'Firstname' => 'Имя2',
@@ -43,37 +43,38 @@ foreach($authors as $key => $author)
     $tIAuthor->getNickname()->setValue($author['Nickname']);
     $tIAuthor->getHomePage()->setValue($author['HomePage']);
     $tIAuthor->getId()->setValue($author['Id']);
-    $tIAuthor->getEmail()->setValue($author['Email']);
+    $tIAuthor->getEmail(1)->setValue($author['Email']);
 }
 
-$tITranslator = $titleInfo->getTranslator();
+$tITranslator = $titleInfo->getTranslator(1);
 $tITranslator->getFirstname()->setValue('Имя');
 $tITranslator->getMiddlename()->setValue('Отчество');
 $tITranslator->getLastname()->setValue('Фамилия');
 $tITranslator->getNickname()->setValue('head');
 $tITranslator->getHomePage()->setValue('vk.com');
 $tITranslator->getId()->setValue('jff23489hf293hf9823');
-$tITranslator->getEmail()->setValue('26soft@mail.ru');
+$tITranslator->getEmail(1)->setValue('26soft@mail.ru');
 
 $titleInfo->getBookTitle()->setValue('Хуевая книга');
 $titleInfo->getDate()->setValue('04.02.2016');
 $titleInfo->getLang()->setValue('ru');
-
 $titleInfo->getKeywords()->setValue('pam, param, pampam');
 
 
-
+$titleInfo->getAnnotation()->setValue("    <p></p>");
 
 $genres = ['sf_cyberpunk','sf_space','sf'];
 
 foreach($genres as $k => $v)
     $titleInfo->getGenre($v)->setValue($v);
-/*
-print_r($genre->getValue());
-foreach($genre->getValue() as $v) {
-    foreach($v['attr'] as $ki => $item)
-        echo $v['value'] .' = '. $ki.' = '.$item."\r\n";
-}
-die();*/
 
+$fb->getBody(1)->setValue("<title><p>Анджей Сапковский</p>
+<p>Ведьмак. Последнее желание</p>
+</title><section><cite><p>Andrzej Sapkowski</p>
+<p>Ostatnie Zyczenie</p>
+<p>Печатается с разрешения автора и литературного агентства NOWA Publishers при содействии Агентства Александра Корженевского</p>
+<p>Copyright © Andrzej Sapkowski, 1993</p>
+<p>© Е.П. Вайсброт, наследники, перевод на русский язык</p>
+<p>© ООО «Издательство АСТ», 2015</p>
+</cite></section></title>");
 $FB2Builder->save();

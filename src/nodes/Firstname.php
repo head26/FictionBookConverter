@@ -13,7 +13,6 @@ namespace FB2Builder\nodes;
  */
 class Firstname extends AbstractNode
 {
-    protected $attribute = [];
     /**
      * XML Node Name
      * @return string
@@ -31,5 +30,8 @@ class Firstname extends AbstractNode
             'xml:lang' => 'ru'
         ];
     }
+public function getAttr()
+{
 
+}
 }

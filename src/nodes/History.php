@@ -11,11 +11,14 @@ namespace FB2Builder\nodes;
 
 /**
  * Class History
+ *
+ * История изменении данного FB2 документа.
+ * Рекомендуется к заполнению ответственным за документ.
  * @package FB2Builder\nodes
  */
 class History extends AbstractBuildXML
 {
-    //TODO: к работе.
+    //TODO: к работе. Аналогично annotation
     /**
      * XML Node Name
      * @return string

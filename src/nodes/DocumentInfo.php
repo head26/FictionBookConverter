@@ -9,14 +9,16 @@
 namespace FB2Builder\nodes;
 /**
  * Class DocumentInfo
+ *
+ * Описание информации о конкретном FB2.x документе (создатель(и), история и т.д.).
  * @package FB2Builder\nodes
  */
 class DocumentInfo extends AbstractBuildXML
 {
     /**
-     * @var Author
+     * @var array Author
      */
-    protected $author;
+    protected $author = [];
     /**
      * @var ProgramUsed
      */
@@ -26,9 +28,9 @@ class DocumentInfo extends AbstractBuildXML
      */
     protected $date;
     /**
-     * @var SrcUrl
+     * @var array SrcUrl
      */
-    protected $scrUrl;
+    protected $scrUrl = [];
     /**
      * @var SrcOcr
      */
@@ -46,34 +48,26 @@ class DocumentInfo extends AbstractBuildXML
      */
     protected $history;
     /**
-     * @var Publisher
+     * @var array Publisher
      */
-    protected $publisher;
+    protected $publisher = [];
 
     /**
-     * <author> - 1..n (любое число, один обязaтелен);
-     * <program-used> - 0..1 (один, опционально);
-     * <date> - 1 (один, обязателен);
-     * <src-url> - 0..n (любое число, опционально);
-     * <src-ocr> - 0..1 (один, опционально);
-     * <id> - 1 (один, обязателен);
-     * <version> - 1 (один, обязателен);
-     * <history> - 0..1 (один, опционально);
-     * <publisher> - 0..n (любое число, опционально) с версии 2.2.
-     */
-
-    /**
+     * author - 1..n (любое число, один обязaтелен);
+     * @param $id
      * @return Author
      */
-    public function getAuthor()
+    public function getAuthor($id)
     {
-        if(!$this->author instanceof Author)
-            return $this->author = new Author();
-        return $this->author;
+        if(isset($this->author[$id]))
+            return $this->author[$id];
+        else
+            return $this->author[$id] = new Author();
     }
 
 
     /**
+     * date - 1 (один, обязателен);
      * @return Date
      */
     public function getDate()
@@ -85,6 +79,7 @@ class DocumentInfo extends AbstractBuildXML
 
 
     /**
+     * id - 1 (один, обязателен);
      * @return Id
      */
     public function getId()
@@ -95,6 +90,7 @@ class DocumentInfo extends AbstractBuildXML
     }
 
     /**
+     * program-used - 0..1 (один, опционально);
      * @return ProgramUsed
      */
     public function getProgramUsed()
@@ -105,16 +101,20 @@ class DocumentInfo extends AbstractBuildXML
     }
 
     /**
+     * src-url - 0..n (любое число, опционально);
+     * @param $id
      * @return SrcUrl
      */
-    public function getScrUrl()
+    public function getScrUrl($id)
     {
-        if(!$this->scrUrl instanceof SrcUrl)
-            return $this->scrUrl = new SrcUrl();
-        return $this->scrUrl;
+        if(isset($this->scrUrl[$id]))
+            return $this->scrUrl[$id];
+        else
+            return $this->scrUrl[$id] = new SrcUrl();
     }
 
     /**
+     * src-ocr - 0..1 (один, опционально);
      * @return SrcOcr
      */
     public function getScrOcr()
@@ -125,6 +125,7 @@ class DocumentInfo extends AbstractBuildXML
     }
 
     /**
+     * version - 1 (один, обязателен);
      * @return Version
      */
     public function getVersion()
@@ -135,6 +136,7 @@ class DocumentInfo extends AbstractBuildXML
     }
 
     /**
+     * history - 0..1 (один, опционально);
      * @return History
      */
     public function getHistory()
@@ -145,13 +147,16 @@ class DocumentInfo extends AbstractBuildXML
     }
 
     /**
+     * publisher - 0..n (любое число, опционально) с версии 2.2.
+     * @param $id
      * @return Publisher
      */
-    public function getPublisher()
+    public function getPublisher($id)
     {
-        if(!$this->publisher instanceof Publisher)
-            return $this->publisher = new Publisher();
-        return $this->publisher;
+        if(isset($this->publisher[$id]))
+            return $this->publisher[$id];
+        else
+            return $this->publisher[$id] = new Publisher();
     }
 
     /**

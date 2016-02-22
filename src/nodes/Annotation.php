@@ -11,7 +11,7 @@ namespace FB2Builder\nodes;
  * Class Annotation
  * @package FB2Builder\nodes
  */
-class Annotation extends AbstractBuildXML
+class Annotation extends AbstractNode
 {
     // TODO: к работе.
     /**

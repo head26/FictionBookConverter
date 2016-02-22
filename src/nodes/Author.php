@@ -18,11 +18,11 @@ class Author extends AbstractBuildXML
     protected $lastname;
     protected $nickname;
     protected $homePage;
-    protected $email;
+    protected $email = [];
     protected $id;
 
     /**
-     * first-name - 0..1 (один, обязателен при отсутствии <nickname>, иначе опционально) - имя;
+     * first-name - 0..1 (один, обязателен при отсутствии nickname, иначе опционально) - имя;
      * @return Firstname
      */
     public function getFirstname()
@@ -46,7 +46,7 @@ class Author extends AbstractBuildXML
 
 
     /**
-     * last-name - 0..1 (один, обязателен при отсутствии <nickname>, иначе опционально) - фамилия;
+     * last-name - 0..1 (один, обязателен при отсутствии nickname, иначе опционально) - фамилия;
      * @return Lastname
      */
     public function getLastname()
@@ -57,7 +57,7 @@ class Author extends AbstractBuildXML
     }
 
     /**
-     * nickname - 0..1 (один, обязателен при отсутствии <first-name> и <last-name>, иначе опционально);
+     * nickname - 0..1 (один, обязателен при отсутствии first-name и last-name, иначе опционально);
      * @return Nickname
      */
     public function getNickname()
@@ -80,13 +80,15 @@ class Author extends AbstractBuildXML
 
     /**
      * email - 0..n (любое число, опционально);
+     * @param $id
      * @return Email
      */
-    public function getEmail()
+    public function getEmail($id)
     {
-        if(!$this->email instanceof Email)
-            return $this->email = new Email();
-        return $this->email;
+        if(isset($this->email[$id]))
+            return $this->email[$id];
+        else
+            return $this->email[$id] = new Email();
     }
 
     /**
