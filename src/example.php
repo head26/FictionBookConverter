@@ -38,6 +38,8 @@ foreach($authors as $key => $author)
 {
     $tIAuthor = $titleInfo->getAuthor($key);
     $tIAuthor->getFirstname()->setValue($author['Firstname']);
+    //$tIAuthor->getFirstname()->getAttribute()->set('xml:lang','ru');
+    $tIAuthor->getFirstname()->getAttribute()->setLang('ru');
     $tIAuthor->getMiddlename()->setValue($author['Middlename']);
     $tIAuthor->getLastname()->setValue($author['Lastname']);
     $tIAuthor->getNickname()->setValue($author['Nickname']);
@@ -69,4 +71,4 @@ foreach($genres as $k => $v)
     $titleInfo->getGenre($v)->setValue($v);
 
 $fb->getBody(1)->setValue("213");
-$FB2Builder->save();
+$FB2Builder->save("/FictionBookConverter/test.fb2");

@@ -24,15 +24,4 @@ class Middlename extends AbstractNode
     {
         return 'middle-name';
     }
-
-    /**
-     * @return array
-     */
-    public function getAttribute()
-    {
-        return [
-            'xml:lang' => 'ru'
-        ];
-    }
-
 }

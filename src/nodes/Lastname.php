@@ -23,14 +23,4 @@ class Lastname extends AbstractNode
     {
         return 'last-name';
     }
-
-    /**
-     * @return array
-     */
-    public function getAttribute()
-    {
-        return [
-            'xml:lang' => 'ru'
-        ];
-    }
 }

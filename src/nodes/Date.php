@@ -21,13 +21,4 @@ class Date extends AbstractNode
     {
         return 'date';
     }
-    /**
-     * @return array
-     */
-    public function getAttribute()
-    {
-        return [
-            'value' => $this->value,
-        ];
-    }
 }

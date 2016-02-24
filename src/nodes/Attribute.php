@@ -18,7 +18,7 @@ class Attribute
     /**
      * @var mixed[]
      */
-    protected static $data = array();
+    protected $data = array();
     /**
      * Добавляет атрибут
      *
@@ -26,9 +26,16 @@ class Attribute
      * @param mixed $value
      * @return void
      */
-    public static function set($key, $value)
+    public function set($key, $value)
     {
-        self::$data[$key] = $value;
+        $this->data[$key] = $value;
+    }
+    public function setLang($value)
+    {
+        $this->data['xml:lang'] = $value;
+    }
+    public function setNumber($value){
+        $this->data['number'] = $value;
     }
     /**
      * Возвращает атрибут по ключу, без ключа возвращает все атрибуты
@@ -36,11 +43,11 @@ class Attribute
      * @param string $key
      * @return mixed
      */
-    public static function get($key)
+    public function get($key = '')
     {
         if(empty($key))
-            return self::$data;
-        return isset(self::$data[$key]) ? self::$data[$key] : null;
+            return $this->data;
+        return isset($this->data[$key]) ? $this->data[$key] : null;
     }
     /**
      * Удаляет атрибут по ключу
@@ -48,8 +55,8 @@ class Attribute
      * @param string $key
      * @return void
      */
-    final public static function removeAttr($key)
+    final public function removeAttr($key)
     {
-        unset(self::$data[$key]);
+        unset($this->data[$key]);
     }
 }

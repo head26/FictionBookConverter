@@ -23,14 +23,4 @@ class Nickname extends AbstractNode
     {
         return 'nickname';
     }
-
-    /**
-     * @return array
-     */
-    public function getAttribute()
-    {
-        return [
-            'xml:lang' => 'ru'
-        ];
-    }
 }

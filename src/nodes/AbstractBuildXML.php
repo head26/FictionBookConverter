@@ -13,7 +13,10 @@ namespace FB2Builder\nodes;
  */
 abstract class AbstractBuildXML implements InterfaceNode
 {
-
+    /**
+     * @var Attribute
+     */
+    protected $attribute;
     /**
      * Build XML
      * @param \DOMDocument $domDoc
@@ -27,14 +30,19 @@ abstract class AbstractBuildXML implements InterfaceNode
 
         $node = $domDoc->createElement($nodeName);
         $domDoc->appendChild($node);
-        $attribute = $this->getAttribute();
-        if(!empty($attribute))
-        {
+        if(!empty($this->attribute)) {
+            $attribute = $this->attribute->get();
+
             foreach ($attribute as $name => $value)
                 $node->setAttribute($name, $value);
+            if($nodeName == 'Firstname')
+                foreach ($attribute as $name => $value)
+                $node->setAttributeNS('xmlns','xmlns:lang', $value);
         }
         foreach($this as $name => $value)
         {
+            if($name == 'attribute')
+                continue;
             if(is_object($value))
             {
                 $element = $value->buildXML($domDoc);
@@ -46,7 +54,7 @@ abstract class AbstractBuildXML implements InterfaceNode
                     $element = $item->buildXML($domDoc);
                     $node->appendChild($domDoc->importNode($element, TRUE));
                 }
-            } elseif((strpos($name, 'attr') !== 0))
+            } else
             {
                 if(empty($value))
                     continue;
@@ -56,10 +64,12 @@ abstract class AbstractBuildXML implements InterfaceNode
         return $node;
     }
     /**
-     * @return array
+     * @return Attribute
      */
     public function getAttribute()
     {
-        return [];
+        if(!$this->attribute instanceof Attribute)
+            return $this->attribute = new Attribute();
+        return $this->attribute;
     }
 }

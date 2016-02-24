@@ -21,13 +21,4 @@ class BookTitle extends AbstractNode
     {
         return 'book-title';
     }
-    /**
-     * @return array
-     */
-    public function getAttribute()
-    {
-        return [
-            'xml:lang' => 'ru'
-        ];
-    }
 }

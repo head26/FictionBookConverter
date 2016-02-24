@@ -31,6 +31,10 @@ class FB2Builder
     }
 
 
+    /**
+     * Save FB2 file
+     * @param string $path
+     */
     public function save($path = '') {
         if($this->fictionBook instanceof FictionBook)
         {
@@ -38,7 +42,7 @@ class FB2Builder
             $domDoc->preserveWhiteSpace = FALSE;
             $domDoc->formatOutput = TRUE;
             $this->fictionBook->buildXML($domDoc);
-            $domDoc->save("/FictionBookConverter/test.fb2");
+            $domDoc->save($path);
             echo $domDoc->saveXML();
         }
     }

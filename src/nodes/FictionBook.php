@@ -33,6 +33,15 @@ class FictionBook extends AbstractBuildXML
     protected $binary;
 
     /**
+     * FictionBook constructor.
+     */
+    public function __construct()
+    {
+        $this->getAttribute()->set('xmlns','http://www.gribuser.ru/xml/fictionbook/2.0');
+        $this->getAttribute()->set('xmlns:xlink','http://www.w3.org/1999/xlink');
+    }
+
+    /**
      * description - 1 (один, обязателен);
      * @return Description
      */
@@ -66,19 +75,6 @@ class FictionBook extends AbstractBuildXML
             return $this->binary = new Binary();
         return $this->binary;
     }
-
-
-    /**
-     * @return array
-     */
-    public function getAttribute()
-    {
-        return [
-            'xmlns' => 'http://www.gribuser.ru/xml/fictionbook/2.0',
-            'xmlns:xlink' => 'http://www.w3.org/1999/xlink'
-        ];
-    }
-
     /**
      * XML Node Name
      * @return string
