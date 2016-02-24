@@ -37,9 +37,11 @@ $authors = [
 foreach($authors as $key => $author)
 {
     $tIAuthor = $titleInfo->getAuthor($key);
-    $tIAuthor->getFirstname()->setValue($author['Firstname']);
+    $tIAuthor->getFirstname()
+        ->setValue($author['Firstname'])
+        ->getAttribute()
+        ->setLang('ru');
     //$tIAuthor->getFirstname()->getAttribute()->set('xml:lang','ru');
-    $tIAuthor->getFirstname()->getAttribute()->setLang('ru');
     $tIAuthor->getMiddlename()->setValue($author['Middlename']);
     $tIAuthor->getLastname()->setValue($author['Lastname']);
     $tIAuthor->getNickname()->setValue($author['Nickname']);
