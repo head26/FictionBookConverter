@@ -71,10 +71,28 @@ $titleInfo->getSequence(1)->getAttribute()
 
 $titleInfo->getAnnotation()->setValue("<p></p>");
 
-$genres = ['sf_cyberpunk','sf_space','sf'];
+$genres = ['sf_cyberpunk','sf_space'];
 
 foreach($genres as $k => $v)
     $titleInfo->getGenre($v)->setValue($v);
+
+$documentInfo = $description->getDocumentInfo();
+
+$docAuthor = $documentInfo->getAuthor(1);
+$docAuthor->getFirstname()
+    ->setValue('имя')
+    ->getAttribute()
+    ->setLang('ru');
+$docAuthor->getFirstname()->getAttribute()->set('xml:lang','ru');
+$docAuthor->getMiddlename()->setValue("Отчество");
+$docAuthor->getLastname()->setValue("Фамилия");
+$docAuthor->getNickname()->setValue("ник");
+$docAuthor->getHomePage()->setValue("страница");
+$docAuthor->getId()->setValue("ид");
+$docAuthor->getEmail(1)->setValue("мыло");
+$documentInfo->getDate()->setValue('2344-12-12');
+$documentInfo->getId()->setValue("dfg");
+$documentInfo->getVersion()->setValue('1.1');
 
 $fb->getBody(1)->setValue("213");
 $FB2Builder->save("/FictionBookConverter/test.fb2");

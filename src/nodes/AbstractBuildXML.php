@@ -28,16 +28,25 @@ abstract class AbstractBuildXML implements InterfaceNode
             return false;
         $nodeName = $this->getXMLNodeName();
 
-        $node = $domDoc->createElement($nodeName);
+        $node = $domDoc->createElementNS('http://www.gribuser.ru/xml/fictionbook/2.0',$nodeName);
         $domDoc->appendChild($node);
+        if($nodeName == "FictionBook") {
+            $node->setAttributeNS(
+                'http://www.w3.org/2000/xmlns/',
+                'xmlns:xlink',
+                'http://www.w3.org/1999/xlink/'
+            );
+        }
+echo $node->lookupNamespaceUri(NULL). "\r\n";
         if(!empty($this->attribute)) {
             $attribute = $this->attribute->get();
 
-            foreach ($attribute as $name => $value)
-                $node->setAttribute($name, $value);
-            if($nodeName == 'Firstname')
+           /* foreach ($attribute as $name => $value)
+                $node->setAttribute($name, $value);*/
+            //TODO: Ебучие пространства имен.
+          /*  if($nodeName == 'first-name')
                 foreach ($attribute as $name => $value)
-                $node->setAttributeNS('xmlns','xmlns:lang', $value);
+                    $node->setAttributeNS('xmlns','xml:lang', $value);*/
         }
         foreach($this as $name => $value)
         {

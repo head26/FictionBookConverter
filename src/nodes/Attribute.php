@@ -31,21 +31,57 @@ class Attribute
         $this->data[$key] = $value;
         return $this;
     }
+
+    /**
+     * @param $value
+     * @return Attribute
+     */
     public function setLang($value)
     {
-        $this->data['xml:lang'] = $value;
+        $this->data['lang'] = $value;
         return $this;
     }
+
+    /**
+     * @param $value
+     * @return Attribute
+     */
     public function setNumber($value){
         $this->data['number'] = $value;
         return $this;
     }
+
+    /**
+     * @param $value
+     * @return Attribute
+     */
     public function setName($value){
         $this->data['name'] = $value;
         return $this;
     }
+
+    /**
+     * @param $value
+     * @return Attribute
+     */
     public function setValue($value){
         $this->data['value'] = $value;
+        return $this;
+    }
+    /**
+     * @param $value
+     * @return Attribute
+     */
+    public function setType($value){
+        $this->data['type'] = $value;
+        return $this;
+    }
+    /**
+     * @param $value
+     * @return Attribute
+     */
+    public function setXlinkType($value){
+        $this->data['xlink:type'] = $value;
         return $this;
     }
     /**
