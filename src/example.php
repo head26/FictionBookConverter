@@ -62,6 +62,10 @@ $titleInfo->getDate()->setValue('04.02.2016');
 $titleInfo->getLang()->setValue('ru');
 $titleInfo->getKeywords()->setValue('pam, param, pampam');
 
+$titleInfo->getSequence(1)->getAttribute()
+    ->setLang('ru')
+    ->setName('Цыгане')
+    ->setNumber(2);
 
 $titleInfo->getAnnotation()->setValue("<p></p>");
 

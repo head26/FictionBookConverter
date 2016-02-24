@@ -40,6 +40,10 @@ class Attribute
         $this->data['number'] = $value;
         return $this;
     }
+    public function setName($value){
+        $this->data['name'] = $value;
+        return $this;
+    }
     /**
      * Возвращает атрибут по ключу, без ключа возвращает все атрибуты
      *

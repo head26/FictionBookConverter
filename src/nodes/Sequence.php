@@ -13,36 +13,6 @@ namespace FB2Builder\nodes;
  */
 class Sequence extends AbstractBuildXML
 {
-    // TODO: к работе.
-    protected $name;
-    protected $number;
-    protected $xmlLang;
-
-    /**
-     * @param string $name
-     * @param int $number
-     */
-    public function setSequence($name, $number)
-    {
-        $this->name = $name;
-        $this->number = $number;
-    }
-
-    /**
-     * @return int|null
-     */
-    public function getNumber()
-    {
-        return $this->number;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
     /**
      * XML Node Name
      * @return string
@@ -51,6 +21,4 @@ class Sequence extends AbstractBuildXML
     {
         return 'sequence';
     }
-
-
 }
