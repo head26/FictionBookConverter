@@ -24,18 +24,21 @@ class Attribute
      *
      * @param string $key
      * @param mixed $value
-     * @return void
+     * @return Attribute
      */
     public function set($key, $value)
     {
         $this->data[$key] = $value;
+        return $this;
     }
     public function setLang($value)
     {
         $this->data['xml:lang'] = $value;
+        return $this;
     }
     public function setNumber($value){
         $this->data['number'] = $value;
+        return $this;
     }
     /**
      * Возвращает атрибут по ключу, без ключа возвращает все атрибуты
