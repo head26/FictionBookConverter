@@ -44,6 +44,10 @@ class Attribute
         $this->data['name'] = $value;
         return $this;
     }
+    public function setValue($value){
+        $this->data['value'] = $value;
+        return $this;
+    }
     /**
      * Возвращает атрибут по ключу, без ключа возвращает все атрибуты
      *
