@@ -54,21 +54,23 @@ abstract class AbstractBuildXML implements InterfaceNode
 
                 if($nodeName == 'body')
                 {
-                    $node->appendChild($domDoc->createElement('title','Классная книга'));
+                    $title = $domDoc->createElementNS('http://www.gribuser.ru/xml/fictionbook/2.0','title');
+                    $node->appendChild($title);
+                    $title->appendChild($domDoc->createElementNS('http://www.gribuser.ru/xml/fictionbook/2.0','p','Классная книга'));
                 }
 
                 if($nodeName == 'body')
                 {
-                    $section = $domDoc->createElement('section');
+                    $section = $domDoc->createElementNS('http://www.gribuser.ru/xml/fictionbook/2.0','section');
                     $node->appendChild($section);
-                    $section->appendChild($domDoc->createElement('title', 'Глава 1'));
+                    $section->appendChild($domDoc->createElementNS('http://www.gribuser.ru/xml/fictionbook/2.0','title', 'Глава 1'));
                     $section->appendChild($domDoc->importNode($parser->parse($value), TRUE));
                 }
                 continue;
             }
             if($nodeName == 'annotation')
             {
-                $node->appendChild($domDoc->createElement('p','Аннотация'));
+                $node->appendChild($domDoc->createElementNS('http://www.gribuser.ru/xml/fictionbook/2.0','p','Аннотация'));
                 continue;
             }
             if(is_object($value))

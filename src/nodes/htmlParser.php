@@ -25,7 +25,7 @@ class htmlParser
         $elements = $xpath->query("//p");
         //print_r($elements);
         foreach ($elements as $element) {
-          $node =  $doc->createElement($element->nodeName,trim($element->nodeValue));
+          $node =  $doc->createElementNS('http://www.gribuser.ru/xml/fictionbook/2.0', $element->nodeName,trim($element->nodeValue));
         }
         return $node;
         /*$txt =~ s/&(?!#)(?:([a-zA-Z]+);)?/$1 ? $html_entities{$1} : "&amp;"/sge;
