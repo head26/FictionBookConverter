@@ -48,19 +48,11 @@ abstract class AbstractBuildXML implements InterfaceNode
         {
             if($name == 'attribute')
                 continue;
-            if($nodeName == 'body')
+            if(in_array($nodeName, ['body','annotation']))
             {
-                //print_r($value);
-                $value = str_replace(array('\n','&nbsp'), '', $value);
-                $doc = new \DOMDocument("1.0", "UTF-8");
-                $doc->loadHTML(mb_convert_encoding($value, 'HTML-ENTITIES', 'utf-8'), LIBXML_DTDATTR);
-                //print_r($doc);
-                $xpath = new \DOMXpath($doc);
-                $elements = $xpath->query("//p");
-                //print_r($elements);
-                foreach ($elements as $element) {
-                    $node->appendChild($domDoc->createElement($element->nodeName,$element->nodeValue));
-                }
+                $parser = new htmlParser();
+print_r($parser->parse($value));
+                $node->appendChild($domDoc->importNode($parser->parse($value), TRUE));
                 continue;
             }
             if(is_object($value))

@@ -41,7 +41,6 @@ foreach($authors as $key => $author)
         ->setValue($author['Firstname'])
         ->getAttribute()
         ->setLang('ru');
-    //$tIAuthor->getFirstname()->getAttribute()->set('xml:lang','ru');
     $tIAuthor->getMiddlename()->setValue($author['Middlename']);
     $tIAuthor->getLastname()->setValue($author['Lastname']);
     $tIAuthor->getNickname()->setValue($author['Nickname']);
@@ -69,13 +68,13 @@ $titleInfo->getSequence(1)->getAttribute()
     ->setName('Цыгане')
     ->setNumber(2);
 
-$titleInfo->getAnnotation()->setValue("<p></p>");
+$titleInfo->getAnnotation()->setValue("<p>вот такая вот шляпа</p>");
 
 $genres = ['sf_cyberpunk','sf_space'];
 
 foreach($genres as $k => $v)
     $titleInfo->getGenre($v)->setValue($v);
-$titleInfo->getCoverpage()->getImage(1)->getAttribute()->setName('123');
+//$titleInfo->getCoverpage()->getImage(1)->getAttribute()->setName('123');
 $documentInfo = $description->getDocumentInfo();
 
 $docAuthor = $documentInfo->getAuthor(1);
