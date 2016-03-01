@@ -75,7 +75,7 @@ $genres = ['sf_cyberpunk','sf_space'];
 
 foreach($genres as $k => $v)
     $titleInfo->getGenre($v)->setValue($v);
-
+$titleInfo->getCoverpage()->getImage(1)->getAttribute()->setName('123');
 $documentInfo = $description->getDocumentInfo();
 
 $docAuthor = $documentInfo->getAuthor(1);
@@ -83,7 +83,6 @@ $docAuthor->getFirstname()
     ->setValue('имя')
     ->getAttribute()
     ->setLang('ru');
-$docAuthor->getFirstname()->getAttribute()->set('xml:lang','ru');
 $docAuthor->getMiddlename()->setValue("Отчество");
 $docAuthor->getLastname()->setValue("Фамилия");
 $docAuthor->getNickname()->setValue("ник");
@@ -93,6 +92,8 @@ $docAuthor->getEmail(1)->setValue("мыло");
 $documentInfo->getDate()->setValue('2344-12-12');
 $documentInfo->getId()->setValue("dfg");
 $documentInfo->getVersion()->setValue('1.1');
+$str = '\n <p>\n    &nbsp;&nbsp; Слуга, в котором все: и бирюзовая сережка в ухе, и напомаженные разноцветные волосы, и учтивые телодвижения, словом, все изобличало человека новейшего, усовершенствованного\n    поколения, посмотрел снисходительно вдоль дороги и ответствовал: \"Никак нет-с, не видать\".\n  </p>\n';
 
-$fb->getBody(1)->setValue("213");
+$fb->getBody(1)->setValue($str);
+
 $FB2Builder->save("/FictionBookConverter/test.fb2");

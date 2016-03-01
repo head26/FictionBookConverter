@@ -18,7 +18,7 @@ class Attribute
     /**
      * @var mixed[]
      */
-    protected $data = array();
+    protected $data = [];
     /**
      * Добавляет атрибут
      *
@@ -38,7 +38,7 @@ class Attribute
      */
     public function setLang($value)
     {
-        $this->data['lang'] = $value;
+        $this->data['xml:lang'] = $value;
         return $this;
     }
 
@@ -84,6 +84,39 @@ class Attribute
         $this->data['xlink:type'] = $value;
         return $this;
     }
+    /**
+     * @param $value
+     * @return Attribute
+     */
+    public function setXlinkHref($value){
+        $this->data['xlink:href'] = $value;
+        return $this;
+    }
+    /**
+     * @param $value
+     * @return Attribute
+     */
+    public function setAlt($value){
+        $this->data['alt'] = $value;
+        return $this;
+    }
+    /**
+     * @param $value
+     * @return Attribute
+     */
+    public function setTitle($value){
+        $this->data['title'] = $value;
+        return $this;
+    }
+    /**
+     * @param $value
+     * @return Attribute
+     */
+    public function setId($value){
+        $this->data['id'] = $value;
+        return $this;
+    }
+
     /**
      * Возвращает атрибут по ключу, без ключа возвращает все атрибуты
      *

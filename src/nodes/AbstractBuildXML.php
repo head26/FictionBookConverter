@@ -29,29 +29,40 @@ abstract class AbstractBuildXML implements InterfaceNode
         $nodeName = $this->getXMLNodeName();
 
         $node = $domDoc->createElementNS('http://www.gribuser.ru/xml/fictionbook/2.0',$nodeName);
+
         $domDoc->appendChild($node);
         if($nodeName == "FictionBook") {
             $node->setAttributeNS(
                 'http://www.w3.org/2000/xmlns/',
                 'xmlns:xlink',
-                'http://www.w3.org/1999/xlink/'
+                'http://www.w3.org/1999/xlink'
             );
         }
-echo $node->lookupNamespaceUri(NULL). "\r\n";
+
         if(!empty($this->attribute)) {
             $attribute = $this->attribute->get();
-
-           /* foreach ($attribute as $name => $value)
-                $node->setAttribute($name, $value);*/
-            //TODO: Ебучие пространства имен.
-          /*  if($nodeName == 'first-name')
-                foreach ($attribute as $name => $value)
-                    $node->setAttributeNS('xmlns','xml:lang', $value);*/
+            foreach ($attribute as $name => $value)
+                $node->setAttribute($name, $value);
         }
         foreach($this as $name => $value)
         {
             if($name == 'attribute')
                 continue;
+            if($nodeName == 'body')
+            {
+                //print_r($value);
+                $value = str_replace(array('\n','&nbsp'), '', $value);
+                $doc = new \DOMDocument("1.0", "UTF-8");
+                $doc->loadHTML(mb_convert_encoding($value, 'HTML-ENTITIES', 'utf-8'), LIBXML_DTDATTR);
+                //print_r($doc);
+                $xpath = new \DOMXpath($doc);
+                $elements = $xpath->query("//p");
+                //print_r($elements);
+                foreach ($elements as $element) {
+                    $node->appendChild($domDoc->createElement($element->nodeName,$element->nodeValue));
+                }
+                continue;
+            }
             if(is_object($value))
             {
                 $element = $value->buildXML($domDoc);

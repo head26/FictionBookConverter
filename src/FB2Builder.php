@@ -42,7 +42,7 @@ class FB2Builder
             $domDoc->preserveWhiteSpace = FALSE;
             $domDoc->formatOutput = TRUE;
             $this->fictionBook->buildXML($domDoc);
-            $domDoc->schemaValidate("./XSD/FB2.2/FictionBook.xsd");
+            //$domDoc->schemaValidate("./XSD/FB2.2/FictionBook.xsd");
             //$domDoc->schemaValidate("./XSD/FB2.0/FictionBook2.xsd");
             $domDoc->save($path);
             echo $domDoc->saveXML();
