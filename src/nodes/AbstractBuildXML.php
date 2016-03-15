@@ -23,7 +23,7 @@ abstract class AbstractBuildXML implements InterfaceNode
      * @return \DOMElement|void
      */
     function buildXML(\DOMDocument $domDoc){
-
+//TODO: Придумать что-то с ссылками, как атрибутов так и всех нод.
         if(empty($this->getXMLNodeName()))
             return false;
         $nodeName = $this->getXMLNodeName();
@@ -31,13 +31,6 @@ abstract class AbstractBuildXML implements InterfaceNode
         $node = $domDoc->createElementNS('http://www.gribuser.ru/xml/fictionbook/2.0',$nodeName);
 
         $domDoc->appendChild($node);
-        if($nodeName == "FictionBook") {
-            $node->setAttributeNS(
-                'http://www.w3.org/2000/xmlns/',
-                'xmlns:xlink',
-                'http://www.w3.org/1999/xlink'
-            );
-        }
 
         if(!empty($this->attribute)) {
             $attribute = $this->attribute->get();
@@ -48,7 +41,7 @@ abstract class AbstractBuildXML implements InterfaceNode
         {
             if($name == 'attribute')
                 continue;
-            if($nodeName == 'body')
+            /*if($nodeName == 'body')
             {
                 $parser = new htmlParser();
 
@@ -67,12 +60,12 @@ abstract class AbstractBuildXML implements InterfaceNode
                     $section->appendChild($domDoc->importNode($parser->parse($value), TRUE));
                 }
                 continue;
-            }
-            if($nodeName == 'annotation')
+            }*/
+           /* if($nodeName == 'annotation')
             {
                 $node->appendChild($domDoc->createElementNS('http://www.gribuser.ru/xml/fictionbook/2.0','p','Аннотация'));
                 continue;
-            }
+            }*/
             if(is_object($value))
             {
                 $element = $value->buildXML($domDoc);
@@ -90,6 +83,19 @@ abstract class AbstractBuildXML implements InterfaceNode
                     continue;
                 $node->textContent = $value;
             }
+        }
+        if($nodeName == "FictionBook") {
+            $node->setAttributeNS(
+                'http://www.w3.org/2000/xmlns/',
+                'xmlns:xlink',
+                'http://www.w3.org/1999/xlink'
+            );
+            if(!empty(FictionBook::$binary))
+                foreach(FictionBook::$binary as $key => $val)
+                {
+                    $element = $val->buildXML($domDoc);
+                    $node->appendChild($domDoc->importNode($element, TRUE));
+                }
         }
         return $node;
     }

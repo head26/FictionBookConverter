@@ -28,9 +28,9 @@ class FictionBook extends AbstractBuildXML
      */
     protected $body = [];
     /**
-     * @var Binary
+     * @var array Binary
      */
-    protected $binary;
+    public static $binary = [];
 
     /**
      * description - 1 (один, обязателен);
@@ -58,13 +58,15 @@ class FictionBook extends AbstractBuildXML
 
     /**
      * binary - 0..n (любое число, опционально).
+     * @param $id
      * @return Binary
      */
-    public function getBinary()
+    public static function getBinary($id)
     {
-        if(!$this->binary instanceof Binary)
-            return $this->binary = new Binary();
-        return $this->binary;
+        if(isset(self::$binary[$id]))
+            return self::$binary[$id];
+        else
+            return self::$binary[$id] = new Binary();
     }
     /**
      * XML Node Name

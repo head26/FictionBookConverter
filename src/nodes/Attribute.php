@@ -116,6 +116,14 @@ class Attribute
         $this->data['id'] = $value;
         return $this;
     }
+    /**
+     * @param $value
+     * @return Attribute
+     */
+    public function setContentType($value){
+        $this->data['content-type'] = $value;
+        return $this;
+    }
 
     /**
      * Возвращает атрибут по ключу, без ключа возвращает все атрибуты

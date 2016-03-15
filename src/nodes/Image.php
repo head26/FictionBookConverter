@@ -17,7 +17,25 @@ namespace FB2Builder\nodes;
  */
 class Image extends AbstractBuildXML
 {
-    //TODO: Делать надо епта
+    public function setImage($path)
+    {
+        $info = pathinfo($path);
+        $fileName = preg_replace("/[^\\w]*/ui",'',$info['filename']).'.'.$info['extension'];
+        $content = file_get_contents($path);
+        if($content === FALSE)
+            return FALSE;
+        $finfo = new \finfo(FILEINFO_MIME_TYPE);
+        $mime = $finfo->buffer($content);
+        if(!in_array($mime, array("image/jpeg", "image/png")))
+            return FALSE;
+        FictionBook::getBinary($fileName)
+            ->setValue(base64_encode($content))
+            ->getAttribute()
+            ->setContentType($mime)
+            ->setId($fileName);
+
+        $this->getAttribute()->setXlinkHref('#'.$fileName);
+    }
     /**
      * XML Node Name
      * @return string
