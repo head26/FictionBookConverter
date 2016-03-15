@@ -23,7 +23,7 @@ abstract class AbstractBuildXML implements InterfaceNode
      * @return \DOMElement|void
      */
     function buildXML(\DOMDocument $domDoc){
-//TODO: Придумать что-то с ссылками, как атрибутов так и всех нод.
+//TODO: Придумать что-то с ссылками, как атрибутов так и всех нод. Возможно переопределить DOMDocument
         if(empty($this->getXMLNodeName()))
             return false;
         $nodeName = $this->getXMLNodeName();
