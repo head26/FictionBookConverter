@@ -19,6 +19,10 @@ class FB2Builder
      */
     protected $fictionBook;
 
+    /**
+     * @var \DOMDocument
+     */
+    public static $FB2DOM;
 
     /**
      * @return FictionBook
@@ -38,14 +42,14 @@ class FB2Builder
     public function save($path = '') {
         if($this->fictionBook instanceof FictionBook)
         {
-            $domDoc = new \DOMDocument("1.0", "UTF-8");
-            $domDoc->preserveWhiteSpace = FALSE;
-            $domDoc->formatOutput = TRUE;
-            $this->fictionBook->buildXML($domDoc);
-            $domDoc->schemaValidate("./XSD/FB2.2/FictionBook.xsd");
+            self::$FB2DOM = new \DOMDocument("1.0", "UTF-8");
+            self::$FB2DOM->preserveWhiteSpace = FALSE;
+            self::$FB2DOM->formatOutput = TRUE;
+            $this->fictionBook->buildXML();
+            self::$FB2DOM->schemaValidate("./XSD/FB2.2/FictionBook.xsd");
             //$domDoc->schemaValidate("./XSD/FB2.0/FictionBook2.xsd");
-            $domDoc->save($path);
-            echo $domDoc->saveXML();
+            self::$FB2DOM->save($path);
+            echo self::$FB2DOM->saveXML();
         }
     }
 

@@ -75,7 +75,7 @@ $genres = ['sf_cyberpunk','sf_space'];
 foreach($genres as $k => $v)
     $titleInfo->getGenre($v)->setValue($v);
 
-//$titleInfo->getCoverpage()->getImage(1)->setImage('/FictionBookConverter/джеки чан епта.jpg');
+$titleInfo->getCoverpage()->getImage(1)->setImage('/FictionBookConverter/джеки чан епта.jpg');
 $documentInfo = $description->getDocumentInfo();
 
 $docAuthor = $documentInfo->getAuthor(1);

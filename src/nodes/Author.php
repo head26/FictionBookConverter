@@ -13,12 +13,33 @@ namespace FB2Builder\nodes;
  */
 class Author extends AbstractBuildXML
 {
+    /**
+     * @var Firstname
+     */
     protected $firstname;
+    /**
+     * @var Middlename
+     */
     protected $middlename;
+    /**
+     * @var Lastname
+     */
     protected $lastname;
+    /**
+     * @var Nickname
+     */
     protected $nickname;
+    /**
+     * @var HomePage
+     */
     protected $homePage;
+    /**
+     * @var array Email
+     */
     protected $email = [];
+    /**
+     * @var Id
+     */
     protected $id;
 
     /**

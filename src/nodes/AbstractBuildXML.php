@@ -7,6 +7,9 @@
  * Time: 13:58
  */
 namespace FB2Builder\nodes;
+
+use FB2Builder\FB2Builder;
+
 /**
  * Class AbstractBuildXML
  * @package FB2Builder\nodes
@@ -17,87 +20,65 @@ abstract class AbstractBuildXML implements InterfaceNode
      * @var Attribute
      */
     protected $attribute;
+    
     /**
      * Build XML
-     * @param \DOMDocument $domDoc
-     * @return \DOMElement|void
+     * @param \DOMNode|null $parentNode
+     * @return void|false
      */
-    function buildXML(\DOMDocument $domDoc){
-//TODO: Придумать что-то с ссылками, как атрибутов так и всех нод. Возможно переопределить DOMDocument
+    function buildXML($parentNode = null){
+
         if(empty($this->getXMLNodeName()))
             return false;
+
+        $FB2DOM = FB2Builder::$FB2DOM;
+
         $nodeName = $this->getXMLNodeName();
 
-        $node = $domDoc->createElementNS('http://www.gribuser.ru/xml/fictionbook/2.0',$nodeName);
-
-        $domDoc->appendChild($node);
-
-        if(!empty($this->attribute)) {
-            $attribute = $this->attribute->get();
-            foreach ($attribute as $name => $value)
-                $node->setAttribute($name, $value);
-        }
-        foreach($this as $name => $value)
-        {
-            if($name == 'attribute')
-                continue;
-            /*if($nodeName == 'body')
-            {
-                $parser = new htmlParser();
-
-                if($nodeName == 'body')
-                {
-                    $title = $domDoc->createElementNS('http://www.gribuser.ru/xml/fictionbook/2.0','title');
-                    $node->appendChild($title);
-                    $title->appendChild($domDoc->createElementNS('http://www.gribuser.ru/xml/fictionbook/2.0','p','Классная книга'));
-                }
-
-                if($nodeName == 'body')
-                {
-                    $section = $domDoc->createElementNS('http://www.gribuser.ru/xml/fictionbook/2.0','section');
-                    $node->appendChild($section);
-                    $section->appendChild($domDoc->createElementNS('http://www.gribuser.ru/xml/fictionbook/2.0','title', 'Глава 1'));
-                    $section->appendChild($domDoc->importNode($parser->parse($value), TRUE));
-                }
-                continue;
-            }*/
-           /* if($nodeName == 'annotation')
-            {
-                $node->appendChild($domDoc->createElementNS('http://www.gribuser.ru/xml/fictionbook/2.0','p','Аннотация'));
-                continue;
-            }*/
-            if(is_object($value))
-            {
-                $element = $value->buildXML($domDoc);
-                $node->appendChild($domDoc->importNode($element, TRUE));
-            } elseif(is_array($value))
-            {
-                foreach($value as $item)
-                {
-                    $element = $item->buildXML($domDoc);
-                    $node->appendChild($domDoc->importNode($element, TRUE));
-                }
-            } else
-            {
-                if(empty($value))
-                    continue;
-                $node->textContent = $value;
-            }
-        }
+        $node = $FB2DOM->createElementNS('http://www.gribuser.ru/xml/fictionbook/2.0',$nodeName);
         if($nodeName == "FictionBook") {
             $node->setAttributeNS(
                 'http://www.w3.org/2000/xmlns/',
                 'xmlns:xlink',
                 'http://www.w3.org/1999/xlink'
             );
-            if(!empty(FictionBook::$binary))
-                foreach(FictionBook::$binary as $key => $val)
-                {
-                    $element = $val->buildXML($domDoc);
-                    $node->appendChild($domDoc->importNode($element, TRUE));
-                }
+            $FB2DOM->appendChild($FB2DOM->importNode($node, TRUE));
         }
-        return $node;
+
+        if(!empty($parentNode))
+            $parentNode->appendChild($node);
+        if(!empty($this->attribute)) {
+            $attribute = $this->attribute->get();
+            foreach ($attribute as $name => $value) {
+                if($nodeName == 'image')
+                    $node->setAttributeNS('http://www.w3.org/1999/xlink','xlink:href', $value);
+                else
+                    $node->setAttribute($name, $value);
+            }
+        }
+
+        foreach($this as $name => $value)
+        {
+
+            if($name == 'attribute')
+                continue;
+
+            if(is_object($value))
+                $value->buildXML($node);
+            elseif(is_array($value)) {
+                foreach ($value as $item)
+                    $item->buildXML($node);
+            }
+            else {
+                if (empty($value))
+                    continue;
+                $node->textContent = $value;
+            }
+        }
+        if(!empty(FictionBook::$binary) && $nodeName == "FictionBook") {
+            foreach (FictionBook::$binary as $key => $val)
+                $val->buildXML($node);
+        }
     }
     /**
      * @return Attribute
